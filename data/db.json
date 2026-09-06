@@ -1625,14 +1625,55 @@
    "model": "Ford Transit L4H3",
    "notes": "H3 vysoká střecha, L4 (6,7 m, hraniční); jen 3 místa; oddělená ložnice s postelí 133×184 (krátká/úzká), dinette vpředu jako 3. lůžko; solár 300 W, 120 Ah AGM, 230 V, indukce + plyn, lednice 60 l, Porta Potti; jen 20 l vody; TÜV 6/2027; soukromník, nově zrenovovaný interiér",
    "price": 27500,
-   "score": 3,
-   "seats": 3,
+   "score": 1,
+   "seats": 2,
    "source": "kleinanzeigen.de",
-   "status": "new",
+   "status": "rejected",
    "title": "Ford Transit L4H3 vestavba, 3 místa (2019)",
    "url": "https://www.kleinanzeigen.de/s-anzeige/wohnmobil-ford-transit-l4h3/3488871510-220-18597",
    "year": 2019,
-   "id": "kleinanzeigen-3488871510"
+   "id": "kleinanzeigen-3488871510",
+   "verdict": "ne",
+   "total": 6,
+   "rubric": {
+    "zaklad": [
+     2,
+     "Transit L4H3 06/2019, 121 250 km, rozvody v 109 tkm, servisní knížka, TÜV do 06/2027, čistá karoserie"
+    ],
+    "stavba": [
+     1,
+     "svépomocný ausbau v tiny-house stylu: plsť, vinylové lamely, tapeta v koupelně, lehký nalepený nábytek, čalouněná lavice bez pásů"
+    ],
+    "elektro": [
+     1,
+     "300 Wp solár, 1× 120 Ah AGM, 230 V s FI, indukce 230 V; střídač/MPPT neuvedeny, žádný záběr rozvaděče"
+    ],
+    "papiry": [
+     0,
+     "Wohnmobil-Zulassung ani počet míst neuvedeny, plyn jen 'v kufru' bez zkoušky"
+    ],
+    "fit": [
+     1,
+     "H3 ano, stůl použitelný, ale postel 133×184 a vzadu žádná sedadla s pásy – jen 2 místa"
+    ],
+    "prodejce": [
+     1,
+     "soukromník, 23 fotek, 27 500 € VB za neschválenou vestavbu na 121 tkm je optimistické"
+    ]
+   },
+   "justification": "Na fotkách je čistá, nová vestavba (plstěné stěny, LED, Porta Potti za shrnovacími dveřmi), ale zadní lavice u stolu nemá bezpečnostní pásy a postel 184 cm je pro 189 cm krátká. Indukční vařič 230 V na jediné 120Ah AGM bez uvedeného střídače je pro 800W PC nepoužitelné a elektro není vůbec vyfoceno. Chybí zmínka o zápisu jako Wohnmobil.",
+   "photosSeen": 12,
+   "registration": "unknown",
+   "electrics": "300 Wp solár, 120 Ah AGM, 230 V + FI, indukce 230 V; střídač/MPPT neuvedeny",
+   "bed": "pevná 133×184 cm vzadu",
+   "layout": "L4H3: jídelna se stolem za řidičem, kuchyň s indukcí a lednicí 60 l, WC kabina, pevná příčná postel vzadu",
+   "redFlags": [
+    "postel 184 cm",
+    "žádná sedadla s pásy vzadu",
+    "elektro bez fotky a bez střídače",
+    "registrace Wohnmobil neuvedena",
+    "jen 20 l vody"
+   ]
   },
   {
    "addedBy": "scanner",
@@ -1646,14 +1687,53 @@
    "model": "Fiat Ducato / Adria Twin SPT 600",
    "notes": "Sériový 5,99 m, 4 místa / 3 lůžka, postel napříč 140 cm vzadu, dinette vpředu; Truma Combi 4 plyn, solár, SAT, sprcha/WC; TÜV + plyn 2027, kompletní servis vč. brzd 2026; soukromník, bez nehod; požaduje 41 500, VB 40 500",
    "price": 40500,
-   "score": 5,
+   "score": 3,
    "seats": 4,
    "source": "kleinanzeigen.de",
    "status": "new",
    "title": "Adria Twin SPT 600 na Ducatu 2.3 130 k (2018)",
    "url": "https://www.kleinanzeigen.de/s-anzeige/kastenwagen-adria-twin-spt-600/3492668696-220-18122",
    "year": 2018,
-   "id": "kleinanzeigen-3492668696"
+   "id": "kleinanzeigen-3492668696",
+   "verdict": "zvážit",
+   "total": 9,
+   "rubric": {
+    "zaklad": [
+     2,
+     "Ducato 2.3 130 PS 05/2018, 65 700 km, rozvody + vodní pumpa 2023 u Fiatu, brzdy 2025, HU 08/2027, karoserie bez poškození"
+    ],
+    "stavba": [
+     2,
+     "tovární Adria Twin 600 SPT: čisté laminátové skříňky, plynová dvouplotýnka s nerez dřezem, koupelna s dřevěným roštem – kompletní a zachovalé"
+    ],
+    "elektro": [
+     1,
+     "solár (Wp neuvedeno), AGM 100 Ah nová 2026, 230 V; bez střídače, rozvaděč nevyfocen"
+    ],
+    "papiry": [
+     2,
+     "Wohnmobil, 4 sedadla, Gasprüfung do 07/2027, přídavné pružiny zapsané u DEKRA"
+    ],
+    "fit": [
+     1,
+     "L3H2 (uvnitř ~190 cm), dvoulavice s pásy + otočná sedadla u stolu, příčná postel 140 cm široká, délka ~190 – pro 189 cm těsné"
+    ],
+    "prodejce": [
+     1,
+     "soukromník s vyloučením záruky, 22 fotek, detailní servisní historie, 40 500 € VB odpovídá trhu"
+    ]
+   },
+   "justification": "Fotky ukazují neponičený tovární Adria Twin: laminátové skříňky bez odřenin, pásovaná dvoulavice s otočnými sedadly, koupelna se sprchou. Elektro je jen tovární 100 Ah AGM a nespecifikovaný solár bez střídače – pro práci s 800W PC by se muselo kompletně dostavět. Příčná postel ve 2,05 m široké dodávce je pro 189 cm na hraně.",
+   "photosSeen": 9,
+   "registration": "wohnmobil",
+   "electrics": "solár (Wp neuvedeno), 100 Ah AGM nová 2026, 230 V, Truma Combi 4; bez střídače",
+   "bed": "příčná vzadu 140 cm šířka, délka neuvedena",
+   "layout": "Twin 600 SPT: otočná sedadla, dvoulavice se stolem, kuchyň, koupelna, příčné lůžko vzadu",
+   "redFlags": [
+    "příčná postel pro 189 cm",
+    "bez střídače, jen 100 Ah AGM",
+    "prodej bez záruky"
+   ]
   },
   {
    "addedBy": "scanner",
@@ -1667,14 +1747,56 @@
    "model": "Peugeot Boxer L3H2",
    "notes": "4 zapsaná místa (2 otočná), pevná postel vzadu 195×155, dinette se stolem vpředu, velká garáž; solár 190 Wp + lithium + měnič, Autoterm 2D, voda 100 l, sprcha uvnitř/venku, separační WC; nový TÜV, rozvody hotové; červené vlajky: 172 tis. km (nad limit), lehká rez u lišty posuvných dveří, zápis Wohnmobil neuveden; levné",
    "price": 24900,
-   "score": 3,
+   "score": 1,
    "seats": 4,
    "source": "kleinanzeigen.de",
-   "status": "new",
+   "status": "rejected",
    "title": "Boxer L3H2 svépomocná vestavba, 4 místa, Autoterm (2019)",
    "url": "https://www.kleinanzeigen.de/s-anzeige/peugeot-boxer-camper-van-wohnmobil-selbstausbau-fiat-ducato/3495088943-220-708",
    "year": 2019,
-   "id": "kleinanzeigen-3495088943"
+   "id": "kleinanzeigen-3495088943",
+   "verdict": "ne",
+   "total": 5,
+   "rubric": {
+    "zaklad": [
+     1,
+     "Boxer L3H2 02/2019, 172 000 km, nový TÜV, výměna poloos a rozvodů; přiznaná rez na kolejnici dveří, prasklé sklo, na fotce zkorodovaný zadní práh"
+    ],
+    "stavba": [
+     0,
+     "svépomoc v boho stylu: surová borová překližka, bambusová rohož jako strop, kempingový vařič na desce, přenosná lednice ve dveřích, vzadu holé trámy s provazy"
+    ],
+    "elektro": [
+     1,
+     "190 Wp solár, lithium '160 Wh' (?), sinusový střídač bez výkonu, DC-DC; nic vyfoceno, plynový box z překližky, bez plynové zkoušky"
+    ],
+    "papiry": [
+     1,
+     "4 zapsaná místa, ale registrace Wohnmobil neuvedena a Gasprüfung chybí"
+    ],
+    "fit": [
+     1,
+     "H2 = bez stání pro 189 cm, postel 195×155 OK, stůl u lavice, 4 místa"
+    ],
+    "prodejce": [
+     1,
+     "soukromník, 28 fotek, poctivý popis vad, bez záruky; 24 900 € za 172 tkm boho ausbau je vysoké"
+    ]
+   },
+   "justification": "Na fotkách je ručně stlučená borová vestavba: bambusová rohož na stropě, kempingový vařič volně na desce, plynová lahev v překližkové bedně a v zadní garáži holé trámy s provazy a zkorodovaný práh. Elektro je jen popsáno bez jediné fotky a bez plynové revize. H2 navíc znamená, že 189 cm člověk uvnitř nestojí.",
+   "photosSeen": 10,
+   "registration": "unknown",
+   "electrics": "190 Wp solár, lithium (kapacita nejasná), DC-DC, sinusový střídač bez údaje; bez fotky",
+   "bed": "pevná 195×155 cm",
+   "layout": "L3H2: otočná sedadla + lavice se stolem, kuchyň u posuvných dveří, pevná postel nad garáží, separační WC",
+   "redFlags": [
+    "172 000 km",
+    "H2 – nelze stát",
+    "bez plynové zkoušky",
+    "zkorodovaný práh, rez na kolejnici dveří",
+    "elektro bez fotky",
+    "boho DIY kvalita"
+   ]
   },
   {
    "addedBy": "scanner",
@@ -1689,13 +1811,52 @@
    "notes": "Lehce nad stropem a L2 (5,41 m), ale velmi nízký nájezd, jako nové, nové rozvody, nové WC, SAT/TV, markýza, kamera, el. schůdek, okna navíc nad postelí; soukromník nekuřák; Roadcamp mívá 4 místa (ověřit)",
    "price": 41900,
    "score": 3,
-   "seats": null,
+   "seats": 4,
    "source": "kleinanzeigen.de",
    "status": "new",
    "title": "Pössl Roadcamp na Jumperu 131 k, L2, 32 tis. km (2018)",
    "url": "https://www.kleinanzeigen.de/s-anzeige/neuwertig-womo-poessl-roadcamp-citroen-nur-32-191-km-ez-2018/3495206225-220-1446",
    "year": 2018,
-   "id": "kleinanzeigen-3495206225"
+   "id": "kleinanzeigen-3495206225",
+   "verdict": "zvážit",
+   "total": 8,
+   "rubric": {
+    "zaklad": [
+     2,
+     "Pössl Roadcamp Citroën 131 PS 05/2018, 32 191 km na fotce tachometru, 1. majitel, čerstvá inspekce a rozvody, nekuřák"
+    ],
+    "stavba": [
+     2,
+     "tovární Pössl: buk-dekor nábytek bez poškození, čisté matrace, samostatná koupelna, TV – jako nový"
+    ],
+    "elektro": [
+     0,
+     "žádný údaj o baterii, soláru ani střídači; rozvaděč nevyfocen"
+    ],
+    "papiry": [
+     1,
+     "Pössl = Wohnmobil, 2 plynové lahve, ale počet míst ani Gasprüfung neuvedeny"
+    ],
+    "fit": [
+     1,
+     "5,41 m Jumper H2, lavice s pásy + otočná sedadla = 4 místa, stůl použitelný; příčná postel pro 189 cm těsná"
+    ],
+    "prodejce": [
+     2,
+     "soukromník, 22 fotek, 41 900 € pevně za 32 tkm exemplář je reálné"
+    ]
+   },
+   "justification": "Fotky ukazují prakticky nový tovární Pössl: tachometr 32 191 km, neponičený bukový nábytek, čistá koupelna, pásovaná lavice se stolem. Nikde ale ani slovo o baterii, soláru či střídači – k práci s PC by se musela celá elektrika dostavět. Krátká 5,41 m verze s příčnou postelí je pro 189 cm na hraně a v H2 se nestojí vzpřímeně.",
+   "photosSeen": 6,
+   "registration": "wohnmobil",
+   "electrics": "neuvedeno (jen sat/TV, 230 V)",
+   "bed": "příčná vzadu, rozměr neuveden",
+   "layout": "Roadcamp 5,41 m: otočná sedadla + lavice se stolem, kuchyň, koupelna s WC, příčná postel vzadu",
+   "redFlags": [
+    "elektro zcela nepopsané",
+    "příčná postel a H2 pro 189 cm",
+    "L2 krátký"
+   ]
   },
   {
    "addedBy": "scanner",
@@ -1711,13 +1872,54 @@
    "notes": "Rok 2016 (pod cílem), ale nový motor 2023 (22,5 tis. km); 5,98 m, stání „přes 2 m“, zápis Wohnmobil, postel 200×160, sezení pro 5 u stolu; solár 525 W, 200 Ah AGM, MPPT, měnič 1000 W, Planar 2D, kazetové WC, plyn 3 hořáky, jen 30 l vody; TÜV 7/2028; soukromník",
    "price": 31200,
    "score": 3,
-   "seats": 5,
+   "seats": 2,
    "source": "kleinanzeigen.de",
    "status": "new",
    "title": "Ford Transit L3H3 vestavba, výška uvnitř přes 200 cm, nový motor 2023 (2016)",
    "url": "https://www.kleinanzeigen.de/s-anzeige/camper-ford-transit-l3h3/3497694157-220-3522",
    "year": 2016,
-   "id": "kleinanzeigen-3497694157"
+   "id": "kleinanzeigen-3497694157",
+   "verdict": "zvážit",
+   "total": 7,
+   "rubric": {
+    "zaklad": [
+     1,
+     "Transit L3H3 2016, ~142 500 km, nový motor 2023 (22 500 km), HU do 07/2028, karoserie čistá"
+    ],
+    "stavba": [
+     1,
+     "svépomoc: smrkové palubky na stropě, plsť, oranžová kuchyňská dvířka, dvě podélné lavice se stolem, vzadu OSB garáž; kompletní, ale rustikální"
+    ],
+    "elektro": [
+     1,
+     "3×175 Wp Renogy, Renogy 50 A DC-DC MPPT, 200 Ah AGM, Ective 1000 W sinus s nabíječkou, 230 V; žádná fotka rozvaděče ani baterie"
+    ],
+    "papiry": [
+     1,
+     "Wohnmobilzulassung, Gas-TÜV 07/2026, ale počet míst neuveden a vzadu žádné pásy vidět"
+    ],
+    "fit": [
+     2,
+     "výška uvnitř přes 200 cm (H3), postel 200×160, velký stůl mezi lavicemi – práce s PC možná; jen 2 místa s pásy"
+    ],
+    "prodejce": [
+     1,
+     "soukromník, 24 fotek, detailní popis, 31 200 € VB za 2016 Transit s vyměněným motorem je vysoké"
+    ]
+   },
+   "justification": "Jediný z DIY vozů s pořádně popsanou elektrikou (525 Wp Renogy, 200 Ah AGM, Ective 1000 W sinus), ale na fotkách není jediný záběr baterie ani rozvaděče. Fotky ukazují rustikální palubkovou vestavbu s plstí, dvěma podélnými lavicemi bez pásů a OSB garáží vzadu. Výška přes 2 m a postel 200×160 sedí, ale vyměněný motor 2023 a jen 2 místa s pásy.",
+   "photosSeen": 9,
+   "registration": "wohnmobil",
+   "electrics": "525 Wp Renogy, Renogy 50A DC-DC MPPT, 200 Ah AGM, Ective CSI 10 1000 W sinus, 230 V; bez fotky",
+   "bed": "200×160 cm (z lavic)",
+   "layout": "L3H3: dvě podélné lavice se stolem, kuchyň u posuvných dveří, lednice 78 l, kazetové WC, OSB garáž vzadu",
+   "redFlags": [
+    "motor vyměněn 2023 – původ?",
+    "jen 2 místa s pásy",
+    "elektro bez fotky",
+    "AGM místo LiFePO4",
+    "jen 30 l vody"
+   ]
   },
   {
    "addedBy": "scanner",
@@ -1871,14 +2073,55 @@
    "model": "Fiat Ducato / Roadcar R601",
    "notes": "R601 = 5,99 m sériový (postel napříč, dinette vpředu), ale 140 tis. km; nová baterie 9/2025; dealer téměř bez údajů; VB; ověřit místa (obvykle 4) a servis",
    "price": 38900,
-   "score": 3,
-   "seats": null,
+   "score": 1,
+   "seats": 4,
    "source": "kleinanzeigen.de",
-   "status": "new",
+   "status": "rejected",
    "title": "Pössl Roadcar R601 (12/2020), 140 tis. km",
    "url": "https://www.kleinanzeigen.de/s-anzeige/poessl-roadcar-r601/3504803863-220-2745",
    "year": 2020,
-   "id": "kleinanzeigen-3504803863"
+   "id": "kleinanzeigen-3504803863",
+   "verdict": "ne",
+   "total": 4,
+   "rubric": {
+    "zaklad": [
+     1,
+     "Roadcar R601 12/2020, ale 140 000 km za 4,5 roku; žádný údaj o servisu, HU ani stavu"
+    ],
+    "stavba": [
+     1,
+     "tovární Roadcar, ale fotky jsou screenshoty s vodoznakem 'Wohnwagen Vogt' a černými rámy – skutečný stav tohoto vozu nejde poznat"
+    ],
+    "elektro": [
+     0,
+     "jen 'nová palubní baterie 09/2025' bez typu a kapacity"
+    ],
+    "papiry": [
+     1,
+     "Pössl = Wohnmobil nepřímo; místa, Gasprüfung, HU neuvedeno"
+    ],
+    "fit": [
+     1,
+     "R601 = 6 m H2, 4 místa, stůl použitelný, příčná postel vzadu"
+    ],
+    "prodejce": [
+     0,
+     "obchodník, 2 věty popisu, cizí prodejní fotky, žádná záruka, 38 900 € VB za 140 tkm"
+    ]
+   },
+   "justification": "Fotky nejsou vlastní – jsou to screenshoty s vodoznakem jiného prodejce (Wohnwagen Vogt) a černými okraji, takže skutečný stav tohoto konkrétního vozu vůbec nevidím. Popis má dvě věty, 140 000 km za necelých 5 let a nula údajů o elektrice. Obchodník bez záruky a s cizími fotkami je za 38 900 € nepřijatelný.",
+   "photosSeen": 5,
+   "registration": "wohnmobil",
+   "electrics": "nová palubní baterie 09/2025 (typ neuveden); jinak nic",
+   "bed": "příčná vzadu, rozměr neuveden",
+   "layout": "Roadcar R601 6 m: otočná sedadla + lavice se stolem, kuchyň, koupelna, příčné lůžko vzadu",
+   "redFlags": [
+    "fotky s cizím vodoznakem – nejsou od prodejce",
+    "140 000 km za 4,5 roku",
+    "popis 2 věty",
+    "elektro nepopsané",
+    "obchodník bez záruky"
+   ]
   },
   {
    "addedBy": "scanner",
@@ -1892,14 +2135,54 @@
    "model": "Ford Transit / Karmann",
    "notes": "Reference: cca 10 % nad strop; sériový Karmann na Transitu 2022, 49 tis. km, dealer; půdorys, délka a místa nejsou ve výpisu",
    "price": 1098000,
-   "score": 2,
-   "seats": null,
+   "score": 1,
+   "seats": 5,
    "source": "sauto.cz",
-   "status": "new",
+   "status": "rejected",
    "title": "Ford Transit 2.0 TDCi 130 k Karmann (2022), 49 tis. km",
    "url": "https://www.sauto.cz/obytne/detail/ford/transit/209909961",
    "year": 2022,
-   "id": "sauto-209909961"
+   "id": "sauto-209909961",
+   "verdict": "ne",
+   "total": 6,
+   "rubric": {
+    "zaklad": [
+     2,
+     "Transit Custom 2.0 TDCi 130 PS automat, 03/2022, 49 000 km, servisní knížka, STK do 02/2028, Carvertical; bezvadný lak"
+    ],
+    "stavba": [
+     2,
+     "tovární Karmann Duncan (zvedací střecha, Thule markýza, lednice 42 l, Thetford WC, sprcha); interiér ale na 24 prohlédnutých fotkách chybí"
+    ],
+    "elektro": [
+     0,
+     "jen 230 V přípojka a USB; baterie, solár, střídač nic"
+    ],
+    "papiry": [
+     2,
+     "obytný vůz, 5 míst k jízdě, 4 ke spaní, nová tlaková zkouška LPG, platná STK, 1. majitel v ČR"
+    ],
+    "fit": [
+     0,
+     "Transit Custom, výška 2080 mm – stání jen pod vyklopenou střechou; stoleček malý – práce s PC 8 h nereálná"
+    ],
+    "prodejce": [
+     0,
+     "dealer s odpočtem DPH, 1 098 000 Kč za Custom pop-top je drahé; z fotek samé pneumatiky a prahy, interiér schovaný"
+    ]
+   },
+   "justification": "Nový, čistý Custom s automatem a 49 tkm, ale je to pop-top o výšce 2,08 m – 189 cm člověk v něm stojí jen pod vyklopenou střechou a stoleček není pracovní místo. Z prohlédnutých fotek dealera je každá druhá detail pneumatiky nebo prahu, interiér a elektro nevidět; o baterii/soláru/střídači není ani slovo. Za 1,1 mil. Kč neodpovídá požadavkům.",
+   "photosSeen": 24,
+   "registration": "obytny-m1",
+   "electrics": "jen 230 V přípojka a USB; baterie/solár/střídač neuvedeny",
+   "bed": "dvoulůžko dole + 2 ve zvedací střeše",
+   "layout": "Karmann Duncan na Transit Custom: zvedací střecha, kuchyňka, sprcha, Thetford WC, stoleček, 5 míst",
+   "redFlags": [
+    "výška vozu 2080 mm – pop-top, ne H3",
+    "elektro nepopsané",
+    "dealer skrývá interiér",
+    "cena 1,1 mil. Kč"
+   ]
   },
   {
    "addedBy": "scanner",
@@ -2000,7 +2283,12 @@
    "title": "Pössl Roadcamp R na Jumperu 96 kW (2019)",
    "url": "https://www.tipcars.com/obytne/citroen-jumper/obytna-vestavba/nafta/citroen-jumper-possl-roadcamp-r-100169686.html",
    "year": 2019,
-   "id": "tipcars-100169686"
+   "id": "tipcars-100169686",
+   "justification": "Prověrka: stránku nelze načíst, tipcars blokuje (Cloudflare 403). Podle URL jde o Pössl Roadcamp R na Jumperu 5,41 m H2, tedy krátký model, pro 189 cm nevhodný. Ověřit ručně na webu.",
+   "redFlags": [
+    "nelze ověřit – stránka blokována",
+    "krátký H2 model"
+   ]
   },
   {
    "addedBy": "scanner",
@@ -2021,7 +2309,13 @@
    "title": "Knaus Boxstar 600 Street L3H2, 26 tis. km (2020)",
    "url": "https://www.tipcars.com/obytne/knaus-boxstar/obytna-vestavba/nafta/knaus-boxstar-knaus-boxstar-600-street-l3h2-100169708.html",
    "year": 2020,
-   "id": "tipcars-100169708"
+   "id": "tipcars-100169708",
+   "justification": "Prověrka: stránku nelze načíst, tipcars blokuje (Cloudflare 403). Podle URL Knaus Boxstar 600 Street L3H2, tovární 6 m bez H3, cena 1,3 mil. nad rozpočtem. Ověřit ručně na webu.",
+   "redFlags": [
+    "nelze ověřit – stránka blokována",
+    "H2 model",
+    "nad rozpočet"
+   ]
   }
  ]
 }
