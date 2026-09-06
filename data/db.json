@@ -717,14 +717,52 @@
    "model": "Citroën Jumper / Clever Vans",
    "notes": "5,998 m, 4 místa, postel napříč 195×140 + rozkládací dinette vpředu; Truma s teplou vodou, 240 Ah LiFePO4 + měnič, kompresorová lednice Dometic, markýza Thule, el. schůdek, vzduchové pérování vzadu, tažné + nosič kol; soukromník; Euro 6; ověřit kategorii obytný M1",
    "price": 950000,
-   "score": 4,
+   "score": 5,
    "seats": 4,
    "source": "bazos.cz",
    "status": "new",
    "title": "Clever Vans na Jumperu 2.0 HDi 96 kW, 4 místa (1/2019)",
    "url": "https://auto.bazos.cz/inzerat/221957946/obytny-automobil-citroen-jumper-clever-vans.php",
    "year": 2019,
-   "id": "bazos-221957946"
+   "id": "bazos-221957946",
+   "verdict": "ber",
+   "total": 11,
+   "rubric": {
+    "zaklad": [
+     2,
+     "Jumper 2018/19, 70 000 km, 2. majitel, servis v autorizovaném Citroën, STK do 01/2027; na fotkách čistá karoserie bez viditelné rzi"
+    ],
+    "stavba": [
+     2,
+     "tovární Clever Vans: buková dýha s čistými hranami, koupelna s Thetford C220 a sprchou, plynová skříň – vše kompletní a čisté"
+    ],
+    "elektro": [
+     2,
+     "LiFePO4 240 Ah s BMS, booster WA121 525, Victron Phoenix 375 VA sinus, plnění LPG, Truma CP+; přesně vyjmenováno, foto rozvaděče chybí"
+    ],
+    "papiry": [
+     2,
+     "registrováno jako obytný automobil, 4 osoby, STK platná, plyn AluGas 2×11 kg s Duocontrol"
+    ],
+    "fit": [
+     2,
+     "H2 (v 2654 mm), 6 m, 4 sedadla, příčné lůžko 195×140 cm, otočné sedačky a stolek vpředu použitelný jako pracoviště"
+    ],
+    "prodejce": [
+     1,
+     "soukromník, 20 fotek, velmi detailní popis, 950 000 Kč je horní hranice ceny"
+    ]
+   },
+   "justification": "Tovární vestavba Clever Vans v čistém stavu: na fotkách buková dýha bez poškození, plnohodnotná koupelna a plynová skříň, dinette s otočnými sedačkami a stolkem. Elektro je nejsilnější ze všech inzerátů (LiFePO4 240 Ah, Victron sinus 375 VA), ale pro 800 W PC bude nutné vyměnit měnič. Slabina: měnič 375 VA nestačí a cena je na hraně.",
+   "photosSeen": 20,
+   "registration": "obytny-m1",
+   "electrics": "LiFePO4 240 Ah BMS, booster 25 A, Victron Phoenix 375 VA sinus, 230 V přípojka, Truma Combi 4 plyn/LPG plnění",
+   "bed": "195×140 cm příčné vzadu + rozkládací přední sezení",
+   "layout": "L3H2 6 m: otočné sedačky + stolek vpředu, kuchyň s lednicí Dometic, koupelna Thetford C220 + sprcha, příčné lůžko vzadu",
+   "redFlags": [
+    "měnič jen 375 VA – 800 W PC nepojede bez výměny měniče",
+    "bez fotky elektrorozvaděče"
+   ]
   },
   {
    "addedBy": "scanner",
@@ -1018,14 +1056,54 @@
    "model": "Citroën Jumper",
    "notes": "Rok 2016 a 158 tis. km (mimo cíl), ale zapsáno M1 obytný; 6 m, 3 místa, podélná postel 200×186 vzadu; doložené elektro: solár 250 Wp, Victron MPPT + SmartShunt, 300 Ah LiFePO4, měnič 2000 W, 230 V; Planar 2 kW, kompresorová lednice, markýza Thule; soukromník, servis 154 tis., brzdy 2026",
    "price": 599000,
-   "score": 5,
+   "score": 3,
    "seats": 3,
    "source": "bazos.cz",
    "status": "new",
    "title": "Obytná dodávka Citroën Jumper 2016, solár, L3H2",
    "url": "https://www.bazos.cz/inzerat/223368123/obytka-citroen-jumper-2016-solar-l3h2.php",
    "year": 2016,
-   "id": "bazos-223368123"
+   "id": "bazos-223368123",
+   "verdict": "zvážit",
+   "total": 7,
+   "rubric": {
+    "zaklad": [
+     1,
+     "Jumper 2016, 158 000 km, rozvody a brzdy 2026 (foto servisní nálepky), karoserie na fotkách čistá; vyšší nájezd a 10 let"
+    ],
+    "stavba": [
+     1,
+     "DIY: plstěné stěny, černé lakované skříňky, U-sezení s tenkými polštáři a ocelovým rámem, WC v dřevěném boxu – funkční, ale amatérský vzhled"
+    ],
+    "elektro": [
+     2,
+     "foto 18: Victron MPPT 75/15, nabíječka 20 A, měnič 2000 W sinus, LiFePO4 300 Ah, SmartShunt, BatteryProtect, 2×125 Wp, 230 V – doloženo"
+    ],
+    "papiry": [
+     2,
+     "zapsáno jako M1 obytné, 3 místa k jízdě"
+    ],
+    "fit": [
+     1,
+     "L3H2 6 m, lůžko 200×186 cm, U-sezení se stolem jako pracoviště; jen 3 sedadla"
+    ],
+    "prodejce": [
+     0,
+     "soukromník, 20 fotek; 599 000 Kč za DIY vestavbu na 10letém autě se 158 tis. km je hodně"
+    ]
+   },
+   "justification": "Elektro je pro práci z auta ideální (LiFePO4 300 Ah, 2000 W sinus, 250 Wp, na fotce Victron MPPT a jistič), ale montáž na fotce 18 je volně na překližce s kabely vedenými bez lišt. Nábytek je svépomocný – plstěné stěny, ocelový rám sezení, chemické WC v krabici; jen 3 sedadla. Za 599 000 Kč za Jumper 2016 se 158 000 km bych tvrdě smlouval.",
+   "photosSeen": 20,
+   "registration": "obytny-m1",
+   "electrics": "LiFePO4 300 Ah (3840 Wh), 2×125 Wp, Victron MPPT 75/15, měnič 2000 W sinus, nabíječka 20 A, SmartShunt, BatteryProtect, 230 V přípojka",
+   "bed": "200×186 cm vzadu",
+   "layout": "L3H2 6 m: U-sezení se stolem uprostřed, kuchyňský blok, příčné lůžko vzadu, chemické WC v boxu",
+   "redFlags": [
+    "pouze 3 sedadla",
+    "DIY vestavba – plst, viditelné kabely bez lišt",
+    "158 000 km, rok 2016",
+    "cena vysoká na DIY"
+   ]
   },
   {
    "addedBy": "scanner",
@@ -1040,14 +1118,53 @@
    "notes": "999 tis. BEZ DPH = cca 1,21 mil. s DPH, nad rozpočet; MY2020 přihlášeno 2022, 138 tis. km; sériový s kuchyní, WC/koupelnou, 2+1 lůžka, solár, markýza Thule, GPS Jablotron, tažné 2,5 t, nová STK; soukromník; délka a místa neuvedeny",
    "price": 999000,
    "priceNote": "netto",
-   "score": 2,
-   "seats": null,
+   "score": 3,
+   "seats": 4,
    "source": "bazos.cz",
    "status": "new",
    "title": "Ducato Livingstone (Font Vendôme) 2022, odpočet DPH",
    "url": "https://auto.bazos.cz/inzerat/223440238/fiat-ducato-livingstone-2022-odpocet-dph.php",
    "year": 2022,
-   "id": "bazos-223440238"
+   "id": "bazos-223440238",
+   "verdict": "zvážit",
+   "total": 8,
+   "rubric": {
+    "zaklad": [
+     1,
+     "Ducato 2020 (v provozu 2022), 138 000 km, nová STK, nové pneu; nájezd na 4 roky vysoký"
+    ],
+    "stavba": [
+     2,
+     "tovární Roller Team Livingstone: čalouněné sedačky, laminátový nábytek bez poškození, koupelna s WC, kuchyň s lednicí, čisté"
+    ],
+    "elektro": [
+     1,
+     "jen 'solární systém' s fotkou regulátoru, baterie/Wp/měnič neuvedeny; Truma panel"
+    ],
+    "papiry": [
+     1,
+     "nová STK, 2+1 spaní; registrace M1 obytné pravděpodobná (tovární), ale neuvedeno; plyn 2×11 kg"
+    ],
+    "fit": [
+     2,
+     "H2, přední dinette se stolem a otočnými sedačkami vhodná jako pracoviště, 4 sedadla standard Livingstone, příčné lůžko vzadu"
+    ],
+    "prodejce": [
+     1,
+     "13 fotek, obecný popis, cena 999 000 bez DPH = cca 1,21 mil. s DPH – vysoké"
+    ]
+   },
+   "justification": "Tovární Roller Team v dobrém stavu: na fotkách čalouněná dinette s otočnými sedačkami a stolem, čistá kuchyň, plynová skříň s hasičákem. Elektro je popsáno jen slovy 'solární systém' a na fotce je jen levný regulátor – pro 800 W PC bude nutné dovybavit baterii a měnič. Cena 999 000 Kč bez DPH (1,2 mil. s DPH) při 138 000 km je nad trhem.",
+   "photosSeen": 13,
+   "registration": "unknown",
+   "electrics": "neuvedeno – jen 'solární systém' a foto regulátoru, baterie/měnič neznámé",
+   "bed": "příčné vzadu (rozměr neuveden), 2+1",
+   "layout": "L3H2 Roller Team Livingstone: dinette vpředu, kuchyň, koupelna s WC, příčné lůžko vzadu",
+   "redFlags": [
+    "138 000 km za 4 roky",
+    "cena bez DPH – reálně 1,2 mil.",
+    "elektro nedokumentované"
+   ]
   },
   {
    "addedBy": "scanner",
@@ -1108,7 +1225,47 @@
    "title": "Ducato L2H2 svépomocná vestavba, bez plynu, autark (2019)",
    "url": "https://www.kleinanzeigen.de/s-anzeige/fiat-ducato-campervan-l2h2-selbstausbau-gasfrei-autark-neuwertig/3346863773-220-1859",
    "year": 2019,
-   "id": "kleinanzeigen-3346863773"
+   "id": "kleinanzeigen-3346863773",
+   "verdict": "zvážit",
+   "total": 8,
+   "rubric": {
+    "zaklad": [
+     2,
+     "Ducato 2019, 72 500 km, TÜV 12/2027, inspekce 02/2026, letní i zimní pneu; karoserie čistá, jen škrábance"
+    ],
+    "stavba": [
+     1,
+     "DIY, ale kvalitní: multiplex s čistými hranami, nové polstry, lamelový strop, plst na stěnách; sprcha venku, bez WC/koupelny"
+    ],
+    "elektro": [
+     2,
+     "foto 14: Victron SmartSolar MPPT 100/30, Orion-Tr Smart 12/12-30, pojistkový box, 2×140 Ah LiFePO4, ECTIVE 1500 W sinus, 2×200 Wp – doloženo fotkami"
+    ],
+    "papiry": [
+     1,
+     "Wohnmobilzulassung do 3 000 kg; bezplynové; počet sedadel neuveden, vzadu jen U-sezení bez pásů"
+    ],
+    "fit": [
+     1,
+     "L2H2 (5,4 m), U-sezení 187 cm se stolem jako pracovní stůl; lůžko = sezení 190 cm; 4. sedadlo chybí"
+    ],
+    "prodejce": [
+     1,
+     "soukromník, 19 fotek, detailní popis; 29 950 € je férová cena"
+    ]
+   },
+   "justification": "Elektro je vidět a v pořádku: na fotce 14 Victron MPPT 100/30, Orion booster, pojistkový box, dvě LiFePO4 140 Ah, ECTIVE 1500 W měnič – 800 W PC pojede. Nábytek z multiplexu s čistými hranami vypadá řemeslně slušně, ale je to DIY bez WC a zadní U-sezení nemá pásy, takže pro dítě vzadu nepoužitelné. Krátký L2 a lůžko jako součást sezení, které se musí každý den skládat.",
+   "photosSeen": 19,
+   "registration": "wohnmobil",
+   "electrics": "2×140 Ah LiFePO4, 2×200 Wp, Victron SmartSolar MPPT 100/30, Victron Orion-Tr 12/12-30, ECTIVE 1500 W sinus, 230 V přípojka, pojistkový box",
+   "bed": "U-sezení rozložené 187×190 cm",
+   "layout": "L2H2: kuchyň s indukcí a lednicí u posuvných dveří, velké U-sezení se zvedacím stolem vzadu = lůžko",
+   "redFlags": [
+    "žádná sedadla s pásy vzadu – jen 2 místa",
+    "bez WC, jen venkovní sprcha",
+    "lůžko se každý den skládá",
+    "L2 krátký"
+   ]
   },
   {
    "addedBy": "scanner",
@@ -1122,14 +1279,54 @@
    "model": "Fiat Ducato / Roadcar R640",
    "notes": "L4, hraniční délka (6,36 m); 4 místa, vzadu dvě samostatné postele, dinette vpředu; solár 120 W, střešní i kabinová klima, tažné, markýza, el. schůdek; 1. majitel soukromník; lehké kroupy na střeše a kapotě; TÜV/plyn neuvedeno; zlevněno ze 43 990",
    "price": 39990,
-   "score": 4,
+   "score": 3,
    "seats": 4,
    "source": "kleinanzeigen.de",
    "status": "new",
    "title": "Pössl Roadcar R640, samostatné postele, L4 (5/2020)",
    "url": "https://www.kleinanzeigen.de/s-anzeige/poessl-roadcar-640-einzelbetten/3446200950-220-7622",
    "year": 2020,
-   "id": "kleinanzeigen-3446200950"
+   "id": "kleinanzeigen-3446200950",
+   "verdict": "zvážit",
+   "total": 9,
+   "rubric": {
+    "zaklad": [
+     1,
+     "Ducato 2020, 45 813 km, 1. majitel; přiznané kroupy na střeše a kapotě, TÜV neuveden"
+    ],
+    "stavba": [
+     2,
+     "tovární Pössl Roadcar 640: světlý nábytek bez poškození, koupelna s kazetovým WC, plynový vařič, lednice, podélná lůžka"
+    ],
+    "elektro": [
+     0,
+     "pouze 'Solaranlage 120 W' a regulátor, baterie/měnič neuvedeny, bez fotky elektra"
+    ],
+    "papiry": [
+     2,
+     "4 místa k jízdě, tovární obytné, 1×11 kg lahev"
+    ],
+    "fit": [
+     2,
+     "6,36 m H2 (v 2650), otočné sedačky + stolek, 4 sedadla, samostatná podélná lůžka; při 189 cm výhoda"
+    ],
+    "prodejce": [
+     2,
+     "soukromník, 17 fotek, popis telegrafický ale úplný, 39 990 € je pod trhem pro Roadcar 640 z 2020"
+    ]
+   },
+   "justification": "Tovární Roadcar 640 s nízkým nájezdem a 4 místy k jízdě, na fotkách čistá koupelna, kuchyň a dinette s otočnými sedačkami. Elektro je ale prakticky nula – 120 Wp solár a standardní olověná baterie, nic pro 800 W PC; počítejte s investicí do LiFePO4 a měniče. Poškození kroupami je přiznané a cena tomu odpovídá. Je to L4.",
+   "photosSeen": 17,
+   "registration": "wohnmobil",
+   "electrics": "jen 120 Wp solár + regulátor, tovární olověná baterie, bez měniče",
+   "bed": "samostatná podélná lůžka vzadu (rozměr neuveden)",
+   "layout": "Roadcar 640 6,36 m: dinette vpředu, kuchyň + koupelna uprostřed, podélná lůžka vzadu",
+   "redFlags": [
+    "kroupy na střeše a kapotě",
+    "TÜV neuveden",
+    "elektro pro práci chybí",
+    "L4 délka"
+   ]
   },
   {
    "addedBy": "scanner",
@@ -1143,14 +1340,55 @@
    "model": "Peugeot Boxer L2H2",
    "notes": "Dealer CaraVansinn, záruka 1 rok; L2 5,41 m, postel 140×200 + rozkládací sezení; solár 480 W, ale elektro přes přenosný EcoFlow (ne pevný systém), Standheizung, lednice 90 l, voda 110 l, Trobolo; zápis Wohnmobil neuveden; na svépomoc drahé",
    "price": 39990,
-   "score": 3,
-   "seats": null,
+   "score": 1,
+   "seats": 2,
    "source": "kleinanzeigen.de",
-   "status": "new",
+   "status": "rejected",
    "title": "Boxer L2H2 2.2 BlueHDi 140 k, vestavba, dealer se zárukou (2020)",
    "url": "https://www.kleinanzeigen.de/s-anzeige/peugeot-boxer-camper-wohnmobil-reisemobil-vanlife-tempomat-autark-l2h2-klima-pdc-standheizung-ducato/3454128947-220-9886",
    "year": 2020,
-   "id": "kleinanzeigen-3454128947"
+   "id": "kleinanzeigen-3454128947",
+   "verdict": "ne",
+   "total": 6,
+   "rubric": {
+    "zaklad": [
+     1,
+     "Boxer 2020, 67 000 km, čerstvá inspekce od dealera; TÜV a historie neuvedeny"
+    ],
+    "stavba": [
+     1,
+     "profesionální sériová vestavba CaraVansinn: bílé lamino, lamelový strop, indukce; bez WC/koupelny (jen Trobolo), lůžko nad průchozím kufrem"
+    ],
+    "elektro": [
+     1,
+     "480 Wp panel + Ecoflow Delta 3 Max Plus (powerstation, ne pevná instalace); bez fotky elektra"
+    ],
+    "papiry": [
+     0,
+     "registrace neuvedena (inzerát jako Kastenwagen), sedadla neuvedena, vzadu žádné sedačky s pásy"
+    ],
+    "fit": [
+     1,
+     "L2H2 5,41 m; pevné lůžko 140×200 cm, jen 2 sedadla vpředu, stůl výsuvný pod lůžkem – ne pracoviště"
+    ],
+    "prodejce": [
+     2,
+     "dealer s roční zárukou, 34 fotek, detailní popis; cena reálná"
+    ]
+   },
+   "justification": "Hezká showroomová vestavba (lamelový strop, indukce, bílé skříňky na fotkách), ale pro rodinu nepoužitelná: pouze 2 sedadla, žádné sedačky s pásy vzadu, žádné WC ani koupelna, jen 5,41 m. Elektro stojí na přenosné powerstation Ecoflow místo pevné instalace a přihlášení jako obytné auto není v inzerátu vůbec zmíněno.",
+   "photosSeen": 34,
+   "registration": "unknown",
+   "electrics": "480 Wp solár, Ecoflow Delta 3 Max Plus powerstation, booster; bez pevné baterie",
+   "bed": "140×200 cm pevné příčné",
+   "layout": "L2H2 5,41 m: kuchyň s indukcí a 90 l lednicí, sezení bez pásů, pevné lůžko nad průchozím kufrem",
+   "redFlags": [
+    "jen 2 sedadla",
+    "bez WC/koupelny",
+    "powerstation místo pevné elektroinstalace",
+    "registrace jako obytné neuvedena",
+    "L2 krátký"
+   ]
   },
   {
    "addedBy": "scanner",
@@ -1164,14 +1402,54 @@
    "model": "Fiat Ducato L3H2",
    "notes": "Oficiální zápis Wohnmobil, Armaflex, pevná postel jen 120×175 (malá), 140 Ah AGM, 230 V, naftové topení, Porta Potti, venkovní sprcha; zděděné auto, prodávající ho nepoužíval; místa neuvedena; VB",
    "price": 34999,
-   "score": 3,
+   "score": 1,
    "seats": null,
    "source": "kleinanzeigen.de",
-   "status": "new",
+   "status": "rejected",
    "title": "Ducato L3H2 2.3 131 k, vestavba se zápisem Wohnmobil (2019)",
    "url": "https://www.kleinanzeigen.de/s-anzeige/fiat-ducato-l3h2-camper-wohnmobil-ausbau-tuev-12-27-bj-2019/3454899313-220-3749",
    "year": 2019,
-   "id": "kleinanzeigen-3454899313"
+   "id": "kleinanzeigen-3454899313",
+   "verdict": "ne",
+   "total": 5,
+   "rubric": {
+    "zaklad": [
+     2,
+     "Ducato 2019, 95 730 km, TÜV 12/2027, Euro 6; na fotkách čistá karoserie a kabina"
+    ],
+    "stavba": [
+     0,
+     "DIY zjevně nedokončené: přenosný kempingový vařič na lince, přenosná lednice na podlaze, bílé lakované desky, kanystry pod dřezem"
+    ],
+    "elektro": [
+     1,
+     "140 Ah AGM, 230 V CEE přípojka, pojistky s FI, nabíječka; bez soláru, bez měniče, bez fotky"
+    ],
+    "papiry": [
+     1,
+     "'offizielle Wohnmobilzulassung'; sedadla neuvedena – na fotce dvě dvojlavice z Fordu Transit přišroubované DIY, schválení neznámé"
+    ],
+    "fit": [
+     0,
+     "lůžko 120×175 cm – pro 189 cm nepoužitelné; žádný stůl, sezení = autosedačky"
+    ],
+    "prodejce": [
+     1,
+     "soukromník-dědic, 20 fotek, prodejce auto sám neužíval; 34 999 € VB je drahé"
+    ]
+   },
+   "justification": "Na fotkách je jen prázdná dodávka s deskovou linkou, kempingovým vařičem, přenosnou lednicí na zemi a matrací na dřevěné konstrukci – vestavba je amatérská a bez stolu. Lůžko 120×175 cm je pro 189 cm člověka příliš krátké, elektro je pouze AGM 140 Ah bez měniče a soláru. Vzadu jsou sedačky z Fordu Transit bez doložení, zda jsou zapsané v papírech.",
+   "photosSeen": 20,
+   "registration": "wohnmobil",
+   "electrics": "140 Ah AGM, 230 V CEE přípojka s FI, nabíječka, bez soláru, bez měniče",
+   "bed": "120×175 cm",
+   "layout": "L3H2: linka s dřezem a kempingovým vařičem, 4 dodatečné sedačky Transit, příčné lůžko vzadu",
+   "redFlags": [
+    "lůžko 175 cm",
+    "sedačky z jiného vozu bez doložení schválení",
+    "bez měniče a soláru",
+    "prodejce auto nezná"
+   ]
   },
   {
    "addedBy": "scanner",
@@ -1185,14 +1463,53 @@
    "model": "Citroën Jumper / Globecar",
    "notes": "Sériový 6,00 m (2 lůžka), postel napříč vzadu + dinette vpředu; Truma Combi 4, solár 170 W, střešní klima Dometic, lednice 75 l, SAT, markýza; TÜV + plyn 12/2027; soukromník; zlevněno ze 42 tis.; promáčklina vzadu vpravo; počet míst neuveden (ověřit 4)",
    "price": 38000,
-   "score": 5,
+   "score": 3,
    "seats": null,
    "source": "kleinanzeigen.de",
    "status": "new",
    "title": "Globecar na Citroënu Jumper 2.0 BlueHDi 130 k (12/2019)",
    "url": "https://www.kleinanzeigen.de/s-anzeige/globecar-citro-n-jumper/3459135923-220-9213",
    "year": 2019,
-   "id": "kleinanzeigen-3459135923"
+   "id": "kleinanzeigen-3459135923",
+   "verdict": "zvážit",
+   "total": 9,
+   "rubric": {
+    "zaklad": [
+     2,
+     "Jumper 2019 (Globecar Campscout), 54 110 km, TÜV 12/2027, plyn revize 12/2027, nehavarované, podvozek ošetřený, foto motoru; přiznaný důlek vzadu vpravo"
+    ],
+    "stavba": [
+     2,
+     "tovární Globecar: třešňový nábytek bez poškození, kompletní koupelna se sprchou (nepoužívaná), Truma Combi 4, střešní klima"
+    ],
+    "elektro": [
+     0,
+     "jen 170 Wp solár, baterie/měnič neuvedeny, bez fotky elektra"
+    ],
+    "papiry": [
+     2,
+     "tovární obytné, plynová revize do 12/2027; Campscout má standardně 4 místa, ověřit"
+    ],
+    "fit": [
+     2,
+     "6 m H2 (v 2,58 m), otočné sedačky se stolem, příčné lůžko vzadu; půdorys 'pro 2 osoby'"
+    ],
+    "prodejce": [
+     1,
+     "soukromník (syn prodává za otce), 20 fotek včetně motoru a podvozku, detailní popis; 38 000 € solidní"
+    ]
+   },
+   "justification": "Velmi zachovalý tovární Globecar: na fotkách nepoužívaná sprcha, čistý motor a ošetřený podvozek, kuchyň a dinette bez opotřebení, doložený plyn i TÜV do 12/2027. Elektro pro práci chybí – jen 170 Wp solár a tovární baterie, měnič neuveden; nutná investice do LiFePO4 a měniče. Počet sedadel v papírech je třeba ověřit (popis říká 'pro 2 osoby').",
+   "photosSeen": 20,
+   "registration": "wohnmobil",
+   "electrics": "170 Wp solár, tovární baterie (typ neuveden), bez měniče v popisu, Truma Combi 4 plyn",
+   "bed": "příčné vzadu, rozměr neuveden",
+   "layout": "Globecar Campscout 6 m: dinette vpředu, kuchyň + koupelna se sprchou uprostřed, příčné lůžko vzadu",
+   "redFlags": [
+    "elektro pro práci chybí",
+    "půdorys popsán pro 2 osoby – sedadla ověřit",
+    "důlek vzadu vpravo"
+   ]
   },
   {
    "addedBy": "scanner",
@@ -1246,14 +1563,55 @@
    "model": "Fiat Ducato 85 kW / Roadcar R540",
    "notes": "L2 5,41 m sériový (postel napříč, dinette, obvykle 4 místa), solár 100 Wp, plynové topení, kabinová klima, kamera, markýza; nové rozvody, TÜV 12/2027, 1. majitel nekuřák; 135 tis. km; strohý inzerát",
    "price": 35500,
-   "score": 3,
+   "score": 1,
    "seats": null,
    "source": "kleinanzeigen.de",
-   "status": "new",
+   "status": "rejected",
    "title": "Pössl Roadcar R540, L2, 1. majitel (2019)",
    "url": "https://www.kleinanzeigen.de/s-anzeige/roadcar-540/3488540098-220-8612",
    "year": 2019,
-   "id": "kleinanzeigen-3488540098"
+   "id": "kleinanzeigen-3488540098",
+   "verdict": "ne",
+   "total": 5,
+   "rubric": {
+    "zaklad": [
+     1,
+     "Ducato 2019, 135 000 km, 85 kW (slabý motor), TÜV 12/2027, nový rozvodový řemen, 1. majitel"
+    ],
+    "stavba": [
+     2,
+     "tovární Pössl Roadcar 540: světlý nábytek neporušený, koupelna s WC, kuchyň s vařičem a lednicí"
+    ],
+    "elektro": [
+     0,
+     "jen 100 Wp solár, nic dalšího, bez fotky"
+    ],
+    "papiry": [
+     1,
+     "tovární obytné, plynové topení; sedadla a plynová revize neuvedeny"
+    ],
+    "fit": [
+     0,
+     "5,41 m Roadcar 540 – příčné lůžko cca 190 cm v úzké dodávce, malá dinette, těsné pro rodinu a 189 cm"
+    ],
+    "prodejce": [
+     1,
+     "soukromník, jen 9 fotek, popis 10 řádků, 35 500 € za 135 000 km je hodně"
+    ]
+   },
+   "justification": "Tovární Roadcar 540 v hezkém stavu (na fotkách čisté skříňky, koupelna s WC, kuchyň), ale jde o nejkratší 5,41 m verzi s příčným lůžkem, které je pro 189 cm na hraně, a slabým 85 kW motorem. Nájezd 135 000 km, elektro pouze 100 Wp solár bez měniče a jen 9 fotek bez záběru sezení.",
+   "photosSeen": 9,
+   "registration": "wohnmobil",
+   "electrics": "100 Wp solár, tovární olověná baterie, bez měniče",
+   "bed": "příčné vzadu (cca 190 cm)",
+   "layout": "Roadcar 540 5,41 m: dinette, kuchyň, koupelna, příčné lůžko vzadu",
+   "redFlags": [
+    "135 000 km",
+    "85 kW motor",
+    "krátká L2 verze",
+    "jen 9 fotek",
+    "elektro nedokumentované"
+   ]
   },
   {
    "addedBy": "scanner",

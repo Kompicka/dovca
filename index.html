@@ -264,8 +264,9 @@ dialog::backdrop{background:rgba(0,0,0,.35)}
   <p class="intro">Inzeráty, které prošly sítem. U hotovek sleduj vnitřní výšku a počet míst v TP, u vestaveb elektro a vlhkost. Stav si přepínejte, ať víme, kdo už volal. Zamítnuté kusy H2 z prvního skenu jsou schované pod filtrem „Zamítnuto“.</p>
   <div class="filters">
     <select id="f-status"><option value="active">Aktivní (bez zamítnutých)</option><option value="">Všechny stavy</option><option value="new">Nové</option><option value="watch">Sledujeme</option><option value="contacted">Kontaktováno</option><option value="rejected">Zamítnuto</option></select>
+    <select id="f-verdict"><option value="">Všechny verdikty</option><option value="ber">ber</option><option value="zvážit">zvážit</option><option value="ne">ne</option><option value="none">neprověřeno</option></select>
     <select id="f-kind"><option value="">Vše</option><option value="van">Prázdné dodávky</option><option value="camper">Hotové obytné</option><option value="partial">Rozestavěné</option></select>
-    <select id="f-sort"><option value="price">Nejlevnější</option><option value="priced">Nejdražší</option><option value="found">Nejnovější nález</option><option value="year">Nejmladší auto</option><option value="score">Nejlepší hodnocení</option><option value="km">Nejmenší nájezd</option></select>
+    <select id="f-sort"><option value="price">Nejlevnější</option><option value="priced">Nejdražší</option><option value="found">Nejnovější nález</option><option value="year">Nejmladší auto</option><option value="score">Nejlepší prověrka</option><option value="km">Nejmenší nájezd</option></select>
     <input type="number" id="f-min" placeholder="Cena od (Kč)" step="50000" style="width:130px">
     <input type="number" id="f-max" placeholder="Cena do (Kč)" step="50000" style="width:130px">
     <select id="f-src"><option value="">Všechny zdroje</option></select>
@@ -576,20 +577,20 @@ const KIND={van:'dodávka',camper:'obytný',partial:'rozestavěný'};
 const STATUS={new:'nové',watch:'sledujeme',contacted:'kontaktováno',rejected:'zamítnuto'};
 function priceCzk(d){const r=get('req');return d.currency==='EUR'?d.price*(r.eur||24.5):d.price}
 function renderDeals(){
-  const fs=$('#f-status').value,fk=$('#f-kind').value,so=$('#f-sort').value,fmin=+$('#f-min').value||0,fmax=+$('#f-max').value||0,fsrc=$('#f-src').value;
+  const fs=$('#f-status').value,fk=$('#f-kind').value,so=$('#f-sort').value,fmin=+$('#f-min').value||0,fmax=+$('#f-max').value||0,fsrc=$('#f-src').value,fv=$('#f-verdict').value;
   const srcSel=$('#f-src');const srcs=[...new Set(deals.map(d=>d.source).filter(Boolean))].sort();
   if(srcSel.options.length!==srcs.length+1){const cur=srcSel.value;srcSel.innerHTML='<option value="">Všechny zdroje</option>'+srcs.map(x=>`<option value="${esc(x)}">${esc(x)}</option>`).join('');srcSel.value=cur}
-  let list=deals.filter(d=>(fs==='active'?d.status!=='rejected':(!fs||d.status===fs))&&(!fk||d.kind===fk)&&(!fsrc||d.source===fsrc)&&(!fmin||priceCzk(d)>=fmin)&&(!fmax||priceCzk(d)<=fmax));
+  let list=deals.filter(d=>(fs==='active'?d.status!=='rejected':(!fs||d.status===fs))&&(!fk||d.kind===fk)&&(!fv||(fv==='none'?!d.verdict:d.verdict===fv))&&(!fsrc||d.source===fsrc)&&(!fmin||priceCzk(d)>=fmin)&&(!fmax||priceCzk(d)<=fmax));
   $('#f-count').textContent=list.length+' z '+deals.length;
-  const key={found:d=>-(new Date(d.foundAt||0).getTime()),price:d=>priceCzk(d)||1e12,priced:d=>-(priceCzk(d)||0),year:d=>-(d.year||0),score:d=>-(d.score||0),km:d=>d.km||1e12}[so];
+  const key={found:d=>-(new Date(d.foundAt||0).getTime()),price:d=>priceCzk(d)||1e12,priced:d=>-(priceCzk(d)||0),year:d=>-(d.year||0),score:d=>-(d.total!=null?d.total*10+(d.score||0):(d.score||0)),km:d=>d.km||1e12}[so];
   list.sort((a,b)=>key(a)-key(b));
   const tb=$('#deals-body');tb.innerHTML='';
   $('#deals-empty').hidden=list.length>0;
   list.forEach(d=>{
     const tr=document.createElement('tr');
     const czk=priceCzk(d);
-    tr.innerHTML=`<td><div class="deal-title">${d.url?`<a href="${esc(d.url)}" target="_blank" rel="noopener">${esc(d.title)}</a>`:esc(d.title)}</div><div class="deal-sub">${esc(d.model||'')}${d.length?' · '+esc(d.length):''}${d.height?esc(d.height):''} · ${esc(d.source||'')} · ${d.foundAt?esc(String(d.foundAt).slice(0,10)):''}${d.interiorHeightCm?' · uvnitř '+d.interiorHeightCm+' cm':''}${d.seats?' · '+d.seats+' místa':''}${d.priceNote==='netto'?' · cena bez DPH':''}${d.addedBy==='scanner'?' · skener':''}</div></td>
-    <td><span class="pill ${d.kind}">${KIND[d.kind]||d.kind||''}</span></td>
+    tr.innerHTML=`<td><div class="deal-title">${d.url?`<a href="${esc(d.url)}" target="_blank" rel="noopener">${esc(d.title)}</a>`:esc(d.title)}</div><div class="deal-sub">${esc(d.model||'')}${d.length?' · '+esc(d.length):''}${d.height?esc(d.height):''} · ${esc(d.source||'')} · ${d.foundAt?esc(String(d.foundAt).slice(0,10)):''}${d.interiorHeightCm?' · uvnitř '+d.interiorHeightCm+' cm':''}${d.seats?' · '+d.seats+' místa':''}${d.priceNote==='netto'?' · cena bez DPH':''}${d.addedBy==='scanner'?' · skener':''}</div>${d.justification?`<div class="deal-sub" style="margin-top:4px;color:var(--ink2);max-width:52ch">${esc(d.justification)}${d.redFlags&&d.redFlags.length?' <span style="color:var(--bad)">⚑ '+esc(d.redFlags.join('; '))+'</span>':''}</div>`:''}</td>
+    <td><span class="pill ${d.kind}">${KIND[d.kind]||d.kind||''}</span>${d.verdict?`<div style="margin-top:4px"><span class="pill ${d.verdict==='ber'?'good':d.verdict==='ne'?'bad':'warn'}" title="Prověrka fotek a popisu, ${d.photosSeen||0} fotek">${d.verdict} ${d.total!=null?d.total+'/12':''}</span></div>`:''}</td>
     <td class="num">${fmt(czk)}${d.currency==='EUR'?`<div class="deal-sub">${fmtN(d.price)} €</div>`:''}</td>
     <td class="num">${d.year||'–'}</td><td class="num">${d.km?fmtN(d.km):'–'}</td>
     <td>${esc(d.location||'')}</td>
@@ -601,7 +602,7 @@ function renderDeals(){
   $('#s-deals').textContent=deals.length;$('#c-deals').textContent=deals.length;
   $('#s-watch').textContent=deals.filter(d=>d.status==='watch'||d.status==='contacted').length;
 }
-$$('#f-status,#f-kind,#f-sort,#f-src').forEach(e=>e.addEventListener('change',renderDeals));$$('#f-min,#f-max').forEach(e=>e.addEventListener('input',renderDeals));
+$$('#f-status,#f-kind,#f-sort,#f-src,#f-verdict').forEach(e=>e.addEventListener('change',renderDeals));$$('#f-min,#f-max').forEach(e=>e.addEventListener('input',renderDeals));
 $('#deals-body').addEventListener('change',async e=>{
   const id=e.target.dataset.id;if(!id)return;
   const d=deals.find(x=>x.id===id);if(!d)return;
