@@ -1,0 +1,865 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Vestavba dodávky</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --bg:#EDEFEA; --surface:#FFFFFF; --surface2:#F6F7F4; --line:#D3D7CF; --line2:#E4E7E0;
+  --ink:#1B2420; --ink2:#4A554F; --mute:#7A857E;
+  --accent:#E8641B; --accent-ink:#FFFFFF; --accent-soft:#FBE8DB;
+  --steel:#35566B; --steel-soft:#DCE6EC;
+  --good:#2F7D4E; --good-soft:#DDEFE3; --warn:#B8860B; --warn-soft:#F8EFD2; --bad:#B23A2A; --bad-soft:#F6DCD7;
+  --shadow:0 1px 2px rgba(27,36,32,.06),0 6px 20px rgba(27,36,32,.06);
+  --radius:6px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#161917; --surface:#1F2421; --surface2:#262C28; --line:#3A423D; --line2:#2E3531;
+    --ink:#E8ECE6; --ink2:#B5BDB6; --mute:#7F8A83;
+    --accent:#F0793A; --accent-ink:#1B1410; --accent-soft:#3A2618;
+    --steel:#8FB3C9; --steel-soft:#24343F;
+    --good:#6FC48E; --good-soft:#1E3427; --warn:#E0B44A; --warn-soft:#3A2F14; --bad:#E5705F; --bad-soft:#3E211C;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 6px 20px rgba(0,0,0,.35);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#161917; --surface:#1F2421; --surface2:#262C28; --line:#3A423D; --line2:#2E3531;
+  --ink:#E8ECE6; --ink2:#B5BDB6; --mute:#7F8A83;
+  --accent:#F0793A; --accent-ink:#1B1410; --accent-soft:#3A2618;
+  --steel:#8FB3C9; --steel-soft:#24343F;
+  --good:#6FC48E; --good-soft:#1E3427; --warn:#E0B44A; --warn-soft:#3A2F14; --bad:#E5705F; --bad-soft:#3E211C;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 6px 20px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 "IBM Plex Sans",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:"Barlow Condensed","Arial Narrow",sans-serif;text-wrap:balance;margin:0;line-height:1.1}
+h1{font-size:34px;font-weight:700;letter-spacing:.01em;text-transform:uppercase}
+h2{font-size:26px;font-weight:600}
+h3{font-size:19px;font-weight:600}
+.mono,.num,td.num,input[type=number]{font-family:"IBM Plex Mono",ui-monospace,monospace;font-variant-numeric:tabular-nums}
+a{color:var(--steel)}
+button{font:inherit;cursor:pointer}
+input,select,textarea{font:inherit;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:7px 9px;min-width:0}
+input:focus,select:focus,textarea:focus,button:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+textarea{width:100%;resize:vertical}
+.eyebrow{font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);font-weight:600}
+
+/* header */
+.top{background:var(--surface);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}
+.top-in{max-width:1180px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:12px}
+.brand svg{width:44px;height:30px;flex:none}
+.brand small{display:block;color:var(--mute);font-size:12.5px;font-weight:500;margin-top:2px}
+.strip{display:flex;gap:8px;flex-wrap:wrap;margin-left:auto}
+.stat{background:var(--surface2);border:1px solid var(--line2);border-radius:var(--radius);padding:6px 12px;min-width:110px}
+.stat .eyebrow{font-size:10.5px}
+.stat b{display:block;font-family:"IBM Plex Mono",monospace;font-weight:500;font-size:15px;font-variant-numeric:tabular-nums}
+.sync{font-size:12px;color:var(--mute);display:flex;align-items:center;gap:6px;width:100%}
+.sync .dot{width:8px;height:8px;border-radius:50%;background:var(--mute)}
+.sync.on .dot{background:var(--good)}
+.sync.off .dot{background:var(--warn)}
+
+/* tabs */
+.tabs{max-width:1180px;margin:0 auto;padding:0 20px;display:flex;gap:2px;overflow-x:auto}
+.tab{background:none;border:0;border-bottom:3px solid transparent;padding:10px 14px;color:var(--ink2);font-weight:500;white-space:nowrap;font-family:"Barlow Condensed",sans-serif;font-size:18px;letter-spacing:.02em;text-transform:uppercase}
+.tab[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--accent)}
+.tab .cnt{display:inline-block;background:var(--steel-soft);color:var(--steel);border-radius:99px;font:600 11px/1 "IBM Plex Sans",sans-serif;padding:4px 7px;margin-left:6px;vertical-align:2px}
+
+main{max-width:1180px;margin:0 auto;padding:22px 20px 80px}
+.panel{display:none}.panel.on{display:block}
+.intro{max-width:66ch;color:var(--ink2);margin:0 0 18px}
+.grid{display:grid;gap:16px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
+.card{background:var(--surface);border:1px solid var(--line2);border-radius:var(--radius);padding:18px 20px}
+.card.lift{box-shadow:var(--shadow)}
+.card h3{margin-bottom:12px;display:flex;align-items:baseline;gap:10px}
+.card h3 .eyebrow{font-weight:600}
+.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.field{display:flex;flex-direction:column;gap:4px}
+.field label{font-size:12.5px;color:var(--ink2);font-weight:500}
+.fields{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{border:1px solid var(--line);background:var(--surface2);border-radius:99px;padding:4px 11px;font-size:13px;color:var(--ink2)}
+.chip[aria-pressed="true"]{background:var(--steel);border-color:var(--steel);color:#fff}
+.btn{border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:4px;padding:8px 14px;font-weight:500}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn.small{padding:4px 9px;font-size:13px}
+.btn.ghost{border-color:transparent;color:var(--ink2)}
+.btn:disabled{opacity:.5;cursor:default}
+.actions{display:flex;gap:10px;align-items:center;margin-top:16px;flex-wrap:wrap}
+.saved{font-size:13px;color:var(--good);opacity:0;transition:opacity .2s}
+.saved.show{opacity:1}
+.note{font-size:13px;color:var(--mute)}
+.banner{background:var(--warn-soft);color:var(--ink);border:1px solid var(--warn);border-radius:var(--radius);padding:10px 14px;font-size:14px;margin-bottom:16px}
+.banner[hidden]{display:none}
+
+/* table */
+.tablewrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th{text-align:left;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--mute);font-weight:600;padding:8px 10px;border-bottom:1px solid var(--line);white-space:nowrap}
+td{padding:9px 10px;border-bottom:1px solid var(--line2);vertical-align:top}
+td.num,th.num{text-align:right;white-space:nowrap}
+tr:last-child td{border-bottom:0}
+td input,td select{padding:4px 6px;width:100%}
+td input.n{text-align:right;width:110px}
+.pill{display:inline-block;border-radius:99px;padding:2px 9px;font-size:12px;font-weight:600;white-space:nowrap}
+.pill.new{background:var(--accent-soft);color:var(--accent)}
+.pill.watch{background:var(--steel-soft);color:var(--steel)}
+.pill.contacted{background:var(--good-soft);color:var(--good)}
+.pill.rejected{background:var(--line2);color:var(--mute)}
+.pill.van{background:var(--steel-soft);color:var(--steel)}
+.pill.camper{background:var(--good-soft);color:var(--good)}
+.stars{color:var(--warn);letter-spacing:1px;font-size:13px}
+.deal-title{font-weight:500}
+.deal-sub{font-size:12.5px;color:var(--mute)}
+.filters{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:12px}
+.filters select,.filters input{padding:5px 8px;font-size:13.5px}
+
+/* compare */
+.verdict{display:grid;grid-template-columns:1fr auto 1fr;gap:16px;align-items:stretch}
+.side{border:1px solid var(--line2);border-radius:var(--radius);padding:16px 18px;background:var(--surface)}
+.side.win{border-color:var(--accent);box-shadow:inset 0 0 0 1px var(--accent)}
+.side .big{font-family:"Barlow Condensed",sans-serif;font-size:40px;font-weight:700;line-height:1;margin:6px 0 2px;font-variant-numeric:tabular-nums}
+.side .big small{font-size:18px;font-weight:600;color:var(--mute)}
+.vs{display:flex;align-items:center;justify-content:center;font-family:"Barlow Condensed",sans-serif;font-size:22px;color:var(--mute);font-weight:600}
+.kv{display:grid;grid-template-columns:1fr auto;gap:4px 14px;font-size:13.5px;margin-top:10px}
+.kv span:nth-child(2n){font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums;text-align:right}
+.kv .tot{border-top:1px solid var(--line);padding-top:6px;margin-top:4px;font-weight:600}
+.bar{height:10px;border-radius:99px;background:var(--line2);overflow:hidden;margin-top:10px}
+.bar i{display:block;height:100%;background:var(--steel)}
+.bar.a i{background:var(--accent)}
+.hint{font-size:13px;color:var(--ink2);margin-top:8px;max-width:60ch}
+@media (max-width:760px){.verdict{grid-template-columns:1fr}.vs{padding:4px 0}}
+
+/* build plan */
+.phase{border:1px solid var(--line2);border-radius:var(--radius);background:var(--surface);margin-bottom:12px}
+.phase-h{display:flex;align-items:center;gap:12px;padding:12px 16px;cursor:pointer;user-select:none}
+.phase-h .idx{font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:22px;color:var(--accent);width:34px;flex:none}
+.phase-h h3{flex:1}
+.phase-h .prog{font-size:12.5px;color:var(--mute);font-family:"IBM Plex Mono",monospace}
+.phase-h .pbar{width:90px;height:6px;border-radius:99px;background:var(--line2);overflow:hidden}
+.phase-h .pbar i{display:block;height:100%;background:var(--good)}
+.phase-body{border-top:1px solid var(--line2);padding:8px 16px 12px}
+.phase-body[hidden]{display:none}
+.task{display:grid;grid-template-columns:22px 1fr auto auto;gap:10px;align-items:center;padding:6px 0;border-bottom:1px dashed var(--line2)}
+.task:last-of-type{border-bottom:0}
+.task input[type=checkbox]{width:17px;height:17px;accent-color:var(--good);margin:0}
+.task.done .t{text-decoration:line-through;color:var(--mute)}
+.task .who{font-size:12px;color:var(--steel);background:var(--steel-soft);border-radius:99px;padding:2px 8px}
+.task .who:empty{display:none}
+.task .x{border:0;background:none;color:var(--mute);font-size:16px;line-height:1;padding:2px 4px}
+.addtask{display:flex;gap:8px;margin-top:8px}
+.addtask input{flex:1}
+.phase-meta{font-size:13px;color:var(--ink2);margin:0 0 8px}
+
+/* elec */
+.bal{display:grid;grid-template-columns:1fr auto;gap:8px 14px;align-items:center;font-size:14px}
+.bal .k{color:var(--ink2)}
+.bal .v{font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums;text-align:right;white-space:nowrap}
+.bal .sec{grid-column:1/-1;margin-top:8px;padding-top:8px;border-top:1px solid var(--line2);font-family:"Barlow Condensed",sans-serif;font-size:17px;font-weight:600;text-transform:uppercase;letter-spacing:.04em;color:var(--ink2)}
+.pill.good{background:var(--good-soft);color:var(--good)}.pill.warn{background:var(--warn-soft);color:var(--warn)}.pill.bad{background:var(--bad-soft);color:var(--bad)}
+#schema text{fill:var(--ink);font-size:12px}
+#schema .lbl{fill:var(--mute);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase}
+#schema .box{fill:var(--surface2);stroke:var(--line)}
+#schema .box.k{fill:var(--accent-soft);stroke:var(--accent)}
+#schema .box.b{fill:var(--steel-soft);stroke:var(--steel)}
+#schema .w48{stroke:var(--accent);stroke-width:3;fill:none}
+#schema .w12{stroke:var(--steel);stroke-width:2;fill:none}
+#schema .w230{stroke:var(--ink2);stroke-width:2;fill:none;stroke-dasharray:6 4}
+#fp .van{fill:var(--surface2);stroke:var(--ink);stroke-width:2}
+#fp .arch{fill:var(--line);stroke:none}
+#fp .door{stroke:var(--accent);stroke-width:5;fill:none}
+#fp .blk{stroke:var(--ink);stroke-width:1.2;cursor:grab;opacity:.92}
+#fp .blk.drag{cursor:grabbing;opacity:1}
+#fp .bl{font-size:12px;fill:var(--ink);pointer-events:none;font-weight:500}
+#fp .bs{font-size:9.5px;fill:var(--ink2);pointer-events:none}
+#fp .h{cursor:pointer}
+#fp .h circle{fill:var(--surface);stroke:var(--ink2)}
+#fp .h text{font-size:10px;fill:var(--ink);pointer-events:none;text-anchor:middle}
+#fp .dim{fill:var(--mute);font-size:11px;font-family:"IBM Plex Mono",monospace}
+#fp .dimline{stroke:var(--mute);stroke-width:1}
+/* log */
+.entry{display:grid;grid-template-columns:110px 1fr;gap:14px;padding:10px 0;border-bottom:1px solid var(--line2)}
+.entry .d{font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--mute)}
+.entry .w{font-weight:600;color:var(--steel);font-size:13px}
+.empty{padding:28px;text-align:center;color:var(--mute);border:1px dashed var(--line);border-radius:var(--radius)}
+dialog{border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--ink);padding:20px 22px;max-width:520px;width:calc(100% - 32px);box-shadow:var(--shadow)}
+dialog::backdrop{background:rgba(0,0,0,.35)}
+.toast{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:9px 16px;border-radius:6px;font-size:14px;opacity:0;pointer-events:none;transition:opacity .2s;z-index:20}
+.toast.show{opacity:1}
+@media (prefers-reduced-motion: reduce){*{transition:none!important}}
+</style>
+
+</head>
+<body>
+<header class="top">
+  <div class="top-in">
+    <div class="brand">
+      <svg viewBox="0 0 44 30" aria-hidden="true"><path d="M2 22V8h24l10 8h6v6h-3a4 4 0 0 1-8 0H13a4 4 0 0 1-8 0H2z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="9" cy="22" r="3" fill="var(--accent)"/><circle cx="35" cy="22" r="3" fill="var(--accent)"/><path d="M26 8v8h10" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8 12h12" stroke="var(--accent)" stroke-width="2"/></svg>
+      <div><h1>Vestavba dodávky</h1><small>Společný plán: co koupit, za kolik a jak to postavit</small></div>
+    </div>
+    <div class="strip">
+      <div class="stat"><span class="eyebrow">Nálezy</span><b id="s-deals">–</b></div>
+      <div class="stat"><span class="eyebrow">Sledujeme</span><b id="s-watch">–</b></div>
+      <div class="stat"><span class="eyebrow">Rozpočet celkem</span><b id="s-budget">–</b></div>
+      <div class="stat"><span class="eyebrow">Poslední sken</span><b id="s-scan">–</b></div>
+    </div>
+    <div class="sync" id="sync"><span class="dot"></span><span id="sync-t">Připojuji sdílená data…</span></div>
+  </div>
+  <nav class="tabs" role="tablist">
+    <button class="tab" role="tab" data-p="req" aria-selected="true">Požadavky</button>
+    <button class="tab" role="tab" data-p="deals" aria-selected="false">Nálezy<span class="cnt" id="c-deals">0</span></button>
+    <button class="tab" role="tab" data-p="cmp" aria-selected="false">Koupit vs. postavit</button>
+    <button class="tab" role="tab" data-p="elec" aria-selected="false">Elektro a design</button>
+    <button class="tab" role="tab" data-p="build" aria-selected="false">Plán stavby</button>
+    <button class="tab" role="tab" data-p="log" aria-selected="false">Deník</button>
+  </nav>
+</header>
+
+<main>
+<div class="banner" id="ro" hidden>Sdílená data nejsou dostupná v tomto náhledu. Vidíš výchozí hodnoty, změny se neuloží.</div>
+
+<!-- ===== POŽADAVKY ===== -->
+<section class="panel on" id="p-req">
+  <p class="intro">Zadání pro skener inzerátů. Strategie je „hotovky první“: hledáme hotový obytný vůz nebo kvalitní vestavbu, kterou dostavíme (48V elektro, dětská postýlka). Prázdná dodávka je záložní cesta. Změny se ukládají pro všechny.</p>
+  <div class="grid g2">
+    <div class="card">
+      <h3>Auto <span class="eyebrow">základ</span></h3>
+      <div class="fields">
+        <div class="field"><label>Rok výroby od</label><input type="number" id="r-year" min="1995" max="2030"></div>
+        <div class="field"><label>Max. nájezd (km)</label><input type="number" id="r-km" step="10000"></div>
+        <div class="field"><label>Palivo</label><select id="r-fuel"><option value="any">jakékoli</option><option value="diesel">diesel</option><option value="benzin">benzín</option></select></div>
+        <div class="field"><label>Min. míst k sezení</label><input type="number" id="r-seats" min="2" max="9"></div>
+        <div class="field"><label>Kurz EUR → CZK</label><input type="number" id="r-eur" step="0.1"></div>
+      </div>
+      <div class="field" style="margin-top:12px"><label>Délka (L)</label><div class="chips" id="r-len" data-vals="L1,L2,L3,L4"></div></div>
+      <div class="field" style="margin-top:10px"><label>Výška (H) – H2 = stání uvnitř (≈1,9 m u Ducata/Transitu)</label><div class="chips" id="r-hgt" data-vals="H1,H2,H3"></div></div>
+      <div class="field" style="margin-top:10px"><label>Modely</label><div class="chips" id="r-models" data-vals="Fiat Ducato,Peugeot Boxer,Citroën Jumper,Ford Transit,Mercedes Sprinter,VW Crafter,Renault Master,Opel Movano,Iveco Daily,VW T5/T6"></div></div>
+    </div>
+    <div class="card">
+      <h3>Peníze a hledání <span class="eyebrow">limity</span></h3>
+      <div class="fields">
+        <div class="field"><label>Strop za prázdnou dodávku (Kč)</label><input type="number" id="r-bvan" step="10000"></div>
+        <div class="field"><label>Strop za hotový obytný vůz (Kč)</label><input type="number" id="r-bcamper" step="10000"></div>
+        <div class="field"><label>Rozpočet na vestavbu (Kč)</label><input type="number" id="r-bbuild" step="10000"></div>
+        <div class="field"><label>Max. vzdálenost od Prahy (km)</label><input type="number" id="r-dist" step="50"></div>
+      </div>
+      <div class="field" style="margin-top:12px"><label>Zdroje, které skener prochází</label><div class="chips" id="r-src" data-vals="bazos.cz,bazos.sk,sauto.cz,tipcars.com,mobile.de,kleinanzeigen.de,autoscout24.de,willhaben.at"></div></div>
+      <div class="field" style="margin-top:12px"><label>Co se hledá (kategorie)</label><div class="chips" id="r-kind" data-vals="prázdná dodávka,hotový obytný vůz,rozestavěná vestavba"></div></div>
+      <div class="field" style="margin-top:12px"><label>Musí mít / nesmí mít / poznámky pro skener</label><textarea id="r-notes" rows="4" placeholder="např. bez rzi na prazích, ne po taxi/kurýrech, ideálně 1. majitel, tažné zařízení plus, ne DPF problémy…"></textarea></div>
+    </div>
+  </div>
+  <div class="actions">
+    <button class="btn primary" id="r-save">Uložit požadavky</button>
+    <span class="saved" id="r-saved">Uloženo pro všechny</span>
+    <span class="note" id="r-meta"></span>
+  </div>
+</section>
+
+<!-- ===== NÁLEZY ===== -->
+<section class="panel" id="p-deals">
+  <p class="intro">Inzeráty, které prošly sítem. U hotovek sleduj vnitřní výšku a počet míst v TP, u vestaveb elektro a vlhkost. Stav si přepínejte, ať víme, kdo už volal. Zamítnuté kusy H2 z prvního skenu jsou schované pod filtrem „Zamítnuto“.</p>
+  <div class="filters">
+    <select id="f-status"><option value="active">Aktivní (bez zamítnutých)</option><option value="">Všechny stavy</option><option value="new">Nové</option><option value="watch">Sledujeme</option><option value="contacted">Kontaktováno</option><option value="rejected">Zamítnuto</option></select>
+    <select id="f-kind"><option value="">Vše</option><option value="van">Prázdné dodávky</option><option value="camper">Hotové obytné</option><option value="partial">Rozestavěné</option></select>
+    <select id="f-sort"><option value="price">Nejlevnější</option><option value="priced">Nejdražší</option><option value="found">Nejnovější nález</option><option value="year">Nejmladší auto</option><option value="score">Nejlepší hodnocení</option><option value="km">Nejmenší nájezd</option></select>
+    <input type="number" id="f-min" placeholder="Cena od (Kč)" step="50000" style="width:130px">
+    <input type="number" id="f-max" placeholder="Cena do (Kč)" step="50000" style="width:130px">
+    <select id="f-src"><option value="">Všechny zdroje</option></select>
+    <span class="note" id="f-count"></span>
+    <span style="flex:1"></span>
+    <button class="btn" id="d-add">+ Přidat inzerát</button>
+  </div>
+  <div class="card" style="padding:0">
+    <div class="tablewrap">
+      <table id="deals">
+        <thead><tr><th>Inzerát</th><th>Typ</th><th class="num">Cena</th><th class="num">Rok</th><th class="num">km</th><th>Kde</th><th>Hodnocení</th><th>Stav</th><th>Poznámka</th></tr></thead>
+        <tbody id="deals-body"></tbody>
+      </table>
+    </div>
+    <div class="empty" id="deals-empty" hidden>Zatím nic. Ulož požadavky a spusť sken, nebo přidej inzerát ručně.</div>
+  </div>
+  <p class="note" id="scan-note" style="margin-top:10px"></p>
+</section>
+
+<!-- ===== KOUPIT VS. POSTAVIT ===== -->
+<section class="panel" id="p-cmp">
+  <p class="intro">Cesta A je teď hlavní: hotový ojetý vůz plus dostavba (elektro 130 tis., postýlka, sedadlo). Cesta B je záloha: prázdná dodávka plus vestavba firmou podle zveřejněných ceníků. Medián vlevo se počítá ze sledovaných hotovek v Nálezech.</p>
+  <div class="verdict" id="verdict"></div>
+  <div class="grid g2" style="margin-top:18px">
+    <div class="card">
+      <h3>Cesta A <span class="eyebrow">hotový obytný vůz</span></h3>
+      <div class="fields">
+        <div class="field"><label>Cena hotového vozu (Kč)</label><input type="number" id="c-camper" step="10000"></div>
+        <div class="field"><label>Dostavba po koupi: elektro, postýlka, sedadlo (Kč)</label><input type="number" id="c-camperfix" step="5000"></div>
+        <div class="field"><label>Zůstatková hodnota za 5 let (%)</label><input type="number" id="c-camperres" min="0" max="100"></div>
+      </div>
+      <p class="hint">Hotový vůz je většinou už zapsaný jako obytný automobil, což šetří schvalování. Zato kupujete cizí kompromisy a často starší základ.</p>
+    </div>
+    <div class="card">
+      <h3>Cesta B <span class="eyebrow">dodávka + vlastní vestavba</span></h3>
+      <div class="fields">
+        <div class="field"><label>Cena prázdné dodávky (Kč)</label><input type="number" id="c-van" step="10000"></div>
+        <div class="field"><label>Hodin práce celkem</label><input type="number" id="c-hours" step="10"></div>
+        <div class="field"><label>Cena vaší hodiny (Kč)</label><input type="number" id="c-rate" step="50"></div>
+        <div class="field"><label>Zůstatková hodnota za 5 let (%)</label><input type="number" id="c-buildres" min="0" max="100"></div>
+      </div>
+      <p class="hint">Typická vestavba svépomocí zabere 300–600 hodin. Přepis na „obytný automobil“ (kategorie M1, zvláštní) přes zkušební stanici stojí zhruba 10–20 tis. Kč a chce přípravu dopředu: kotvení sedadel, plyn s revizí, hmotnosti.</p>
+    </div>
+  </div>
+  <div class="card" style="margin-top:16px">
+    <h3>Rozpočet vestavby <span class="eyebrow">položky cesty B</span></h3>
+    <div class="tablewrap">
+      <table id="items"><thead><tr><th>Položka</th><th class="num">Odhad (Kč)</th><th>Poznámka</th><th></th></tr></thead><tbody id="items-body"></tbody>
+      <tfoot><tr><td><b>Celkem materiál a služby</b></td><td class="num" id="items-total"><b>–</b></td><td colspan="2"></td></tr></tfoot></table>
+    </div>
+    <div class="actions"><button class="btn small" id="i-add">+ Položka</button><button class="btn primary" id="c-save">Uložit porovnání</button><span class="saved" id="c-saved">Uloženo pro všechny</span></div>
+  </div>
+</section>
+
+<!-- ===== ELEKTRO A DESIGN ===== -->
+<section class="panel" id="p-elec">
+  <p class="intro">Pracovat z dodávky s 800W počítačem 6 hodin denně znamená zhruba 5 kWh jen na práci. To je víc než běžný obytný vůz spálí za tři dny, a proto se to celé točí kolem baterie a nabíjení, ne kolem světel.</p>
+
+  <div class="grid g2">
+    <div class="card" style="grid-column:1/-1">
+      <h3>Denní spotřeba <span class="eyebrow">co se bude pouštět</span></h3>
+      <div class="tablewrap">
+        <table id="loads"><thead><tr><th>Spotřebič</th><th class="num">Příkon (W)</th><th class="num">Hodin / den</th><th>Napětí</th><th class="num">Wh / den</th><th></th></tr></thead>
+        <tbody id="loads-body"></tbody>
+        <tfoot><tr><td><b>Celkem vč. ztrát měniče</b></td><td colspan="3" class="note">230V spotřebiče × 1 / účinnost měniče</td><td class="num" id="loads-total"><b>–</b></td><td></td></tr></tfoot></table>
+      </div>
+      <div class="actions"><button class="btn small" id="ld-add">+ Spotřebič</button></div>
+    </div>
+
+    <div class="card">
+      <h3>Parametry systému <span class="eyebrow">co si kupujeme</span></h3>
+      <div class="fields">
+        <div class="field"><label>Napětí systému</label><select id="e-volt"><option value="48">48 V</option><option value="24">24 V</option><option value="12">12 V</option></select></div>
+        <div class="field"><label>Baterie (kWh využitelné)</label><input type="number" id="e-bat" step="0.5"></div>
+        <div class="field"><label>Solár na střeše (Wp)</label><input type="number" id="e-pv" step="50"></div>
+        <div class="field"><label>Nabíjení z alternátoru (W)</label><input type="number" id="e-alt" step="50"></div>
+        <div class="field"><label>Hodin jízdy / den (průměr)</label><input type="number" id="e-drive" step="0.5"></div>
+        <div class="field"><label>Účinnost měniče (%)</label><input type="number" id="e-eff" min="70" max="99"></div>
+        <div class="field"><label>Výkon měniče (W trvale)</label><input type="number" id="e-inv" step="500"></div>
+        <div class="field"><label>Špička PC + ostatní (W)</label><input type="number" id="e-peak" step="50"></div>
+      </div>
+      <p class="hint">Výnos ze soláru počítáme pro ČR a panely naplocho na střeše: léto ≈ 4,0 kWh na 1 kWp a den, jaro/podzim ≈ 2,2, zima ≈ 0,8. Alternátor dává jen to, co stihne za jízdy.</p>
+    </div>
+
+    <div class="card lift">
+      <h3>Bilance <span class="eyebrow">vyjde to?</span></h3>
+      <div id="balance"></div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:16px">
+    <h3>Architektura 48 V <span class="eyebrow">proč ne 12 V</span></h3>
+    <div class="tablewrap"><svg id="schema" viewBox="0 0 980 400" width="100%" style="max-width:980px;display:block;font-family:'IBM Plex Sans',sans-serif" aria-label="Schéma elektrického systému"></svg></div>
+    <div class="grid g2" style="margin-top:12px">
+      <div><p class="hint"><b>Proč 48 V.</b> Měnič 3000 W bere z 12V baterie 250 A, ze 48V jen 63 A. To znamená kabely 35 mm² místo 95 mm², menší ztráty, levnější pojistky a jeden MPPT regulátor zvládne celou střechu. Baterie 48 V (Pylontech a spol.) jsou navíc nejlevnější na kWh, protože se vyrábějí pro domácí fotovoltaiku.</p></div>
+      <div><p class="hint"><b>Daň za 48 V.</b> Lednice, světla, čerpadlo, topení i Maxxfan jsou 12V, takže potřebují DC-DC měnič 48→12 V. A alternátor v autě je 12V, takže do 48V baterie se nabíjí přes izolované DC-DC nabíječe (400 W každý, dají se řadit). Kdo chce z alternátoru víc než ~1 kW, musí na druhý 48V alternátor, což je 60–100 tis. Kč navíc.</p></div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:16px">
+    <h3>Součástky a rozpočet <span class="eyebrow">české zdroje</span></h3>
+    <p class="note" id="parts-meta"></p>
+    <div class="tablewrap">
+      <table id="parts"><thead><tr><th>Díl</th><th class="num">ks</th><th class="num">Cena / ks</th><th class="num">Celkem</th><th>Obchod</th><th>Poznámka</th><th></th></tr></thead>
+      <tbody id="parts-body"></tbody>
+      <tfoot><tr><td><b>Elektro celkem</b></td><td colspan="2"></td><td class="num" id="parts-total"><b>–</b></td><td colspan="3"></td></tr></tfoot></table>
+    </div>
+    <div class="actions"><button class="btn small" id="pt-add">+ Díl</button><button class="btn primary" id="e-save">Uložit elektro</button><span class="saved" id="e-saved">Uloženo pro všechny</span></div>
+  </div>
+
+  <div class="card" style="margin-top:16px">
+    <h3>Půdorys <span class="eyebrow">design vestavby</span></h3>
+    <p class="hint" style="margin:0 0 10px">Fiat Ducato / Boxer / Jumper L3H2: ložná délka 3 705 mm, šířka 1 870 mm, mezi podběhy 1 422 mm, výška 1 932 mm. Bloky přetahujte, kolečkem u bloku otočíte. Posuvné dveře jsou vpravo, vzadu jsou křídlové dveře.</p>
+    <div class="row" style="margin-bottom:10px">
+      <select id="fp-van"><option value="ducato-l3">Ducato/Boxer/Jumper L3 (3705×1870)</option><option value="ducato-l2">Ducato/Boxer/Jumper L2 (3120×1870)</option><option value="ducato-l4">Ducato/Boxer/Jumper L4 (4070×1870)</option><option value="transit-l3">Ford Transit L3 (3494×1784)</option><option value="sprinter-l3">Sprinter/Crafter L3 (4300×1787)</option></select>
+      <input id="fp-name" placeholder="Nový blok" style="width:140px"><input id="fp-w" type="number" placeholder="délka mm" style="width:100px"><input id="fp-h" type="number" placeholder="šířka mm" style="width:100px">
+      <button class="btn small" id="fp-add">+ Blok</button>
+      <span style="flex:1"></span>
+      <button class="btn primary small" id="fp-save">Uložit půdorys</button><span class="saved" id="fp-saved">Uloženo</span>
+    </div>
+    <div class="tablewrap"><svg id="fp" width="100%" style="max-width:980px;display:block;touch-action:none;user-select:none;font-family:'IBM Plex Sans',sans-serif" aria-label="Půdorys vestavby"></svg></div>
+    <p class="note" id="fp-legend"></p>
+  </div>
+</section>
+
+<!-- ===== PLÁN STAVBY ===== -->
+<section class="panel" id="p-build">
+  <p class="intro">Pořadí fází není náhodné: každá další zakrývá tu předchozí. Kabely a hadice musí být položené dřív, než se zavře izolace a obklad. Odškrtávejte, přidávejte úkoly, pište k nim jméno.</p>
+  <div id="phases"></div>
+  <div class="actions"><input id="ph-new" placeholder="Název nové fáze" style="min-width:240px"><button class="btn" id="ph-add">+ Přidat fázi</button></div>
+</section>
+
+<!-- ===== DENÍK ===== -->
+<section class="panel" id="p-log">
+  <p class="intro">Rozhodnutí, telefonáty, prohlídky. Krátce, s datem. Za půl roku budete rádi, že víte, proč jste to Ducato tehdy nevzali.</p>
+  <div class="card">
+    <div class="row" style="align-items:flex-start">
+      <input id="l-who" placeholder="Kdo" style="width:120px">
+      <textarea id="l-text" rows="2" placeholder="Co se stalo / co jsme rozhodli" style="flex:1;min-width:220px"></textarea>
+      <button class="btn primary" id="l-add">Zapsat</button>
+    </div>
+    <div id="log-list" style="margin-top:14px"></div>
+  </div>
+</section>
+</main>
+
+<dialog id="dlg">
+  <h3 style="margin-bottom:12px">Přidat inzerát</h3>
+  <div class="fields" style="grid-template-columns:1fr 1fr">
+    <div class="field" style="grid-column:1/-1"><label>Název</label><input id="n-title" placeholder="Fiat Ducato L3H2 2.3 MJT 2017"></div>
+    <div class="field" style="grid-column:1/-1"><label>Odkaz</label><input id="n-url" placeholder="https://…"></div>
+    <div class="field"><label>Typ</label><select id="n-kind"><option value="van">prázdná dodávka</option><option value="camper">hotový obytný</option><option value="partial">rozestavěný</option></select></div>
+    <div class="field"><label>Zdroj</label><input id="n-source" placeholder="bazos.cz"></div>
+    <div class="field"><label>Cena</label><input type="number" id="n-price"></div>
+    <div class="field"><label>Měna</label><select id="n-cur"><option>CZK</option><option>EUR</option></select></div>
+    <div class="field"><label>Rok</label><input type="number" id="n-year"></div>
+    <div class="field"><label>km</label><input type="number" id="n-km"></div>
+    <div class="field"><label>Lokalita</label><input id="n-loc"></div>
+    <div class="field"><label>Hodnocení 1–5</label><input type="number" id="n-score" min="1" max="5" value="3"></div>
+    <div class="field" style="grid-column:1/-1"><label>Poznámka</label><input id="n-notes"></div>
+  </div>
+  <div class="actions"><button class="btn primary" id="n-ok">Přidat</button><button class="btn ghost" id="n-cancel">Zrušit</button></div>
+</dialog>
+<div class="toast" id="toast"></div>
+
+<script>
+(function(){
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const fmt=n=>n==null||isNaN(n)?'–':Math.round(n).toLocaleString('cs-CZ')+' Kč';
+const fmtN=n=>n==null||isNaN(n)?'–':Math.round(n).toLocaleString('cs-CZ');
+const today=()=>new Date().toISOString().slice(0,10);
+const toast=t=>{const e=$('#toast');e.textContent=t;e.classList.add('show');clearTimeout(e._t);e._t=setTimeout(()=>e.classList.remove('show'),1800)};
+const flash=id=>{const e=$(id);e.classList.add('show');setTimeout(()=>e.classList.remove('show'),1600)};
+
+/* ---------- defaults (used until shared data arrives) ---------- */
+const DEF={
+ req:{yearMin:2014,kmMax:250000,fuel:'diesel',seats:3,eur:24.5,len:['L2','L3'],hgt:['H2'],
+   models:['Fiat Ducato','Peugeot Boxer','Citroën Jumper','Ford Transit','Mercedes Sprinter','VW Crafter'],
+   budgetVan:450000,budgetCamper:900000,budgetBuild:300000,dist:600,
+   src:['bazos.cz','sauto.cz','mobile.de','kleinanzeigen.de'],kind:['prázdná dodávka','hotový obytný vůz'],notes:''},
+ cmp:{camper:850000,camperFix:40000,camperRes:65,van:420000,hours:450,rate:250,buildRes:55,
+   items:[
+    ['Okna (2× boční výklopné) + střešní ventilátor',22000,'Maxxfan Deluxe 8 820 Kč (camper-tech.cz), okna Carbest cca 6 000 Kč/ks'],
+    ['Izolace (Armaflex 19 mm + PIR podlaha)',18000,'cca 25 m² Armaflexu'],
+    ['Podlaha (překližka 12 mm + vinyl)',7000,''],
+    ['Elektro kompletně (48 V systém pro práci z auta)',0,'Bere se automaticky ze záložky Elektro a design','elec'],
+    ['Topení naftové 2 kW Autoterm Air 2D sada + montáž',16000,'Autoterm 12 750 Kč (carheating.cz), Webasto Air Top 2000 STC set 16 500 Kč'],
+    ['Voda: nádrže 80/60 l, čerpadlo, dřez, baterie, hadice',14000,''],
+    ['Nábytek: topolová překližka 15 mm, kování, lamino',35000,''],
+    ['Postel + matrace (rošt, lattenrost)',12000,''],
+    ['Kuchyň: dvouplotýnkový vařič, lednice kompresorová 12 V',25000,'Dometic NRX 50C od 21 405 Kč (CRX 50 dobíhá), vařič cca 3 000 Kč'],
+    ['Obklad stěn a stropu (překližka 4–6 mm, látka)',10000,''],
+    ['Osvětlení, USB, spínače, drobná elektro',5000,''],
+    ['Sedačky / kotvení, pásy pro zápis míst',15000,'jen pokud řešíte více míst'],
+    ['Přepis na obytný automobil (zkušebna, DEKRA, dokumentace)',15000,'Individuální schválení přestavby'],
+    ['Nářadí a spotřební materiál (Sika, vruty, kotouče, lepidla)',15000,''],
+    ['Rezerva 10 %',28000,'Na věci, které jste zapomněli']
+   ]},
+ build:{phases:[
+  {name:'Výběr a koupě auta',tasks:[['Rozhodnout cestu A/B podle porovnání',''],['Prohlídka: rez prahů, spodku, DPF, spojka, historie',''],['Předkupní diagnostika v servisu',''],['Koupě, přepis, povinné ručení','']]},
+  {name:'Odstrojení, rez, plánování rozvržení',tasks:[['Vyndat příčku, obložení, podlahu',''],['Ošetřit rez, pozinkovat sváry, ochrana dutin',''],['Nakreslit půdorys 1:10 a vyzkoušet z kartonu (postel, kuchyň, sedění)',''],['Rozhodnout postel: pevná napříč vs. podélná vs. vyklápěcí','']]},
+  {name:'Otvory: okna, ventilátor, průchodky',tasks:[['Vyříznout a osadit okna',''],['Střešní ventilátor Maxxfan',''],['Průchodky pro topení, vodu, solár, plnicí hrdlo','']]},
+  {name:'Kabeláž a hadice (před izolací)',tasks:[['Natahat kabely 12 V ke světlům, USB, ventilátoru, čerpadlu',''],['Kabely k solárům a ke startovací baterii (B2B)',''],['Hadice vody a odpad',''],['Palivová hadice k topení','']]},
+  {name:'Izolace',tasks:[['Armaflex na stěny, strop, dveře',''],['PIR + překližka do podlahy',''],['Parozábrana jen tam, kde má smysl (ne uzavřít vlhkost)','']]},
+  {name:'Podlaha, obklady, strop',tasks:[['Podlaha překližka + vinyl',''],['Latě / hmoždinky na obklad',''],['Obklad stěn a stropu','']]},
+  {name:'Elektro 12 V / 230 V',tasks:[['Baterie, jističe, pojistky, uzemnění na karoserii',''],['MPPT + solár na střeše',''],['Měnič, zásuvky, revize zapojení','']]},
+  {name:'Topení a voda',tasks:[['Montáž naftového topení, výfuk, palivo',''],['Nádrže, čerpadlo, dřez, sprcha (pokud)',''],['Tlaková zkouška, kontrola těsnosti','']]},
+  {name:'Nábytek, postel, kuchyň',tasks:[['Kostra nábytku, kotvení do karoserie',''],['Postel a rošt',''],['Kuchyňská linka, vařič, lednice','']]},
+  {name:'Schválení a papíry',tasks:[['Sedadla a pásy podle počtu míst',''],['Dokumentace k přestavbě, hmotnosti, fotky',''],['Zkušební stanice, zápis „obytný automobil“',''],['Pojistka jako obytný vůz','']]},
+  {name:'Zkušební víkend',tasks:[['2 noci u lesa, seznam co nefunguje',''],['Opravy a doladění','']]}
+ ]},
+ log:{entries:[]},
+ scan:{lastRun:null,found:0,note:'Skener zatím neběžel.'},
+ elec:{volt:48,bat:7.7,pv:1000,alt:800,drive:1,eff:92,inv:3000,peak:1200,
+  loads:[
+   ['Pracovní PC (zdroj 800 W – změřit wattmetrem, reálně bývá 300–500 W)',800,6,230],
+   ['Monitor 27"',35,6,230],
+   ['Starlink Mini (internet)',35,8,12],
+   ['Lednice kompresorová 50 l (chod cca 40 % času)',45,10,12],
+   ['Světla LED',15,5,12],
+   ['Maxxfan střešní ventilátor',20,4,12],
+   ['Naftové topení – ventilátor (zima)',20,8,12],
+   ['Vodní čerpadlo',40,0.3,12],
+   ['Telefony, notebook, USB',40,3,12],
+   ['Rychlovarná konvice 1 800 W',1800,0.2,230]
+  ],
+  pricedAt:'2026-09-06',
+  parts:[
+   ['Pylontech US5000 48 V 4,8 kWh LiFePO4',2,26084,'solar-eshop.cz','https://www.solar-eshop.cz/p/pylontech-baterie-us5000/','2× = 9,6 kWh nominál, 7,7 kWh využitelných, 2× 40 kg. Levnější: Seplos POLO-W 48 V 5 kWh 24 490 Kč (battery.cz)'],
+   ['Victron MultiPlus-II 48/3000/35-32 (měnič + nabíječ 230 V)',1,16478,'i4wifi.cz','https://www.i4wifi.cz/cs/265531-victron-multiplus-ii-48-3000-35-32','3 000 W trvale, 5 500 W špička. Jinde 29 000 Kč, před objednávkou ověřit'],
+   ['Victron SmartSolar MPPT 150/45',1,5032,'ostrovni-elektrarny.cz','https://ostrovni-elektrarny.cz/shop/produkt/105-victron-smartsolar-mppt-150-45-12-24-48v','Zvládne až 2,6 kWp na 48 V, jeden pro celou střechu'],
+   ['Jinko Tiger Neo 440 Wp full black (1722 × 1134 mm)',2,2150,'nejpanely.cz','https://www.nejpanely.cz/fotovoltaicky-solarni-panel-jinko-solar-tiger-neo-n-type-54hl4-b-440wp-full-black/','2 panely podél střechy = 880 Wp, zbytek střechy na Maxxfan'],
+   ['Solarmi ABS rohové držáky s průchodkou (sada 5 ks)',2,425,'i4wifi.cz','https://www.i4wifi.cz/cs/277770-xtend-solarmi-drzak-pro-solarni-panely-5ks-cerny','Lepit Sikaflexem 252, jedna sada na panel'],
+   ['Victron Orion-Tr Smart 12/48-8 A (380 W) izolovaný, alternátor → 48 V',2,6711,'neosolar.cz','https://eshop.neosolar.cz/dc-dc-nabijecka-orion-tr-smart-12-48-8a-380w-izolovana/','2× = cca 760 W za jízdy, dají se řadit dál'],
+   ['Victron Orion-Tr 48/12-30 A (360 W) měnič pro 12V okruh',1,5528,'neosolar.cz','https://eshop.neosolar.cz/dc-dc-konvertor-orion-tr-48-12-30a-360w/','Lednice, světla, čerpadlo, Maxxfan, topení, USB'],
+   ['Victron SmartShunt 500 A (měření baterie)',1,2473,'nomadem.cz','https://www.nomadem.cz/smartshunt-500a-50mv-victron-energy_z2327/','Bluetooth do telefonu'],
+   ['Victron Cerbo GX MKII (dohled, volitelné)',1,6912,'i4wifi.cz','https://www.i4wifi.cz/cs/300428-victron-energy-cerbo-gx-mkii','Nutné pro komunikaci Pylontech ↔ MultiPlus (CAN). Bez něj radši Victron baterie'],
+   ['Victron GX Touch 50 (displej, volitelné)',1,6206,'battery.cz','https://www.battery.cz/victron-energy-gx-touch-50/','Jde nahradit telefonem přes VRM'],
+   ['Victron Lynx Distributor M10 (sběrnice s pojistkami)',1,5528,'neosolar.cz','https://eshop.neosolar.cz/lynx-distributor-m10/','Levněji obchod77.cz cca 4 550 Kč'],
+   ['MEGA držáky 3× + pojistky 125/200 A 3× + DC jistič 100 A 48 V',1,1800,'solarsun.cz','https://www.solarsun.cz/victron-energy-drzak-pro-pojistky-mega-fuse/','Držák 283 Kč, pojistka 189 Kč, jistič 355 Kč (vselektro.eu)'],
+   ['Kabel 35 mm² CYA H07V-K (m) + oka a smršťovačky',10,300,'bch-battery.cz','https://www.bch-battery.cz/kabel-35mm2-cya-35-lanko-cu-35mm2-cerny','V běžném elektro 200–260 Kč/m, oka + lisování cca 800 Kč navíc'],
+   ['Rozvaděč 230 V: rozvodnice 4M, chránič 2P 25 A/30 mA, jistič B16, zásuvky, kabel 2,5 mm²',1,2500,'elektromaterialy.cz','https://www.elektromaterialy.cz/proudovy-chranic-iid-2p-25a-30ma','Rozvodnice 746, chránič 879, jistič 86 Kč, zbytek zásuvky a kabel'],
+   ['CEE 16 A vstupní zásuvka pro karavan (Bals, IP44) + kabel 20 m',1,1500,'mojeelektro.cz','https://mojeelektro.cz/cee-zasuvky-a-vidlice/19955-cee-zasuvka-pro-karavan-230v16a-ip44.html','Zásuvka 319 Kč, kabelová redukce 3 m 847 Kč (elektro-materialy.cz)'],
+   ['12V pojistková skříň, spínače, kabel 1,5–4 mm²',1,3000,'','','Odhad, neoceněno']
+  ]},
+ layout:{van:'ducato-l3',blocks:[
+   {n:'Postel napříč',x:2305,y:0,w:1400,h:1870,c:'#DCE6EC'},
+   {n:'Kuchyň',x:1300,y:0,w:1000,h:600,c:'#FBE8DB'},
+   {n:'Lednice',x:850,y:0,w:450,h:600,c:'#FBE8DB'},
+   {n:'Pracovní stůl',x:1300,y:1270,w:1000,h:600,c:'#DDEFE3'},
+   {n:'Otočná židle',x:900,y:1300,w:550,h:550,c:'#DDEFE3'},
+   {n:'Lavice + topení',x:150,y:0,w:700,h:600,c:'#F8EFD2'},
+   {n:'Baterie 48 V',x:2350,y:50,w:600,h:450,c:'#E4E7E0'},
+   {n:'Voda 80 l',x:2350,y:1500,w:700,h:320,c:'#E4E7E0'}
+ ]}
+};
+const VANS={'ducato-l3':[3705,1870,1422],'ducato-l2':[3120,1870,1422],'ducato-l4':[4070,1870,1422],'transit-l3':[3494,1784,1392],'sprinter-l3':[4300,1787,1350]};
+
+/* ---------- state ---------- */
+let db=null, uid=null;
+let state={req:null,cmp:null,build:null,log:null,scan:null,elec:null,layout:null};
+let deals=[];let dealOv={};let localDeals=[];let staticMode=false;
+const get=(k)=>state[k]||DEF[k];
+function localSave(){try{localStorage.setItem('vb-local',JSON.stringify({savedAt:new Date().toISOString(),state:{req:state.req,cmp:state.cmp,build:state.build,log:state.log,elec:state.elec,layout:state.layout},dealOv,localDeals}))}catch(e){}}
+function loadLocal(){try{const j=JSON.parse(localStorage.getItem('vb-local')||'null');if(!j)return;for(const k in j.state||{})if(j.state[k])state[k]=j.state[k];dealOv=j.dealOv||{};localDeals=j.localDeals||[];}catch(e){}}
+function applyOv(){deals=deals.filter(d=>!String(d.id).startsWith('local-')).concat(localDeals);deals.forEach(d=>{if(dealOv[d.id])Object.assign(d,dealOv[d.id])})}
+function renderAll(){renderReq();renderDeals();renderScan();renderCmp();renderElec();renderFP();renderBuild();renderLog()}
+
+/* ---------- tabs ---------- */
+$$('.tab').forEach(t=>t.addEventListener('click',()=>{
+  $$('.tab').forEach(x=>x.setAttribute('aria-selected',x===t));
+  $$('.panel').forEach(p=>p.classList.toggle('on',p.id==='p-'+t.dataset.p));
+  try{localStorage.setItem('vb-tab',t.dataset.p)}catch(e){}
+}));
+try{const t=localStorage.getItem('vb-tab');if(t){const b=$(`.tab[data-p="${t}"]`);b&&b.click()}}catch(e){}
+
+/* ---------- chips ---------- */
+function buildChips(el,selected){
+  el.innerHTML='';el.dataset.vals.split(',').forEach(v=>{
+    const b=document.createElement('button');b.type='button';b.className='chip';b.textContent=v;b.setAttribute('aria-pressed',selected.includes(v));
+    b.addEventListener('click',()=>b.setAttribute('aria-pressed',b.getAttribute('aria-pressed')!=='true'));el.appendChild(b)});
+}
+const chipVals=el=>$$('#'+el.id+' .chip[aria-pressed="true"]').map(b=>b.textContent);
+
+/* ---------- requirements ---------- */
+function renderReq(){
+  const r=get('req');
+  $('#r-year').value=r.yearMin;$('#r-km').value=r.kmMax;$('#r-fuel').value=r.fuel;$('#r-seats').value=r.seats;$('#r-eur').value=r.eur;
+  $('#r-bvan').value=r.budgetVan;$('#r-bcamper').value=r.budgetCamper;$('#r-bbuild').value=r.budgetBuild;$('#r-dist').value=r.dist;$('#r-notes').value=r.notes||'';
+  buildChips($('#r-len'),r.len);buildChips($('#r-hgt'),r.hgt);buildChips($('#r-models'),r.models);buildChips($('#r-src'),r.src);buildChips($('#r-kind'),r.kind);
+  $('#r-meta').textContent=r.updatedAt?`Naposledy upraveno ${r.updatedAt}${r.updatedBy?' · '+r.updatedBy:''}`:'';
+  $('#s-budget').textContent=fmt(Math.max(r.budgetCamper||0,(r.budgetVan||0)+(r.budgetBuild||0)));
+}
+function readReq(){
+  return {yearMin:+$('#r-year').value,kmMax:+$('#r-km').value,fuel:$('#r-fuel').value,seats:+$('#r-seats').value,eur:+$('#r-eur').value,
+   len:chipVals($('#r-len')),hgt:chipVals($('#r-hgt')),models:chipVals($('#r-models')),src:chipVals($('#r-src')),kind:chipVals($('#r-kind')),
+   budgetVan:+$('#r-bvan').value,budgetCamper:+$('#r-bcamper').value,budgetBuild:+$('#r-bbuild').value,dist:+$('#r-dist').value,notes:$('#r-notes').value.trim(),
+   updatedAt:today()};
+}
+$('#r-save').addEventListener('click',async()=>{
+  const r=readReq();state.req=r;renderReq();
+  if(!db){localSave();toast('Uloženo v tomto prohlížeči');return}
+  try{await db.doc('plan/requirements').set(r);flash('#r-saved')}catch(e){toast('Uložení selhalo: '+e.code)}
+});
+
+/* ---------- deals ---------- */
+const KIND={van:'dodávka',camper:'obytný',partial:'rozestavěný'};
+const STATUS={new:'nové',watch:'sledujeme',contacted:'kontaktováno',rejected:'zamítnuto'};
+function priceCzk(d){const r=get('req');return d.currency==='EUR'?d.price*(r.eur||24.5):d.price}
+function renderDeals(){
+  const fs=$('#f-status').value,fk=$('#f-kind').value,so=$('#f-sort').value,fmin=+$('#f-min').value||0,fmax=+$('#f-max').value||0,fsrc=$('#f-src').value;
+  const srcSel=$('#f-src');const srcs=[...new Set(deals.map(d=>d.source).filter(Boolean))].sort();
+  if(srcSel.options.length!==srcs.length+1){const cur=srcSel.value;srcSel.innerHTML='<option value="">Všechny zdroje</option>'+srcs.map(x=>`<option value="${esc(x)}">${esc(x)}</option>`).join('');srcSel.value=cur}
+  let list=deals.filter(d=>(fs==='active'?d.status!=='rejected':(!fs||d.status===fs))&&(!fk||d.kind===fk)&&(!fsrc||d.source===fsrc)&&(!fmin||priceCzk(d)>=fmin)&&(!fmax||priceCzk(d)<=fmax));
+  $('#f-count').textContent=list.length+' z '+deals.length;
+  const key={found:d=>-(new Date(d.foundAt||0).getTime()),price:d=>priceCzk(d)||1e12,priced:d=>-(priceCzk(d)||0),year:d=>-(d.year||0),score:d=>-(d.score||0),km:d=>d.km||1e12}[so];
+  list.sort((a,b)=>key(a)-key(b));
+  const tb=$('#deals-body');tb.innerHTML='';
+  $('#deals-empty').hidden=list.length>0;
+  list.forEach(d=>{
+    const tr=document.createElement('tr');
+    const czk=priceCzk(d);
+    tr.innerHTML=`<td><div class="deal-title">${d.url?`<a href="${esc(d.url)}" target="_blank" rel="noopener">${esc(d.title)}</a>`:esc(d.title)}</div><div class="deal-sub">${esc(d.model||'')}${d.length?' · '+esc(d.length):''}${d.height?esc(d.height):''} · ${esc(d.source||'')} · ${d.foundAt?esc(String(d.foundAt).slice(0,10)):''}${d.interiorHeightCm?' · uvnitř '+d.interiorHeightCm+' cm':''}${d.seats?' · '+d.seats+' místa':''}${d.priceNote==='netto'?' · cena bez DPH':''}${d.addedBy==='scanner'?' · skener':''}</div></td>
+    <td><span class="pill ${d.kind}">${KIND[d.kind]||d.kind||''}</span></td>
+    <td class="num">${fmt(czk)}${d.currency==='EUR'?`<div class="deal-sub">${fmtN(d.price)} €</div>`:''}</td>
+    <td class="num">${d.year||'–'}</td><td class="num">${d.km?fmtN(d.km):'–'}</td>
+    <td>${esc(d.location||'')}</td>
+    <td><span class="stars" title="${d.score||0}/5">${'★'.repeat(d.score||0)}${'☆'.repeat(5-(d.score||0))}</span></td>
+    <td><select data-id="${d.id}" class="st">${Object.keys(STATUS).map(k=>`<option value="${k}"${d.status===k?' selected':''}>${STATUS[k]}</option>`).join('')}</select></td>
+    <td><input data-id="${d.id}" class="nt" value="${esc(d.notes||'')}" placeholder="…"></td>`;
+    tb.appendChild(tr);
+  });
+  $('#s-deals').textContent=deals.length;$('#c-deals').textContent=deals.length;
+  $('#s-watch').textContent=deals.filter(d=>d.status==='watch'||d.status==='contacted').length;
+}
+$$('#f-status,#f-kind,#f-sort,#f-src').forEach(e=>e.addEventListener('change',renderDeals));$$('#f-min,#f-max').forEach(e=>e.addEventListener('input',renderDeals));
+$('#deals-body').addEventListener('change',async e=>{
+  const id=e.target.dataset.id;if(!id)return;
+  const d=deals.find(x=>x.id===id);if(!d)return;
+  const patch=e.target.classList.contains('st')?{status:e.target.value}:{notes:e.target.value};
+  Object.assign(d,patch);if(e.target.classList.contains('st'))renderDeals();
+  if(db){try{await db.doc('deals/'+id).update(patch)}catch(err){toast('Nepodařilo se uložit')}}else{dealOv[id]=Object.assign(dealOv[id]||{},patch);localSave()}
+});
+$('#d-add').addEventListener('click',()=>$('#dlg').showModal());
+$('#n-cancel').addEventListener('click',()=>$('#dlg').close());
+$('#n-ok').addEventListener('click',async()=>{
+  const d={title:$('#n-title').value.trim(),url:$('#n-url').value.trim(),kind:$('#n-kind').value,source:$('#n-source').value.trim()||'ručně',
+    price:+$('#n-price').value||null,currency:$('#n-cur').value,year:+$('#n-year').value||null,km:+$('#n-km').value||null,location:$('#n-loc').value.trim(),
+    score:Math.min(5,Math.max(1,+$('#n-score').value||3)),notes:$('#n-notes').value.trim(),status:'new',foundAt:new Date().toISOString(),addedBy:'manual'};
+  if(!d.title){toast('Chybí název');return}
+  $('#dlg').close();
+  if(!db){d.id='local-'+Date.now();localDeals.push(d);applyOv();localSave();renderDeals();return}
+  try{await db.collection('deals').add(d);toast('Přidáno')}catch(e){toast('Nepodařilo se přidat: '+e.code)}
+});
+function renderScan(){
+  const s=get('scan');
+  $('#s-scan').textContent=s.lastRun?String(s.lastRun).slice(5,16).replace('T',' '):'nikdy';
+  $('#scan-note').textContent=s.lastRun?`Poslední sken ${String(s.lastRun).replace('T',' ').slice(0,16)}: prošel ${(s.sources||[]).join(', ')||'–'}, nových nálezů ${s.found||0}. ${s.note||''}`:s.note||'';
+}
+
+/* ---------- compare ---------- */
+function renderCmp(){
+  const c=get('cmp');
+  $('#c-camper').value=c.camper;$('#c-camperfix').value=c.camperFix;$('#c-camperres').value=c.camperRes;
+  $('#c-van').value=c.van;$('#c-hours').value=c.hours;$('#c-rate').value=c.rate;$('#c-buildres').value=c.buildRes;
+  const tb=$('#items-body');tb.innerHTML='';
+  const et=elecTotal();
+  c.items.forEach((it,i)=>{const tr=document.createElement('tr');const sync=it[3]==='elec';
+    tr.innerHTML=`<td><input data-i="${i}" data-k="0" value="${esc(it[0])}"></td><td class="num"><input class="n" type="number" data-i="${i}" data-k="1" value="${sync?et:it[1]}"${sync?' readonly title="Součet záložky Elektro a design"':''}></td><td><input data-i="${i}" data-k="2" value="${esc(it[2]||'')}"></td><td><button class="x btn ghost small" data-del="${i}" title="Odebrat">×</button></td>`;
+    if(sync)tr.dataset.sync='elec';
+    tb.appendChild(tr)});
+  calcCmp();
+}
+function elecTotal(){const e=get('elec');return (e.parts||[]).reduce((s,p)=>s+(+p[1]||0)*(+p[2]||0),0)}
+function readCmp(){
+  const items=[];$$('#items-body tr').forEach(tr=>{const i=tr.querySelectorAll('input');const row=[i[0].value,+i[1].value||0,i[2].value];if(tr.dataset.sync)row.push('elec');items.push(row)});
+  return {camper:+$('#c-camper').value,camperFix:+$('#c-camperfix').value,camperRes:+$('#c-camperres').value,van:+$('#c-van').value,hours:+$('#c-hours').value,rate:+$('#c-rate').value,buildRes:+$('#c-buildres').value,items};
+}
+function calcCmp(){
+  const c=readCmp();
+  const mat=c.items.reduce((s,i)=>s+(+i[1]||0),0);
+  $('#items-total').innerHTML='<b>'+fmt(mat)+'</b>';
+  const A=c.camper+c.camperFix, Acash=A;
+  const Bcash=c.van+mat, Blab=c.hours*c.rate, B=Bcash+Blab;
+  const Ares=A*(c.camperRes/100), Bres=Bcash*(c.buildRes/100);
+  const Anet=A-Ares, Bnet=B-Bres;
+  const watched=deals.filter(d=>d.kind==='camper'&&d.status!=='rejected'&&priceCzk(d)>0).map(priceCzk).sort((a,b)=>a-b);
+  const med=watched.length?watched[Math.floor(watched.length/2)]:null;
+  const vans=deals.filter(d=>d.kind==='van'&&d.status!=='rejected'&&priceCzk(d)>0).map(priceCzk).sort((a,b)=>a-b);
+  const vmed=vans.length?vans[Math.floor(vans.length/2)]:null;
+  const winB=Bnet<Anet;
+  const maxv=Math.max(A,B);
+  $('#verdict').innerHTML=`
+   <div class="side${winB?'':' win'}"><span class="eyebrow">A · koupit hotové</span><div class="big">${fmt(Acash)}</div><div class="note">hotovost hned, práce ≈ 0 h</div>
+     <div class="bar a"><i style="width:${A/maxv*100}%"></i></div>
+     <div class="kv"><span>Vůz</span><span>${fmt(c.camper)}</span><span>Úpravy</span><span>${fmt(c.camperFix)}</span><span>Zůstatek za 5 let</span><span>−${fmt(Ares)}</span><span class="tot">Čisté náklady 5 let</span><span class="tot">${fmt(Anet)}</span></div>
+     <p class="hint">${med?`Medián sledovaných hotových vozů v Nálezech: <b>${fmt(med)}</b> (${watched.length} inz.)`:'V Nálezech zatím není žádný hotový obytný vůz k porovnání.'}</p></div>
+   <div class="vs">vs.</div>
+   <div class="side${winB?' win':''}"><span class="eyebrow">B · dodávka + vestavba</span><div class="big">${fmt(Bcash)} <small>+ ${fmtN(c.hours)} h</small></div><div class="note">hotovost ${fmt(Bcash)}, práce v ceně ${fmt(Blab)}</div>
+     <div class="bar"><i style="width:${B/maxv*100}%"></i></div>
+     <div class="kv"><span>Dodávka</span><span>${fmt(c.van)}</span><span>Materiál a služby</span><span>${fmt(mat)}</span><span>Vaše práce</span><span>${fmt(Blab)}</span><span>Zůstatek za 5 let</span><span>−${fmt(Bres)}</span><span class="tot">Čisté náklady 5 let</span><span class="tot">${fmt(Bnet)}</span></div>
+     <p class="hint">${vmed?`Medián sledovaných prázdných dodávek: <b>${fmt(vmed)}</b> (${vans.length} inz.)`:'V Nálezech zatím není žádná prázdná dodávka k porovnání.'}</p></div>`;
+}
+$('#p-cmp').addEventListener('input',e=>{if(e.target.matches('input'))calcCmp()});
+$('#items-body').addEventListener('click',e=>{const b=e.target.closest('[data-del]');if(!b)return;const c=readCmp();c.items.splice(+b.dataset.del,1);state.cmp=c;renderCmp()});
+$('#i-add').addEventListener('click',()=>{const c=readCmp();c.items.push(['Nová položka',0,'']);state.cmp=c;renderCmp();const last=$$('#items-body input')[ (c.items.length-1)*3 ];last&&last.select()});
+$('#c-save').addEventListener('click',async()=>{
+  const c=readCmp();state.cmp=c;
+  if(!db){localSave();toast('Uloženo v tomto prohlížeči');return}
+  try{await db.doc('plan/compare').set(c);flash('#c-saved')}catch(e){toast('Uložení selhalo: '+e.code)}
+});
+
+/* ---------- build plan ---------- */
+let openPhase=null;
+function renderBuild(){
+  const b=get('build');const host=$('#phases');host.innerHTML='';
+  b.phases.forEach((ph,pi)=>{
+    const done=ph.tasks.filter(t=>t[2]).length,tot=ph.tasks.length;
+    const el=document.createElement('div');el.className='phase';
+    const isOpen=openPhase===null?(pi===b.phases.findIndex(p=>p.tasks.some(t=>!t[2]))):openPhase===pi;
+    el.innerHTML=`<div class="phase-h" data-p="${pi}"><span class="idx">${String(pi+1).padStart(2,'0')}</span><h3>${esc(ph.name)}</h3><span class="prog">${done}/${tot}</span><span class="pbar"><i style="width:${tot?done/tot*100:0}%"></i></span></div>
+     <div class="phase-body"${isOpen?'':' hidden'}>${ph.tasks.map((t,ti)=>`<div class="task${t[2]?' done':''}"><input type="checkbox" data-p="${pi}" data-t="${ti}"${t[2]?' checked':''}><span class="t">${esc(t[0])}</span><span class="who" contenteditable="true" data-p="${pi}" data-t="${ti}" title="Kdo to dělá">${esc(t[1]||'')}</span><button class="x" data-del-p="${pi}" data-del-t="${ti}" title="Smazat">×</button></div>`).join('')}
+     <div class="addtask"><input placeholder="Nový úkol" data-add="${pi}"><button class="btn small" data-addbtn="${pi}">Přidat</button></div></div>`;
+    host.appendChild(el);
+  });
+}
+async function saveBuild(){const b=get('build');state.build=b;if(db){try{await db.doc('plan/build').set(b)}catch(e){toast('Uložení selhalo')}}else localSave()}
+$('#phases').addEventListener('click',e=>{
+  const h=e.target.closest('.phase-h');if(h){openPhase=+h.dataset.p;const body=h.nextElementSibling;const wasOpen=!body.hidden;$$('.phase-body').forEach(b=>b.hidden=true);body.hidden=wasOpen;if(wasOpen)openPhase=-1;return}
+  const del=e.target.closest('[data-del-p]');if(del){const b=get('build');b.phases[+del.dataset.delP].tasks.splice(+del.dataset.delT,1);state.build=b;renderBuild();saveBuild();return}
+  const ab=e.target.closest('[data-addbtn]');if(ab){addTask(+ab.dataset.addbtn)}
+});
+function addTask(pi){const inp=$(`[data-add="${pi}"]`);const v=inp.value.trim();if(!v)return;const b=get('build');b.phases[pi].tasks.push([v,'',false]);state.build=b;openPhase=pi;renderBuild();saveBuild()}
+$('#phases').addEventListener('keydown',e=>{if(e.key==='Enter'&&e.target.dataset.add!==undefined){e.preventDefault();addTask(+e.target.dataset.add)} if(e.key==='Enter'&&e.target.classList.contains('who')){e.preventDefault();e.target.blur()}});
+$('#phases').addEventListener('change',e=>{if(e.target.type==='checkbox'){const b=get('build');const t=b.phases[+e.target.dataset.p].tasks[+e.target.dataset.t];t[2]=e.target.checked;openPhase=+e.target.dataset.p;state.build=b;renderBuild();saveBuild()}});
+$('#phases').addEventListener('focusout',e=>{if(e.target.classList.contains('who')){const b=get('build');const t=b.phases[+e.target.dataset.p].tasks[+e.target.dataset.t];const v=e.target.textContent.trim();if(v!==(t[1]||'')){t[1]=v;state.build=b;saveBuild()}}});
+$('#ph-add').addEventListener('click',()=>{const v=$('#ph-new').value.trim();if(!v)return;const b=get('build');b.phases.push({name:v,tasks:[]});$('#ph-new').value='';openPhase=b.phases.length-1;state.build=b;renderBuild();saveBuild()});
+
+/* ---------- elektro ---------- */
+function elecRead(){
+  const e=Object.assign({},get('elec'));
+  e.volt=+$('#e-volt').value;e.bat=+$('#e-bat').value;e.pv=+$('#e-pv').value;e.alt=+$('#e-alt').value;e.drive=+$('#e-drive').value;e.eff=+$('#e-eff').value;e.inv=+$('#e-inv').value;e.peak=+$('#e-peak').value;
+  e.loads=$$('#loads-body tr').map(tr=>{const i=tr.querySelectorAll('input,select');return [i[0].value,+i[1].value||0,+i[2].value||0,+i[3].value]});
+  e.parts=$$('#parts-body tr').map(tr=>{const i=tr.querySelectorAll('input');return [i[0].value,+i[1].value||0,+i[2].value||0,i[3].value,i[4].value,i[5].value]});
+  return e;
+}
+function renderElec(){
+  const e=get('elec');
+  $('#e-volt').value=e.volt;$('#e-bat').value=e.bat;$('#e-pv').value=e.pv;$('#e-alt').value=e.alt;$('#e-drive').value=e.drive;$('#e-eff').value=e.eff;$('#e-inv').value=e.inv;$('#e-peak').value=e.peak;
+  const lb=$('#loads-body');lb.innerHTML='';
+  e.loads.forEach((l,i)=>{const tr=document.createElement('tr');tr.innerHTML=`<td><input value="${esc(l[0])}"></td><td class="num"><input class="n" type="number" value="${l[1]}"></td><td class="num"><input class="n" type="number" step="0.1" value="${l[2]}"></td><td><select><option value="230"${l[3]==230?' selected':''}>230 V</option><option value="12"${l[3]==12?' selected':''}>12 V</option></select></td><td class="num" data-wh></td><td><button class="x btn ghost small" data-ld-del="${i}">×</button></td>`;lb.appendChild(tr)});
+  const pb=$('#parts-body');pb.innerHTML='';
+  e.parts.forEach((p,i)=>{const tr=document.createElement('tr');tr.innerHTML=`<td><input value="${esc(p[0])}"></td><td class="num"><input class="n" type="number" style="width:60px" value="${p[1]}"></td><td class="num"><input class="n" type="number" value="${p[2]}"></td><td class="num" data-sum></td><td><input value="${esc(p[3])}" placeholder="obchod" style="width:110px"><input value="${esc(p[4])}" placeholder="https://…" style="width:110px;margin-top:3px">${p[4]?`<div><a href="${esc(p[4])}" target="_blank" rel="noopener" style="font-size:12px">otevřít ↗</a></div>`:''}</td><td><input value="${esc(p[5])}" style="min-width:180px"></td><td><button class="x btn ghost small" data-pt-del="${i}">×</button></td>`;pb.appendChild(tr)});
+  $('#parts-meta').textContent=e.pricedAt?`Ceny ověřeny ${e.pricedAt}. Odkazy vedou na konkrétní produkty; ceny se hýbou, před nákupem zkontrolujte.`:'Ceny jsou zatím odhad. Po ověření v českých e-shopech sem přibudou odkazy.';
+  calcElec();drawSchema();
+}
+function calcElec(){
+  const e=elecRead();const eff=(e.eff||90)/100;state.elec=e;
+  let tot=0;$$('#loads-body tr').forEach((tr,i)=>{const l=e.loads[i];const wh=l[1]*l[2]*(l[3]==230?1/eff:1);tot+=wh;tr.querySelector('[data-wh]').textContent=fmtN(wh)});
+  $('#loads-total').innerHTML='<b>'+fmtN(tot)+' Wh</b>';
+  let ptot=0;$$('#parts-body tr').forEach((tr,i)=>{const p=e.parts[i];const s=p[1]*p[2];ptot+=s;tr.querySelector('[data-sum]').textContent=fmt(s)});
+  $('#parts-total').innerHTML='<b>'+fmt(ptot)+'</b>';
+  const batWh=e.bat*1000, altDay=e.alt*e.drive*0.9;
+  const seasons=[['Léto',4.0],['Jaro / podzim',2.2],['Zima',0.8]];
+  const pill=(ok,warn)=>`<span class="pill ${ok?'good':warn?'warn':'bad'}">${ok?'vyjde':warn?'na hraně':'nevyjde'}</span>`;
+  let h=`<div class="bal"><span class="k">Denní spotřeba</span><span class="v">${fmtN(tot)} Wh</span><span class="k">Baterie vydrží bez nabíjení</span><span class="v">${(batWh/tot).toFixed(1)} dne</span><span class="k">Proud z baterie při ${fmtN(e.inv)} W</span><span class="v">${fmtN(e.inv/e.volt)} A</span><span class="k">Špička ${fmtN(e.peak)} W vs. měnič ${fmtN(e.inv)} W</span><span class="v">${pill(e.peak<=e.inv,e.peak<=e.inv*1.3)}</span>`;
+  seasons.forEach(([n,y])=>{const pvDay=e.pv*y;const netDrive=pvDay+altDay-tot,netStand=pvDay-tot;
+    h+=`<span class="sec">${n}</span><span class="k">Solár dá</span><span class="v">${fmtN(pvDay)} Wh</span><span class="k">+ alternátor (${e.drive} h jízdy)</span><span class="v">${fmtN(altDay)} Wh</span><span class="k">Bilance s jízdou</span><span class="v">${netDrive>=0?'+':''}${fmtN(netDrive)} Wh ${pill(netDrive>=0,netDrive>-tot*0.25)}</span><span class="k">Bilance bez jízdy (stojíte a pracujete)</span><span class="v">${netStand>=0?'+':''}${fmtN(netStand)} Wh ${pill(netStand>=0,netStand>-tot*0.25)}</span>${netStand<0?`<span class="k">Dny na místě, než dojde baterie</span><span class="v">${(batWh/-netStand).toFixed(1)}</span>`:''}`});
+  h+=`</div><p class="hint">Bilance se počítá pro každý den stejně; ve skutečnosti se hodí mít 2 dny rezervy na zataženo. Zimní práce z dodávky bez zásuvky v kempu nevyjde nikomu, kdo netáhne druhý alternátor nebo elektrocentrálu. MultiPlus si ale 230 V ze zásuvky vezme automaticky.</p>`;
+  $('#balance').innerHTML=h;
+  if(document.activeElement&&document.activeElement.closest('#p-cmp'))return;
+  renderCmp();
+}
+function drawSchema(){
+  const s=$('#schema');const e=get('elec');
+  const box=(x,y,w,h,t,sub,cls='')=>`<g><rect class="box ${cls}" x="${x}" y="${y}" width="${w}" height="${h}" rx="4"/><text x="${x+w/2}" y="${y+(sub?h/2-3:h/2+4)}" text-anchor="middle" font-weight="600">${t}</text>${sub?`<text class="lbl" x="${x+w/2}" y="${y+h/2+13}" text-anchor="middle">${sub}</text>`:''}</g>`;
+  const line=(cls,d)=>`<path class="${cls}" d="${d}"/>`;
+  s.innerHTML=`
+   ${line('w48','M150 60 H230')}${line('w48','M150 150 H230')}${line('w48','M350 60 V150 H430')}${line('w48','M350 150 H430')}
+   ${line('w48','M430 60 H480 V 230 H430')}${line('w48','M560 60 H620')}${line('w48','M560 150 H620')}${line('w48','M560 230 H620')}
+   ${line('w230','M40 300 H230')}${line('w230','M740 60 H820')}${line('w230','M350 300 H620 V90')}
+   ${line('w12','M740 230 H790 V 190 H820')}${line('w12','M740 230 H790 V 230 H820')}${line('w12','M740 230 H790 V 270 H820')}${line('w12','M740 230 H790 V 310 H820')}${line('w12','M740 230 H790 V 350 H820')}
+   ${box(30,35,120,50,'Alternátor 12 V','za jízdy')}
+   ${box(30,125,120,50,`Solár ${fmtN(e.pv)} Wp`,'střecha')}
+   ${box(230,35,120,50,'2× Orion-Tr 12/48','izolovaný, ~800 W')}
+   ${box(230,125,120,50,'MPPT 150/45','solární regulátor')}
+   ${box(30,275,120,50,'Břeh CEE 16 A','kemp / garáž')}
+   ${box(230,275,120,50,'Rozvaděč 230 V','chránič + jistič')}
+   ${box(430,35,130,50,'Sběrnice 48 V','Lynx + MEGA pojistky','k')}
+   ${box(430,125,130,50,`Baterie ${e.bat} kWh`,'LiFePO4 48 V','k')}
+   ${box(430,205,130,50,'SmartShunt','měření')}
+   ${box(620,35,120,50,`MultiPlus-II 48/${e.inv/1000|0}k`,'měnič + nabíječ','b')}
+   ${box(620,125,120,50,'Cerbo GX','dohled (volitelné)')}
+   ${box(620,205,120,50,'Orion 48/12-30 A','12V okruh','b')}
+   ${box(820,35,130,50,'PC + monitor','zásuvky 230 V')}
+   ${box(820,175,130,30,'Lednice')}${box(820,215,130,30,'Světla, USB')}${box(820,255,130,30,'Čerpadlo')}${box(820,295,130,30,'Maxxfan')}${box(820,335,130,30,'Naftové topení')}
+   <g transform="translate(30,380)"><path class="w48" d="M0 0 H30"/><text x="38" y="4">48 V</text><path class="w12" d="M90 0 H120"/><text x="128" y="4">12 V</text><path class="w230" d="M175 0 H205"/><text x="213" y="4">230 V</text></g>`;
+}
+$('#p-elec').addEventListener('input',e=>{if(e.target.matches('input,select')&&!e.target.closest('.row'))calcElec()});
+$('#p-elec').addEventListener('change',e=>{if(e.target.matches('#e-volt,#e-bat,#e-pv,#e-inv')){state.elec=elecRead();drawSchema()}});
+$('#loads-body').addEventListener('click',e=>{const b=e.target.closest('[data-ld-del]');if(!b)return;const el=elecRead();el.loads.splice(+b.dataset.ldDel,1);state.elec=el;renderElec()});
+$('#parts-body').addEventListener('click',e=>{const b=e.target.closest('[data-pt-del]');if(!b)return;const el=elecRead();el.parts.splice(+b.dataset.ptDel,1);state.elec=el;renderElec()});
+$('#ld-add').addEventListener('click',()=>{const el=elecRead();el.loads.push(['Nový spotřebič',0,1,12]);state.elec=el;renderElec()});
+$('#pt-add').addEventListener('click',()=>{const el=elecRead();el.parts.push(['Nový díl',1,0,'','','']);state.elec=el;renderElec()});
+$('#e-save').addEventListener('click',async()=>{const el=elecRead();state.elec=el;if(!db){localSave();toast('Uloženo v tomto prohlížeči');return}try{await db.doc('plan/elec').set(el);flash('#e-saved')}catch(err){toast('Uložení selhalo: '+err.code)}});
+
+/* ---------- floor plan ---------- */
+const SNAP=25;let fpDrag=null;
+function fpDims(){const l=get('layout');return VANS[l.van]||VANS['ducato-l3']}
+function renderFP(){
+  const l=get('layout');const [L,W,inner]=fpDims();$('#fp-van').value=l.van;
+  const svg=$('#fp');const M=60;svg.setAttribute('viewBox',`0 0 ${L+M*2} ${W+M*2+20}`);
+  const archD=(W-inner)/2, ax=L-1800, aw=1000;
+  let h=`<g transform="translate(${M},${M})">
+   <rect class="van" x="0" y="0" width="${L}" height="${W}"/>
+   <rect class="arch" x="${ax}" y="0" width="${aw}" height="${archD}"/><rect class="arch" x="${ax}" y="${W-archD}" width="${aw}" height="${archD}"/>
+   <text class="bs" x="${ax+aw/2}" y="${archD-8}" text-anchor="middle">podběh</text><text class="bs" x="${ax+aw/2}" y="${W-archD+16}" text-anchor="middle">podběh</text>
+   <path class="door" d="M0 ${W} H1250" transform="translate(0,6)"/><text class="bs" x="625" y="${W+28}" text-anchor="middle" style="fill:var(--accent)">posuvné dveře</text>
+   <path class="door" d="M${L} 0 V${W}" transform="translate(6,0)"/><text class="bs" x="${L+20}" y="${W/2}" transform="rotate(90 ${L+20} ${W/2})" text-anchor="middle" style="fill:var(--accent)">zadní dveře</text>
+   <text class="bs" x="-12" y="${W/2}" transform="rotate(-90 -12 ${W/2})" text-anchor="middle">kabina ↑ řidič</text>
+   <line class="dimline" x1="0" y1="-22" x2="${L}" y2="-22"/><text class="dim" x="${L/2}" y="-30" text-anchor="middle">${L} mm</text>
+   <line class="dimline" x1="${L+40}" y1="0" x2="${L+40}" y2="${W}"/><text class="dim" x="${L+52}" y="${W/2}" transform="rotate(90 ${L+52} ${W/2})" text-anchor="middle">${W} mm · mezi podběhy ${inner}</text>`;
+  l.blocks.forEach((b,i)=>{h+=`<g class="blk-g" data-i="${i}"><rect class="blk" data-i="${i}" x="${b.x}" y="${b.y}" width="${b.w}" height="${b.h}" fill="${b.c}" rx="6"/><text class="bl" x="${b.x+b.w/2}" y="${b.y+b.h/2}" text-anchor="middle">${esc(b.n)}</text><text class="bs" x="${b.x+b.w/2}" y="${b.y+b.h/2+16}" text-anchor="middle">${b.w}×${b.h}</text>
+    <g class="h" data-rot="${i}" transform="translate(${b.x+b.w-22},${b.y+22})"><circle r="14"/><text y="4">⟳</text></g><g class="h" data-del="${i}" transform="translate(${b.x+22},${b.y+22})"><circle r="14"/><text y="4">×</text></g></g>`});
+  svg.innerHTML=h+'</g>';
+  const used=l.blocks.reduce((s,b)=>s+b.w*b.h,0)/1e6;const total=L*W/1e6;
+  $('#fp-legend').textContent=`Zastavěno ${used.toFixed(2)} m² z ${total.toFixed(2)} m² (${Math.round(used/total*100)} %). Ulička na stání zbývá zhruba ${(total-used).toFixed(2)} m². Rozměry podběhů a dveří jsou orientační.`;
+}
+function fpPoint(ev){const svg=$('#fp');const p=svg.createSVGPoint();p.x=ev.clientX;p.y=ev.clientY;const m=svg.getScreenCTM().inverse();const q=p.matrixTransform(m);return {x:q.x-60,y:q.y-60}}
+$('#fp').addEventListener('pointerdown',e=>{
+  const r=e.target.closest('rect.blk');if(!r)return;const l=get('layout');const b=l.blocks[+r.dataset.i];const p=fpPoint(e);
+  fpDrag={i:+r.dataset.i,dx:p.x-b.x,dy:p.y-b.y};r.classList.add('drag');$('#fp').setPointerCapture(e.pointerId);
+});
+$('#fp').addEventListener('pointermove',e=>{
+  if(!fpDrag)return;const l=get('layout');const [L,W]=fpDims();const b=l.blocks[fpDrag.i];const p=fpPoint(e);
+  b.x=Math.round(Math.min(Math.max(0,p.x-fpDrag.dx),L-b.w)/SNAP)*SNAP;b.y=Math.round(Math.min(Math.max(0,p.y-fpDrag.dy),W-b.h)/SNAP)*SNAP;
+  const g=$(`#fp .blk-g[data-i="${fpDrag.i}"]`);const rect=g.querySelector('rect');rect.setAttribute('x',b.x);rect.setAttribute('y',b.y);
+  const t=g.querySelectorAll('text.bl,text.bs');t[0].setAttribute('x',b.x+b.w/2);t[0].setAttribute('y',b.y+b.h/2);t[1].setAttribute('x',b.x+b.w/2);t[1].setAttribute('y',b.y+b.h/2+16);
+  g.querySelector('[data-rot]').setAttribute('transform',`translate(${b.x+b.w-22},${b.y+22})`);g.querySelector('[data-del]').setAttribute('transform',`translate(${b.x+22},${b.y+22})`);
+});
+$('#fp').addEventListener('pointerup',e=>{if(fpDrag){fpDrag=null;state.layout=get('layout');renderFP()}});
+$('#fp').addEventListener('click',e=>{
+  const rot=e.target.closest('[data-rot]');const del=e.target.closest('[data-del]');const l=get('layout');const [L,W]=fpDims();
+  if(rot){const b=l.blocks[+rot.dataset.rot];[b.w,b.h]=[b.h,b.w];b.x=Math.min(b.x,L-b.w);b.y=Math.min(b.y,W-b.h);state.layout=l;renderFP()}
+  if(del){l.blocks.splice(+del.dataset.del,1);state.layout=l;renderFP()}
+});
+$('#fp-van').addEventListener('change',()=>{const l=get('layout');l.van=$('#fp-van').value;const [L,W]=fpDims();l.blocks.forEach(b=>{b.x=Math.max(0,Math.min(b.x,L-b.w));b.y=Math.max(0,Math.min(b.y,W-b.h))});state.layout=l;renderFP()});
+$('#fp-add').addEventListener('click',()=>{const n=$('#fp-name').value.trim()||'Blok';const w=+$('#fp-w').value||600,h=+$('#fp-h').value||600;const l=get('layout');const cols=['#DCE6EC','#FBE8DB','#DDEFE3','#F8EFD2','#E4E7E0','#EAD9EC'];l.blocks.push({n,x:100,y:700,w,h,c:cols[l.blocks.length%cols.length]});state.layout=l;$('#fp-name').value='';renderFP()});
+$('#fp-save').addEventListener('click',async()=>{const l=get('layout');if(!db){localSave();toast('Uloženo v tomto prohlížeči');return}try{await db.doc('plan/layout').set(l);flash('#fp-saved')}catch(err){toast('Uložení selhalo: '+err.code)}});
+
+/* ---------- log ---------- */
+function renderLog(){
+  const l=get('log');const host=$('#log-list');host.innerHTML='';
+  if(!l.entries.length){host.innerHTML='<div class="empty">Deník je prázdný. První zápis: proč vlastně chcete dodávku.</div>';return}
+  [...l.entries].reverse().forEach(e=>{const d=document.createElement('div');d.className='entry';d.innerHTML=`<div><div class="d">${esc(e.date)}</div><div class="w">${esc(e.who||'')}</div></div><div>${esc(e.text)}</div>`;host.appendChild(d)});
+}
+$('#l-add').addEventListener('click',async()=>{
+  const text=$('#l-text').value.trim(),who=$('#l-who').value.trim();if(!text)return;
+  const l=get('log');l.entries.push({date:today(),who,text});state.log=l;$('#l-text').value='';renderLog();
+  try{localStorage.setItem('vb-who',who)}catch(e){}
+  if(db){try{await db.doc('plan/log').set(l)}catch(e){toast('Uložení selhalo')}}else localSave()
+});
+try{$('#l-who').value=localStorage.getItem('vb-who')||''}catch(e){}
+
+function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+
+/* ---------- first paint ---------- */
+renderReq();renderDeals();renderScan();renderCmp();renderElec();renderFP();renderBuild();renderLog();
+
+/* ---------- shared data ---------- */
+(async()=>{
+  try{db=(window.claude&&window.claude.use)?await window.claude.use('db'):null}catch(e){db=null}
+  const sync=$('#sync');
+  if(!db){staticMode=true;
+    try{const r=await fetch('data/db.json',{cache:'no-store'});const j=await r.json();
+      for(const k of [['requirements','req'],['compare','cmp'],['build','build'],['log','log'],['scan','scan'],['elec','elec'],['layout','layout']])if(j.plan&&j.plan[k[0]])state[k[1]]=j.plan[k[0]];
+      deals=(j.deals||[]).map(d=>Object.assign({},d));loadLocal();applyOv();renderAll();
+      sync.className='sync on';$('#sync-t').textContent='Data z repozitáře ('+(j.exportedAt||'')+'). Vaše změny se ukládají jen v tomto prohlížeči.';
+    }catch(e){sync.className='sync off';$('#sync-t').textContent='Data se nepodařilo načíst: '+e.message}
+    const ro=$('#ro');ro.hidden=false;ro.innerHTML='Statická verze na GitHub Pages. Stavy, poznámky a plány se ukládají jen v tomto prohlížeči. <button class="btn small" id="ro-copy">Zkopírovat změny pro Claude</button> a pošli mu je, zapíše je do repozitáře pro všechny.';
+    $('#ro-copy').addEventListener('click',async()=>{const t=localStorage.getItem('vb-local')||'{}';try{await navigator.clipboard.writeText(t);toast('Zkopírováno')}catch(e){prompt('Zkopíruj:',t)}});
+    return}
+  sync.className='sync on';$('#sync-t').textContent='Sdílená data připojena';
+  const bind=(path,key,render)=>db.doc(path).onSnapshot(s=>{if(s.exists){state[key]=s.data();}render();},e=>{sync.className='sync off';$('#sync-t').textContent='Spojení ztraceno: '+e.code});
+  bind('plan/requirements','req',()=>{renderReq();renderDeals();calcCmp()});
+  bind('plan/compare','cmp',renderCmp);
+  bind('plan/build','build',renderBuild);
+  bind('plan/log','log',renderLog);
+  bind('plan/scan','scan',renderScan);
+  bind('plan/elec','elec',renderElec);
+  bind('plan/layout','layout',renderFP);
+  db.collection('deals').onSnapshot(s=>{deals=s.docs.map(d=>({id:d.id,...d.data()}));renderDeals();calcCmp()},e=>toast('Nálezy: '+e.code));
+})();
+})();
+</script>
+</body>
+</html>
