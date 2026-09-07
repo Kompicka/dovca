@@ -180,7 +180,7 @@
     ]
    ],
    "rate": 250,
-   "van": 550000
+   "van": 450000
   },
   "elec": {
    "alt": 800,
@@ -475,6 +475,11 @@
      "date": "2026-09-07",
      "who": "Claude",
      "text": "L4H3 (6,36 m): na rozdíl od L3H3 existuje ojetý trh. ČR 2021–2024, 37–85 tis. km: 507–653 tis. Kč s DPH; nové 806 tis.+. DE ojeté 24,5–31 tis. € (600–760 tis. Kč), nové od 30,3 tis. €. Ojeté L4H3 vychází o 25–35 % pod novým, Německo u ojetých není levnější než ČR."
+    },
+    {
+     "date": "2026-09-07",
+     "who": "Kp",
+     "text": "Rozhodnuto: koupit prázdnou dodávku za 500–550 tis. Kč, zbytek do vestavby. Vybráni 2 kandidáti k prohlídce u DAVO CAR Benešov: Peugeot Boxer L3H3 2021 (443 999) a Fiat Ducato Maxi L3H3 2020 (449 999). L4H3 zůstává jako alternativa (Jumper 2024, 543 290)."
     }
    ]
   },
@@ -507,7 +512,7 @@
     "Mercedes Sprinter",
     "VW Crafter"
    ],
-   "notes": "STRATEGIE: hotovky první. Hledáme hotový obytný vůz (sériový i kvalitní svépomocná vestavba) na Ducato/Boxer/Jumper/Transit L3 (L4 hraničně), 2018+, do 150 tis. km, do 1,0 mil. Kč po dovozu (≈ 40 tis. €). Vnitřní výška min. 190 cm (majitel 189 cm) – H3 základ je plus, H2 jen s výškou uvnitř ≥ 190 uvedenou v inzerátu. Postel stačí 190 cm. 4 místa v TP (dítě). Půdorys: sezení u stolu vpředu (pracovní místo), postel vzadu. Počítáme s dostavbou 48V elektra (130 tis.) a dětské postýlky. Červené vlajky: vlhkost/pliseň, elektro bez dokumentace, bez zápisu obytný (Wohnmobil), rez. Prázdné dodávky L3H3 2018+ do 550 tis. Kč jen jako záložní cesta, skóre o 1 nižší.",
+   "notes": "STRATEGIE: hotovky první. Hledáme hotový obytný vůz (sériový i kvalitní svépomocná vestavba) na Ducato/Boxer/Jumper/Transit L3 (L4 hraničně), 2018+, do 150 tis. km, do 1,0 mil. Kč po dovozu (≈ 40 tis. €). Vnitřní výška min. 190 cm (majitel 189 cm) – H3 základ je plus, H2 jen s výškou uvnitř ≥ 190 uvedenou v inzerátu. Postel stačí 190 cm. 4 místa v TP (dítě). Půdorys: sezení u stolu vpředu (pracovní místo), postel vzadu. Počítáme s dostavbou 48V elektra (130 tis.) a dětské postýlky. Červené vlajky: vlhkost/pliseň, elektro bez dokumentace, bez zápisu obytný (Wohnmobil), rez. Prázdné dodávky L3H3 2018+ do 550 tis. Kč jen jako záložní cesta, skóre o 1 nižší. | 7. 9. 2026: prázdná dodávka L3H3/L4H3, rozpočet 500–550 tis. Kč s DPH, zbytek jde do vestavby. LCD kabina není podmínka (Android rádio dodatečně). Do 150 tis. km u ČR vozu se servisní knihou.",
    "seats": 3,
    "src": [
     "bazos.cz",
@@ -518,8 +523,8 @@
     "autoscout24.de",
     "willhaben.at"
    ],
-   "updatedAt": "2026-09-06",
-   "updatedBy": "Claude podle dohody",
+   "updatedAt": "2026-09-07",
+   "updatedBy": "Kp",
    "yearMin": 2018
   },
   "scan": {
@@ -2267,9 +2272,9 @@
    "model": "Fiat Ducato",
    "notes": "Přesná shoda: L3H3 MAXI, 1. majitel ČR, servisní historie, STK 5/2028, 371 900 Kč bez DPH, dealer DAVO CAR (1000+ hodnocení), klima + kamera",
    "price": 449999,
-   "score": 5,
+   "score": 4,
    "source": "sauto.cz",
-   "status": "new",
+   "status": "watch",
    "title": "Fiat Ducato 2.3 MTJ 103 kW L3H3 MAXI, CZ, DPH (2020)",
    "url": "https://www.sauto.cz/uzitkova/detail/fiat/ducato/210943425",
    "year": 2020,
@@ -2639,9 +2644,9 @@
    "source": "sauto.cz",
    "url": "https://www.sauto.cz/uzitkova/detail/fiat/ducato/210943425",
    "location": "DAVO CAR Benešov",
-   "score": 3,
+   "score": 4,
    "notes": "Maxi (16\" kola, vyšší nosnost), 2.3 Multijet 2. Stará kabina. Cena s DPH, odpočet možný.",
-   "status": "new",
+   "status": "watch",
    "foundAt": "2026-09-07",
    "addedBy": "scanner"
   }
