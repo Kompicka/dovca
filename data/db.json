@@ -138,24 +138,74 @@
    "hours": 60,
    "items": [
     [
-     "Vestavba firmou na míru podle vlastního návrhu (izolace, okna, nábytek, postel, kuchyň, topení, voda, WC/sprcha), bez elektra",
-     800000,
-     "Firmy na míru (MS Camper, NarubyVans, New Age Nomads) ceny nezveřejňují, jen poptávka; doba 2–5 měsíců. Veřejné jsou jen katalogové vestavby FullVans: Siesta Classic 380 049 s DPH až Siesta Via 672 670 (fullvans.com, ceník 2026). Trh vestaveb 380 tis. až 1,5 mil. 800 tis. = odhad pro plnou vestavbu na míru, nahradit 3 nabídkami"
+     "Materiál: Izolace",
+     26770,
+     "Armaflex ACE samolepicí 19 mm (stěny  strop  dveře) 35× 459 Kč (nomadem.cz); Armaflex ACE samolepicí 32 mm (strop) 8× 789 Kč (nomadem.cz); ALU páska K-Flex 50 mm × 100 m 1× 445 Kč (nomadem.cz); Antivibrační alubutyl STP Aggressive Silver 2 mm  plát 75×47 cm 12× 329 Kč (2din.cz). Odkazy v Elektro a design / db.json plan.materials"
     ],
     [
-     "Odečet standardního elektra firmy (elektro si majitel dělá sám, 48 V)",
-     -60000,
-     "Odhad, dohodnout v nabídce"
+     "Materiál: Okna",
+     44862,
+     "Okno kuchyň Dometic Seitz S4 700×300 (roleta + síť v ceně) 1× 11 690 Kč (nomadem.cz); Okno ložnice Dometic Seitz S4 900×450 1× 15 790 Kč (nomadem.cz); Okno koupelna Dometic Seitz S4 500×450 1× 13 990 Kč (nomadem.cz); Pevné lepené okno do posuvných dveří Carbest  Ducato 2007+  1400×665 1× 3 392 Kč (nomadem.cz). Odkazy v Elektro a design / db.json plan.materials"
     ],
     [
-     "Dětská sklopná postýlka nad postelí se sítí dokola, na míru u firmy",
-     25000,
-     "Odhad, firmy neuvádějí. Hotová alternativa Cabbunk 8–12 tis."
+     "Materiál: Nábytek a podlaha",
+     56006,
+     "Překližka topol 15 mm 2520×1220 (nábytek) 8× 2 299 Kč (drevobis-ds.cz); Překližka topol 12 mm 2520×1220 (nábytek 4 + podlaha 3) 7× 712 Kč (drevo-kaplan.cz); HPL laminovaná topolová překližka 15 mm (pohledové plochy) 6× 900 Kč (camper-tech.cz); PVC podlaha Hornbach Sigma dub 2 2 mm 8× 179 Kč (hornbach.cz) …. Odkazy v Elektro a design / db.json plan.materials"
     ],
     [
-     "Zadní dvojsedačka s tříbodovými pásy FASP Divan 503 (homologovaná) + montáž",
-     50000,
-     "Sedačka 37 900 Kč (nomadem.cz), montáž cca 12 000 odhad. Varianty: FASP SK7 87 900, FASP 650 s otočnou konzolí 85 900"
+     "Materiál: Zvedací postel",
+     33990,
+     "Elektrická spouštěcí postel Lippert Project 2000 (motor  pásy  lišty  spínač  nouzová klika)  nosnost 400 kg  zdvih 95 cm 1× 28 990 Kč (stavbakaravanu.cz); Rám postele: vlastní Al profily + překližka (místo originálu 21 900) 1× 5 000 Kč (odhad). Odkazy v Elektro a design / db.json plan.materials"
+    ],
+    [
+     "Materiál: Koupelna",
+     41616,
+     "Sprchová vanička 723×682×62 mm plast 1× 1 352 Kč (nomadem.cz); Stěny GFK lesklý laminát  role 2 45 m (2 bm = 4 9 m²) 2× 3 675 Kč (kobras.cz); Sprchová baterie Reich Keramik Trend E (mikrospínač) 1× 1 939 Kč (nomadem.cz); Sprchová hadice Reich 150 cm + hlavice Reich Julia + držák 1× 2 067 Kč (nomadem.cz) …. Odkazy v Elektro a design / db.json plan.materials"
+    ],
+    [
+     "Materiál: Voda",
+     36878,
+     "Nádrž čerstvé vody 90 l nad podběh (1150×645×260) 1× 5 290 Kč (nomadem.cz); Odpadní nádrž 75 l na podvozek Ducato/Boxer/Jumper 2018+ 1× 7 490 Kč (nomadem.cz); Tlakové čerpadlo Lilie by Shurflo 10 6 l/min 12 V 1× 2 890 Kč (nomadem.cz); Expanzní nádoba Carbest 0 8 l + filtr před čerpadlo 1× 849 Kč (nomadem.cz) …. Odkazy v Elektro a design / db.json plan.materials"
+    ],
+    [
+     "Materiál: Topení",
+     20750,
+     "Autoterm Air 4D-12 (4 kW) s montážní sadou 1× 14 500 Kč (autoterm.cz); Ovladač Autoterm Comfort Control 1× 2 250 Kč (autoterm.cz); Rozvody teplého vzduchu (hadice Ø60/75  vyústky  Y kusy  izolace) 1× 4 000 Kč (autoterm.cz); Varianta: Truma Combi D 4 (nafta  topení + 10 l bojler) + spaliny + komín + FrostControl + nádržová sada 0× 88 939 Kč (nomadem.cz). Odkazy v Elektro a design / db.json plan.materials"
+    ],
+    [
+     "Materiál: Ventilace",
+     29680,
+     "Střešní ventilátor MaxxFan Deluxe 1× 8 890 Kč (nomadem.cz); Střešní okno Dometic Midi Heki Style 700×500 1× 20 790 Kč (nomadem.cz). Odkazy v Elektro a design / db.json plan.materials"
+    ],
+    [
+     "Materiál: Kuchyň",
+     33295,
+     "Lednice vestavná Vitrifrigo C51i 12/24 V  51 l + mrazák 1× 17 969 Kč (eshop.dalix.cz); Dřez nerez Can LA1402 32×35 cm + výpusť 1× 2 489 Kč (nomadem.cz); Indukční deska vestavná Klarstein Delicatessa Slim 30 cm  2 zóny  3 500 W 1× 3 519 Kč (klarstein.cz); Vestavná trouba Klarstein Victoria 45 cm  49 l  2 800 W 1× 8 909 Kč (klarstein.cz) …. Odkazy v Elektro a design / db.json plan.materials"
+    ],
+    [
+     "Materiál: Sedačky",
+     71768,
+     "Otočná konzole univerzální Ducato X250/X290 (TÜV) 2× 4 490 Kč (nomadem.cz); Samostatná sedačka spolujezdce Sportscraft S8.1 (TÜV) 1× 16 890 Kč (nomadem.cz); Zadní dvojsedačka FASP Divan 503 s tříbodovými pásy (ECE R14/R17) 1× 37 900 Kč (nomadem.cz); Dětské lůžko Cabbunk jednolůžko + montážní sada 1× 7 998 Kč (mujcaravan.cz). Odkazy v Elektro a design / db.json plan.materials"
+    ],
+    [
+     "Materiál: Zatemnění a dveře",
+     23970,
+     "REMIfront IV čelní roletka Ducato X290 1× 8 690 Kč (nomadem.cz); REMIfront IV boční roletky pár 1× 10 690 Kč (nomadem.cz); Moskytiéra posuvné dveře Carbest Ducato H2/H3 1× 4 590 Kč (nomadem.cz). Odkazy v Elektro a design / db.json plan.materials"
+    ],
+    [
+     "Materiál: Exteriér",
+     38045,
+     "Markýza Thule Omnistor 6300 Ducato set 375 cm s adaptéry 1× 24 013 Kč (karavantech.cz); Střešní nosič Thule Roof Rack Ducato L3 (Smart Clamp  bez vrtání) pro solár 1× 10 842 Kč (karavantech.cz); Vnější sprcha (dvířka s mixventilem) 1× 3 190 Kč (nomadem.cz). Odkazy v Elektro a design / db.json plan.materials"
+    ],
+    [
+     "Materiál: Bezpečnost",
+     18066,
+     "Hasicí přístroj Hastex PR2e 2 kg 1× 720 Kč (hastex.cz); Detektor kouře Kidde 29HD 1× 350 Kč (dvereprofi.cz); Detektor CO Honeywell XC100D (nutný i bez plynu kvůli naftovému topení) 1× 1 500 Kč (gas.cz); Autolékárnička vel. I 1× 240 Kč (moje-lekarnicka.cz) …. Odkazy v Elektro a design / db.json plan.materials"
+    ],
+    [
+     "Práce firmy na míru: 400 h × 900 Kč (rozpětí 250–600 h × 700–1 200 Kč = 175–720 tis.)",
+     360000,
+     "Odhad ze sazeb truhlářů, servisů karavanů a DE dílen; žádná česká vestavbová firma sazbu nezveřejňuje. Nahradit 3 nabídkami."
     ],
     [
      "Schválení přestavby na obytný automobil + zápis 3. místa",
@@ -175,7 +225,7 @@
     ],
     [
      "Rezerva 10 %",
-     80000,
+     84000.0,
      "Na to, co firma „neměla v nabídce“"
     ]
    ],
@@ -485,6 +535,11 @@
      "date": "2026-09-07",
      "who": "Claude",
      "text": "Oprava: 1 mil. Kč nebyl limit majitele, jen filtr skeneru. Cena vestavby 550 tis. byla střed katalogových balíčků FullVans, ne vestavby na míru. Firmy na míru ceny nezveřejňují, položka v Koupit vs. postavit přenastavena na 800 tis. jako odhad do doby 3 nabídek."
+    },
+    {
+     "date": "2026-09-07",
+     "who": "Claude",
+     "text": "Materiál vestavby na míru naceněn po modulech z českých e-shopů s odkazy: rozumná varianta 475 696 Kč s DPH bez elektra (levná cca 330 tis.  dražší cca 660 tis.). Práce firmy odhad 360 tis. (250–600 h × 700–1 200 Kč). Rozhodnutí majitele: topení nafta (Autoterm 4D)  bez plynu  kuchyň indukce + elektrická trouba  postel elektricky zvedací (Lippert Project 2000)  samostatná sedačka spolujezdce."
     }
    ]
   },
@@ -543,6 +598,617 @@
     "kleinanzeigen.de",
     "autoscout24.de"
    ]
+  },
+  "materials": {
+   "pricedAt": "2026-09-07",
+   "note": "Materiál vestavby na míru, L3H3, bez elektra (to je v plan.elec). Ceny s DPH z českých e-shopů, u každé položky odkaz. Levná varianta cca 330 tis., dražší cca 660 tis. Kč (viz poznámky u položek).",
+   "modules": [
+    {
+     "name": "Izolace",
+     "total": 26770,
+     "items": [
+      [
+       "Armaflex ACE samolepicí 19 mm (stěny, strop, dveře)",
+       35,
+       459,
+       "nomadem.cz",
+       "https://www.nomadem.cz/izolace-armaflex-ace-se-samolepici-vrstvou_z10561/",
+       "Kč/m². Varianta Duct s Al laminací 549 Kč/m² (odpadá parozábrana). Originál AF 2,4× dražší, zbytečné."
+      ],
+      [
+       "Armaflex ACE samolepicí 32 mm (strop)",
+       8,
+       789,
+       "nomadem.cz",
+       "https://www.nomadem.cz/izolace-armaflex-ace-se-samolepici-vrstvou_z10561/",
+       "Kč/m²."
+      ],
+      [
+       "ALU páska K-Flex 50 mm × 100 m",
+       1,
+       445,
+       "nomadem.cz",
+       "https://www.nomadem.cz/samolepici-alu-paska-k-flex-delka-100-m_z716/",
+       ""
+      ],
+      [
+       "Antivibrační alubutyl STP Aggressive Silver 2 mm, plát 75×47 cm",
+       12,
+       329,
+       "2din.cz",
+       "https://www.2din.cz/odhlucneni-antivibracni-material/antivibracni-material-stp-aggressive-silver/",
+       "≈4,2 m² na plechy."
+      ]
+     ]
+    },
+    {
+     "name": "Okna",
+     "total": 44862,
+     "items": [
+      [
+       "Okno kuchyň Dometic Seitz S4 700×300 (roleta + síť v ceně)",
+       1,
+       11690,
+       "nomadem.cz",
+       "https://www.nomadem.cz/bocni-okno-dometic-seitz-s4-vyklopne_z548/",
+       "Levně Carbest RW Style 4 667 + rám s roletou 1 947."
+      ],
+      [
+       "Okno ložnice Dometic Seitz S4 900×450",
+       1,
+       15790,
+       "nomadem.cz",
+       "https://www.nomadem.cz/bocni-okno-dometic-seitz-s4-vyklopne_z548/",
+       "1000×500 18 890. Levně Carbest 6 027 + rám 2 542."
+      ],
+      [
+       "Okno koupelna Dometic Seitz S4 500×450",
+       1,
+       13990,
+       "nomadem.cz",
+       "https://www.nomadem.cz/bocni-okno-dometic-seitz-s4-vyklopne_z548/",
+       "Levně Carbest 4 242 + rám 1 692."
+      ],
+      [
+       "Pevné lepené okno do posuvných dveří Carbest, Ducato 2007+, 1400×665",
+       1,
+       3392,
+       "nomadem.cz",
+       "https://www.nomadem.cz/pevne-bocni-okno-pro-ducato-boxer-jumper-2007_z5406/",
+       "Homologace E17. Posuvná verze 5 517."
+      ]
+     ]
+    },
+    {
+     "name": "Nábytek a podlaha",
+     "total": 56006,
+     "items": [
+      [
+       "Překližka topol 15 mm 2520×1220 (nábytek)",
+       8,
+       2299,
+       "drevobis-ds.cz",
+       "https://www.drevobis-ds.cz/preklizka-truhlarska-topol-15-x-2520-x-1220-mm/",
+       "≈748 Kč/m²."
+      ],
+      [
+       "Překližka topol 12 mm 2520×1220 (nábytek 4 + podlaha 3)",
+       7,
+       712,
+       "drevo-kaplan.cz",
+       "https://www.drevo-kaplan.cz/preklizka-truhlarska-2520x1220mm-topolova",
+       "Podezřele levné, ověřit telefonicky."
+      ],
+      [
+       "HPL laminovaná topolová překližka 15 mm (pohledové plochy)",
+       6,
+       900,
+       "camper-tech.cz",
+       "https://www.camper-tech.cz/nabytkova-topolova-preklizka-bila-matna-hpl-laminat/",
+       "Ceník „od 900“, nejasná jednotka (deska vs. m²), ověřit."
+      ],
+      [
+       "PVC podlaha Hornbach Sigma dub 2,2 mm",
+       8,
+       179,
+       "hornbach.cz",
+       "https://www.hornbach.cz/p/pvc-podlaha-sigma-514-03-svetly-dub-2-2-0-2-mm-sirka-4-m-metraz/12278267/",
+       "Kč/m². Odolnější Jackson 335 Kč/m²."
+      ],
+      [
+       "Push-lock zámky Häfele",
+       20,
+       219,
+       "nomadem.cz",
+       "https://www.nomadem.cz/push-lock-zamek_z919/",
+       ""
+      ],
+      [
+       "Panty Blum CLIP top 110° s tlumením",
+       20,
+       92,
+       "ardea-cz.cz",
+       "https://www.ardea-cz.cz/blum-71b3550-clip-top-zaves-110-nalozeny-s-integrovanym-tlumenim",
+       "Podložky +20–30 Kč/ks."
+      ],
+      [
+       "Výsuvy, spojovací materiál, lepidla, lišty (paušál)",
+       1,
+       6000,
+       "odhad",
+       "",
+       "Neověřeno, výsuvy Blum 3–5 tis. + spojovák 2 tis."
+      ],
+      [
+       "Kuchyňská deska buk masiv 18×600×2400",
+       1,
+       1150,
+       "hornbach.cz",
+       "https://www.hornbach.cz/p/pracovni-deska-18-x-600-x-2400-mm-buk-masiv/7189527/",
+       ""
+      ],
+      [
+       "Rošt Froli Star 200×70",
+       2,
+       3869,
+       "nomadem.cz",
+       "https://www.nomadem.cz/froli-star-system-pro-postele_z8514/",
+       "= 200×140. Nebo lamely vlastní."
+      ],
+      [
+       "Matrace studená pěna 140×190",
+       1,
+       4690,
+       "fajnspanek.cz",
+       "https://www.fajnspanek.cz/matrace-ze-studene-peny-140x190-cm/",
+       "Cena od."
+      ]
+     ]
+    },
+    {
+     "name": "Zvedací postel",
+     "total": 33990,
+     "items": [
+      [
+       "Elektrická spouštěcí postel Lippert Project 2000 (motor, pásy, lišty, spínač, nouzová klika), nosnost 400 kg, zdvih 95 cm",
+       1,
+       28990,
+       "stavbakaravanu.cz",
+       "https://www.stavbakaravanu.cz/spousteci-postel-project-2000-bez-ramu-a-rostu/",
+       "nomadem.cz 29 900. Bez rámu a roštu. Reimo DE dráž."
+      ],
+      [
+       "Rám postele: vlastní Al profily + překližka (místo originálu 21 900)",
+       1,
+       5000,
+       "odhad",
+       "https://www.nomadem.cz/ram-s-lamelovym-rostem-pro-postel-lippert-project-2000_z3644/",
+       "Originální Al rám s roštem 1600×2000 21 900 Kč nomadem.cz. Sestava z aktuátorů (4× 750 N 6 380 + řízení) nemá synchronizaci, nedoporučeno."
+      ]
+     ]
+    },
+    {
+     "name": "Koupelna",
+     "total": 41616,
+     "items": [
+      [
+       "Sprchová vanička 723×682×62 mm plast",
+       1,
+       1352,
+       "nomadem.cz",
+       "https://www.nomadem.cz/sprchova-vanicka-bez-vypusti-723-x-682-mm-bila_z6509/",
+       "Bez výpusti, odpad se vrtá v předlisu. Větší 830×670 2 290 Kč."
+      ],
+      [
+       "Stěny GFK lesklý laminát, role 2,45 m (2 bm = 4,9 m²)",
+       2,
+       3675,
+       "kobras.cz",
+       "https://benatky.kobras.cz/produkt/laminat-leskly-gfk-cena-za-m2",
+       "1 500 Kč/m², min. odběr 1 bm. Alternativa panel Hornbach mySpotti 210×100 7 590 Kč/ks (3 ks)."
+      ],
+      [
+       "Sprchová baterie Reich Keramik Trend E (mikrospínač)",
+       1,
+       1939,
+       "nomadem.cz",
+       "https://www.nomadem.cz/sprchova-baterie-reich-keramik-trend-e-pripojeni-nad-deskou_z3351/",
+       "Levně Comet Capri 1 059 Kč."
+      ],
+      [
+       "Sprchová hadice Reich 150 cm + hlavice Reich Julia + držák",
+       1,
+       2067,
+       "nomadem.cz",
+       "https://www.nomadem.cz/sprchova-hadice-reich_z4132/",
+       "659 + 829 + 579. Levně set Keller 1 890 Kč."
+      ],
+      [
+       "Odpadní armatura úhlová 25 mm",
+       1,
+       219,
+       "nomadem.cz",
+       "https://www.nomadem.cz/odpadni-armatury/",
+       "Bez sifonu, běžné v obytných vozech."
+      ],
+      [
+       "Mini Heki FL 40×40 s nucenou ventilací (koupelna)",
+       1,
+       4319,
+       "nomadem.cz",
+       "https://www.nomadem.cz/stresni-okno-dometic-seitz-mini-heki-style-plus-40-x-40-cm_z567/",
+       "Levně stěnový ventilátor 12 V 790 Kč."
+      ],
+      [
+       "Roletové dveře Carbest do 198×100 cm",
+       1,
+       7390,
+       "nomadem.cz",
+       "https://www.nomadem.cz/roletove-dvere-pro-koupelny-a-sprchove-kouty-carbest_z9392/",
+       "Skladem 2 ks."
+      ],
+      [
+       "WC kazetové Thetford C223-CS (el. splachování z nádrže)",
+       1,
+       14790,
+       "kobras.cz",
+       "https://benatky.kobras.cz/prislusenstvi-pro-karavaning/chemicka-wc/kazetove-wc-vestavne",
+       "nomadem.cz 16 690. Alternativa separační Trelino Evo M 10 890 (nomadem.cz), Trobolo TeraBloem 9 990: bez chemie, bez kazety a dvířek."
+      ],
+      [
+       "Servisní dvířka Thetford Model 3 (jen pro kazetové WC)",
+       1,
+       2190,
+       "nomadem.cz",
+       "https://www.nomadem.cz/servisni-dvirka-thetford-model-3-385-x-335-mm_z1553/",
+       ""
+      ]
+     ]
+    },
+    {
+     "name": "Voda",
+     "total": 36878,
+     "items": [
+      [
+       "Nádrž čerstvé vody 90 l nad podběh (1150×645×260)",
+       1,
+       5290,
+       "nomadem.cz",
+       "https://www.nomadem.cz/nadrz-na-vodu-nad-podbeh-pro-dodavky-90-litru_z1665/",
+       "112 l 7 290 Kč."
+      ],
+      [
+       "Odpadní nádrž 75 l na podvozek Ducato/Boxer/Jumper 2018+",
+       1,
+       7490,
+       "nomadem.cz",
+       "https://www.nomadem.cz/odpadni-nadrz-75-l-na-podvozek-pro-ducato-boxer-jumper-od-roku-2018_z9887/",
+       "Pro vůz 2006–2017 tvarovaná 90 l 4 890 Kč."
+      ],
+      [
+       "Tlakové čerpadlo Lilie by Shurflo 10,6 l/min 12 V",
+       1,
+       2890,
+       "nomadem.cz",
+       "https://www.nomadem.cz/tlakove-cerpadlo-lilie-by-shurflo-classic-serie-10-6-l-min-12v_z9840/",
+       "Tišší Whisper King 3 790."
+      ],
+      [
+       "Expanzní nádoba Carbest 0,8 l + filtr před čerpadlo",
+       1,
+       849,
+       "nomadem.cz",
+       "https://www.nomadem.cz/expanzni-nadoba-carbest-0-8-l_z9556/",
+       "590 + 259."
+      ],
+      [
+       "Uzamykatelné plnicí hrdlo Fawo 40 mm",
+       1,
+       679,
+       "nomadem.cz",
+       "https://www.nomadem.cz/uzamykatelne-plnici-hrdlo-fawo_z5009/",
+       ""
+      ],
+      [
+       "Kuchyňská baterie Reich Keramik Trend E",
+       1,
+       2290,
+       "nomadem.cz",
+       "https://www.nomadem.cz/pakova-vodovodni-baterie-reich-keramik-trend-e_z3378/",
+       "Carino 1 990."
+      ],
+      [
+       "Hadice 12 mm (10 m studená, 6 m teplá), spojky, spony, průchodky",
+       1,
+       4000,
+       "nomadem.cz",
+       "https://www.nomadem.cz/hadice-na-pitnou-vodu_z592/",
+       "Paušál z jednotkových cen 189–199 Kč/m."
+      ],
+      [
+       "Bojler Elgena Nautic Compact Air 10 l, 230 V 500 W + výměník na teplý vzduch z naftového topení",
+       1,
+       13390,
+       "nomadem.cz",
+       "https://www.nomadem.cz/elgena-nautic-compact-air-6-l-nebo-10-l-bojler-s-vymenikem_z775/",
+       "Ohřívá z Autotermu i z 230 V měniče. Levně Truma Therme 5 l 6 790. Odpadá při Truma Combi D."
+      ]
+     ]
+    },
+    {
+     "name": "Topení",
+     "total": 20750,
+     "items": [
+      [
+       "Autoterm Air 4D-12 (4 kW) s montážní sadou",
+       1,
+       14500,
+       "autoterm.cz",
+       "https://autoterm.cz/cs/teplovzdusne/autoterm-air-4d-12.html",
+       "Oficiální dovozce. 2D (2 kW) 12 750. Pro L3H3 celoročně 4D."
+      ],
+      [
+       "Ovladač Autoterm Comfort Control",
+       1,
+       2250,
+       "autoterm.cz",
+       "https://autoterm.cz/cs/ovladace/comfort-control-cz.html",
+       "Není v ceně topení."
+      ],
+      [
+       "Rozvody teplého vzduchu (hadice Ø60/75, vyústky, Y kusy, izolace)",
+       1,
+       4000,
+       "autoterm.cz",
+       "https://autoterm.cz/cs/7-prislusenstvi",
+       "Paušál, díly 150–2 625 Kč/ks."
+      ],
+      [
+       "Varianta: Truma Combi D 4 (nafta, topení + 10 l bojler) + spaliny + komín + FrostControl + nádržová sada",
+       0,
+       88939,
+       "nomadem.cz",
+       "https://www.nomadem.cz/truma-combi-d-4_z5713/",
+       "68 590 + 5 779 + 8 090 + 4 390 + 2 090. Nahrazuje Autoterm i bojler. ks=0 = nezapočteno."
+      ]
+     ]
+    },
+    {
+     "name": "Ventilace",
+     "total": 29680,
+     "items": [
+      [
+       "Střešní ventilátor MaxxFan Deluxe",
+       1,
+       8890,
+       "nomadem.cz",
+       "https://www.nomadem.cz/stresni-ventilator-maxxfan-deluxe_z581/",
+       "svetkaravanu.cz 8 800. Levně Fiamma Turbo Vent 5 990."
+      ],
+      [
+       "Střešní okno Dometic Midi Heki Style 700×500",
+       1,
+       20790,
+       "nomadem.cz",
+       "https://www.nomadem.cz/okno-dometic-midi-heki-style-700-x-500-mm-s-klickou_z2435/",
+       "Nad postelí. Levně Mini Heki 40×40 4 190."
+      ]
+     ]
+    },
+    {
+     "name": "Kuchyň",
+     "total": 33295,
+     "items": [
+      [
+       "Lednice vestavná Vitrifrigo C51i 12/24 V, 51 l + mrazák",
+       1,
+       17969,
+       "eshop.dalix.cz",
+       "https://eshop.dalix.cz/vestavna-kompresorova-autochladnicka-vitrifrigo-c51i--cerna/",
+       "Skladem, oficiální distributor. Isotherm Cruise 65 Elegance 22 769 (gimishop.cz). Dometic CRX v ČR vyprodaný/drahý."
+      ],
+      [
+       "Dřez nerez Can LA1402 32×35 cm + výpusť",
+       1,
+       2489,
+       "nomadem.cz",
+       "https://www.nomadem.cz/nerezovy-drez-can-la1402-32-x-35-x-15cm_z5305/",
+       "1 990 + 499. Alternativa dřez s víkem Hadex 2 490."
+      ],
+      [
+       "Indukční deska vestavná Klarstein Delicatessa Slim 30 cm, 2 zóny, 3 500 W",
+       1,
+       3519,
+       "klarstein.cz",
+       "https://www.klarstein.cz/delicatessa-slim-30cm-indukcni-varna-deska-2-varne-zony-cerna-p-10033015.html",
+       "Špička 3,5 kW nad 3kW měnič: nepouštět obě zóny naplno, nebo měnič 5 kVA."
+      ],
+      [
+       "Vestavná trouba Klarstein Victoria 45 cm, 49 l, 2 800 W",
+       1,
+       8909,
+       "klarstein.cz",
+       "https://www.klarstein.cz/Victoria-vestavna-trouba-45-cm-49-l-cerna.html",
+       "Vestavná 45 cm pod 2 kW v ČR neexistuje. Levně minitrouba Klarstein Omnichef 30 l 1 500 W cca 2 300 (cena neověřená)."
+      ],
+      [
+       "Koš na odpad Brunner Pillar",
+       1,
+       409,
+       "nomadem.cz",
+       "https://www.nomadem.cz/odpadkove-kose/",
+       ""
+      ]
+     ]
+    },
+    {
+     "name": "Sedačky",
+     "total": 71768,
+     "items": [
+      [
+       "Otočná konzole univerzální Ducato X250/X290 (TÜV)",
+       2,
+       4490,
+       "nomadem.cz",
+       "https://www.nomadem.cz/otocna-konzole-univerzalni-pro-fiat-ducato-250-290_z4335/",
+       "Sportscraft 8 269/ks."
+      ],
+      [
+       "Samostatná sedačka spolujezdce Sportscraft S8.1 (TÜV)",
+       1,
+       16890,
+       "nomadem.cz",
+       "https://www.nomadem.cz/sedadlo-sportscraft-s8-1_z6605/",
+       "Levně originál z vrakoviště 3–8 tis. (bazar.automedik.cz), neověřeno."
+      ],
+      [
+       "Zadní dvojsedačka FASP Divan 503 s tříbodovými pásy (ECE R14/R17)",
+       1,
+       37900,
+       "nomadem.cz",
+       "https://www.nomadem.cz/dvojsedacka-fasp-divan-503_z6377/",
+       "Kotvení protiplechy přes vestavbáře 1–3 tis. Schválení TOM-CAR 6 776."
+      ],
+      [
+       "Dětské lůžko Cabbunk jednolůžko + montážní sada",
+       1,
+       7998,
+       "mujcaravan.cz",
+       "https://www.mujcaravan.cz/Pridavne-detske-jednoluzko-Cabbunk-d7200.htm",
+       "5 999 + 1 999. Nad otočená sedadla kabiny. Nad zadní postel vlastní výroba 1,5–2,5 tis."
+      ]
+     ]
+    },
+    {
+     "name": "Zatemnění a dveře",
+     "total": 23970,
+     "items": [
+      [
+       "REMIfront IV čelní roletka Ducato X290",
+       1,
+       8690,
+       "nomadem.cz",
+       "https://www.nomadem.cz/predni-plisovana-roletka-remifront-iv-pro-fiat-ducato-x290_z6477/",
+       "Levně clona Hindermann za kabinu 7 115 (nahradí čelní i boční)."
+      ],
+      [
+       "REMIfront IV boční roletky pár",
+       1,
+       10690,
+       "nomadem.cz",
+       "https://www.nomadem.cz/bocni-plisovane-roletky-remifront-iv-pro-fiat-ducato-x290-po-09-2021_z6481/",
+       ""
+      ],
+      [
+       "Moskytiéra posuvné dveře Carbest Ducato H2/H3",
+       1,
+       4590,
+       "nomadem.cz",
+       "https://www.nomadem.cz/moskytiera-carbest-pro-bocni-dvere-fiat-ducato_z6506/",
+       "REMICare VAN 10 990."
+      ]
+     ]
+    },
+    {
+     "name": "Exteriér",
+     "total": 38045,
+     "items": [
+      [
+       "Markýza Thule Omnistor 6300 Ducato set 375 cm s adaptéry",
+       1,
+       24013,
+       "karavantech.cz",
+       "https://www.karavantech.cz/thule-omnistor-6300-ducato-antracit-325-cm2",
+       "Adaptéry pro H2; pro H3 ověřit. Levně Fiamma F45S 350 výprodej 13 990 (svetkaravanu.cz) + adaptér 4 018 (hykro.cz)."
+      ],
+      [
+       "Střešní nosič Thule Roof Rack Ducato L3 (Smart Clamp, bez vrtání) pro solár",
+       1,
+       10842,
+       "karavantech.cz",
+       "https://www.karavantech.cz/Podelne-nosniky-Thule-Roof-Rack-s-kitem-pro-markyzu-Ducato-L3H2-d32266.htm",
+       "Příčníky zvlášť. Levně 2× Fiamma Roof Rail univerzální 326 cm 4 321/ks."
+      ],
+      [
+       "Vnější sprcha (dvířka s mixventilem)",
+       1,
+       3190,
+       "nomadem.cz",
+       "https://www.nomadem.cz/venkovni-sprchove-pripojky/",
+       ""
+      ]
+     ]
+    },
+    {
+     "name": "Bezpečnost",
+     "total": 18066,
+     "items": [
+      [
+       "Hasicí přístroj Hastex PR2e 2 kg",
+       1,
+       720,
+       "hastex.cz",
+       "https://www.hastex.cz/eshop/hastex-praskovy-hasici-pristroj-2-kg-pr2e",
+       ""
+      ],
+      [
+       "Detektor kouře Kidde 29HD",
+       1,
+       350,
+       "dvereprofi.cz",
+       "https://www.dvereprofi.cz/alarmy-a-zabezpeceni/opticky-detektor-ohne-a-koure-kidde-29hd/",
+       "Rozsah +4 až +38 °C."
+      ],
+      [
+       "Detektor CO Honeywell XC100D (nutný i bez plynu kvůli naftovému topení)",
+       1,
+       1500,
+       "gas.cz",
+       "https://www.gas.cz/honeywell-xc100---cs-detektor-oxidu-uhelnateho/produkt/10033/616/",
+       "XC100-CS 2 306 ukončeno, nástupce XC100D cca 1 300–1 500."
+      ],
+      [
+       "Autolékárnička vel. I",
+       1,
+       240,
+       "moje-lekarnicka.cz",
+       "https://www.moje-lekarnicka.cz/lekarnicka-do-auta-vel-i-1/",
+       ""
+      ],
+      [
+       "HEOSafe přídavné zámky kabiny Ducato (2 ks)",
+       1,
+       3890,
+       "nomadem.cz",
+       "https://www.nomadem.cz/pridavny-zamek-kabiny-heosafe-pro-fiat-ducato_z6408/",
+       "3 240–3 890 podle ročníku."
+      ],
+      [
+       "Thule Door Lock (posuvné + zadní dveře)",
+       3,
+       1479,
+       "svetkaravanu.cz",
+       "https://www.svetkaravanu.cz/dverni-zamek-thule-door-lock",
+       "3-pack 1 599."
+      ],
+      [
+       "Trezor Mobil-Safe do dveří Ducato",
+       1,
+       6929,
+       "svetkaravanu.cz",
+       "https://www.svetkaravanu.cz/trezory",
+       "Podle ročníku 6 099–7 889."
+      ]
+     ]
+    }
+   ],
+   "labour": {
+    "hoursMin": 250,
+    "hoursMax": 600,
+    "rateMin": 700,
+    "rateMax": 1200,
+    "note": "Žádná česká vestavbová firma sazbu nezveřejňuje. Odvozeno: truhlář 350–700 Kč/h, servisy karavanů 950–1 815 Kč/h (caravanzdarsa.cz ceník 9/2026), Německo 120 €/h (campermanufaktur-berlin.de). Hodiny: profi minimum 150 h (surfnomade.de, toom.de), FullVans standard cca měsíc, NarubyVans velké vestavby až 1 000 h a 680 tis.–1,3 mil. Kč (autosalon.tv)."
+   }
   }
  },
  "deals": [
