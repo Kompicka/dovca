@@ -138,13 +138,13 @@
    "hours": 60,
    "items": [
     [
-     "Vestavba firmou – standard (izolace, okna, nábytek, postel, kuchyň, topení, voda, WC, základní 12V elektro)",
-     550000,
-     "Ověřené ceníky 2026: FullVans Siesta Classic 380 049 Kč s DPH až Siesta Via 672 670 Kč (fullvans.com); Vestavby dodávek na míru od 330 000 Kč (vestavbydododavek.cz, 3–5 týdnů); Havlovic ruční stavba 28–33 tis. €. 550 tis. = střed rozpětí pro vestavbu na míru"
+     "Vestavba firmou na míru podle vlastního návrhu (izolace, okna, nábytek, postel, kuchyň, topení, voda, WC/sprcha), bez elektra",
+     800000,
+     "Firmy na míru (MS Camper, NarubyVans, New Age Nomads) ceny nezveřejňují, jen poptávka; doba 2–5 měsíců. Veřejné jsou jen katalogové vestavby FullVans: Siesta Classic 380 049 s DPH až Siesta Via 672 670 (fullvans.com, ceník 2026). Trh vestaveb 380 tis. až 1,5 mil. 800 tis. = odhad pro plnou vestavbu na míru, nahradit 3 nabídkami"
     ],
     [
-     "Odečet standardního 12V elektra firmy (nahrazuje ho náš 48V systém)",
-     -50000,
+     "Odečet standardního elektra firmy (elektro si majitel dělá sám, 48 V)",
+     -60000,
      "Odhad, dohodnout v nabídce"
     ],
     [
@@ -175,7 +175,7 @@
     ],
     [
      "Rezerva 10 %",
-     60000,
+     80000,
      "Na to, co firma „neměla v nabídce“"
     ]
    ],
@@ -480,12 +480,17 @@
      "date": "2026-09-07",
      "who": "Kp",
      "text": "Rozhodnuto: koupit prázdnou dodávku za 500–550 tis. Kč, zbytek do vestavby. Vybráni 2 kandidáti k prohlídce u DAVO CAR Benešov: Peugeot Boxer L3H3 2021 (443 999) a Fiat Ducato Maxi L3H3 2020 (449 999). L4H3 zůstává jako alternativa (Jumper 2024, 543 290)."
+    },
+    {
+     "date": "2026-09-07",
+     "who": "Claude",
+     "text": "Oprava: 1 mil. Kč nebyl limit majitele, jen filtr skeneru. Cena vestavby 550 tis. byla střed katalogových balíčků FullVans, ne vestavby na míru. Firmy na míru ceny nezveřejňují, položka v Koupit vs. postavit přenastavena na 800 tis. jako odhad do doby 3 nabídek."
     }
    ]
   },
   "requirements": {
-   "budgetBuild": 300000,
-   "budgetCamper": 1000000,
+   "budgetBuild": 0,
+   "budgetCamper": 0,
    "budgetVan": 550000,
    "dist": 600,
    "eur": 24.5,
@@ -512,7 +517,7 @@
     "Mercedes Sprinter",
     "VW Crafter"
    ],
-   "notes": "STRATEGIE: hotovky první. Hledáme hotový obytný vůz (sériový i kvalitní svépomocná vestavba) na Ducato/Boxer/Jumper/Transit L3 (L4 hraničně), 2018+, do 150 tis. km, do 1,0 mil. Kč po dovozu (≈ 40 tis. €). Vnitřní výška min. 190 cm (majitel 189 cm) – H3 základ je plus, H2 jen s výškou uvnitř ≥ 190 uvedenou v inzerátu. Postel stačí 190 cm. 4 místa v TP (dítě). Půdorys: sezení u stolu vpředu (pracovní místo), postel vzadu. Počítáme s dostavbou 48V elektra (130 tis.) a dětské postýlky. Červené vlajky: vlhkost/pliseň, elektro bez dokumentace, bez zápisu obytný (Wohnmobil), rez. Prázdné dodávky L3H3 2018+ do 550 tis. Kč jen jako záložní cesta, skóre o 1 nižší. | 7. 9. 2026: prázdná dodávka L3H3/L4H3, rozpočet 500–550 tis. Kč s DPH, zbytek jde do vestavby. LCD kabina není podmínka (Android rádio dodatečně). Do 150 tis. km u ČR vozu se servisní knihou.",
+   "notes": "STRATEGIE: hotovky první. Hledáme hotový obytný vůz (sériový i kvalitní svépomocná vestavba) na Ducato/Boxer/Jumper/Transit L3 (L4 hraničně), 2018+, do 150 tis. km, do 1,0 mil. Kč po dovozu (≈ 40 tis. €). Vnitřní výška min. 190 cm (majitel 189 cm) – H3 základ je plus, H2 jen s výškou uvnitř ≥ 190 uvedenou v inzerátu. Postel stačí 190 cm. 4 místa v TP (dítě). Půdorys: sezení u stolu vpředu (pracovní místo), postel vzadu. Počítáme s dostavbou 48V elektra (130 tis.) a dětské postýlky. Červené vlajky: vlhkost/pliseň, elektro bez dokumentace, bez zápisu obytný (Wohnmobil), rez. Prázdné dodávky L3H3 2018+ do 550 tis. Kč jen jako záložní cesta, skóre o 1 nižší. | 7. 9. 2026: prázdná dodávka L3H3/L4H3, rozpočet 500–550 tis. Kč s DPH, zbytek jde do vestavby. LCD kabina není podmínka (Android rádio dodatečně). Do 150 tis. km u ČR vozu se servisní knihou. | Rozpočet vestavby ani celkový limit není stanoven (1 mil. byl jen filtr skeneru hotovek, ne limit majitele). Vestavba na míru podle vlastního návrhu, firmou.",
    "seats": 3,
    "src": [
     "bazos.cz",
