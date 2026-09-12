@@ -362,7 +362,7 @@ dialog::backdrop{background:rgba(0,0,0,.35)}
     <div class="tablewrap"><svg id="schema" viewBox="0 0 980 400" width="100%" style="max-width:980px;display:block;font-family:'IBM Plex Sans',sans-serif" aria-label="Schéma elektrického systému"></svg></div>
     <div class="grid g2" style="margin-top:12px">
       <div><p class="hint"><b>Proč 48 V.</b> Měnič 3000 W bere z 12V baterie 250 A, ze 48V jen 63 A. To znamená kabely 35 mm² místo 95 mm², menší ztráty, levnější pojistky a jeden MPPT regulátor zvládne celou střechu. Baterie 48 V (Pylontech a spol.) jsou navíc nejlevnější na kWh, protože se vyrábějí pro domácí fotovoltaiku.</p></div>
-      <div><p class="hint"><b>Daň za 48 V.</b> Lednice, světla, čerpadlo, topení i Maxxfan jsou 12V, takže potřebují DC-DC měnič 48→12 V. A alternátor v autě je 12V, takže do 48V baterie se nabíjí přes izolované DC-DC nabíječe (400 W každý, dají se řadit). Kdo chce z alternátoru víc než ~1 kW, musí na druhý 48V alternátor, což je 60–100 tis. Kč navíc.</p></div>
+      <div><p class="hint"><b>Daň za 48 V.</b> Lednice, světla, čerpadlo, topení i USB-C nabíječky notebooku a monitorů jsou 12V, takže potřebují DC-DC měnič 48→12 V. A alternátor v autě je 12V, takže do 48V baterie se nabíjí přes izolované DC-DC nabíječe (400 W každý, dají se řadit). Kdo chce z alternátoru víc než ~1 kW, musí na druhý 48V alternátor, což je 60–100 tis. Kč navíc.</p></div>
     </div>
   </div>
 
@@ -762,7 +762,7 @@ function drawSchema(){
    ${box(620,125,120,50,'Cerbo GX','dohled (volitelné)')}
    ${box(620,205,120,50,'Orion 48/12-30 A','12V okruh','b')}
    ${box(820,35,130,50,'PC + monitor','zásuvky 230 V')}
-   ${box(820,175,130,30,'Lednice')}${box(820,215,130,30,'Světla, USB')}${box(820,255,130,30,'Čerpadlo')}${box(820,295,130,30,'Maxxfan')}${box(820,335,130,30,'Naftové topení')}
+   ${box(820,175,130,30,'Lednice')}${box(820,215,130,30,'Světla, USB')}${box(820,255,130,30,'Čerpadlo')}${box(820,295,130,30,'Notebook USB-C')}${box(820,335,130,30,'Naftové topení')}
    <g transform="translate(30,380)"><path class="w48" d="M0 0 H30"/><text x="38" y="4">48 V</text><path class="w12" d="M90 0 H120"/><text x="128" y="4">12 V</text><path class="w230" d="M175 0 H205"/><text x="213" y="4">230 V</text></g>`;
 }
 $('#p-elec').addEventListener('input',e=>{if(e.target.matches('input,select')&&!e.target.closest('.row'))calcElec()});
