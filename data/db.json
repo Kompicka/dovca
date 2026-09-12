@@ -149,8 +149,8 @@
         ],
         [
           "Materiál: Okna",
-          44862,
-          "Okno kuchyň Dometic Seitz S4 700×300 (roleta + síť v ceně) 1× 11 690 Kč (nomadem.cz); Okno ložnice Dometic Seitz S4 900×450 1× 15 790 Kč (nomadem.cz); Okno koupelna Dometic Seitz S4 500×450 1× 13 990 Kč (nomadem.cz); Pevné lepené okno do posuvných dveří Carbest  Ducato 2007+  1400×665 1× 3 392 Kč (nomadem.cz). Položky s odkazy jsou níže v kartě Materiál po modulech"
+          27480,
+          "Okno u kuchyně Dometic Seitz S4 700×300 (roleta + síť)  strana posuvných dveří 1× 11 690 Kč (nomadem.cz); Okno u dětské sedačky Dometic Seitz S4 900×450 (roleta + síť)  lavice naproti kuchyni 1× 15 790 Kč (nomadem.cz). Položky s odkazy jsou níže v kartě Materiál po modulech"
         ],
         [
           "Materiál: Nábytek a podlaha",
@@ -642,6 +642,11 @@
           "date": "2026-09-12",
           "who": "Claude",
           "text": "Majitel vybral NarubyVans jako první firmu k poptání. Poptávkový text s celým zadáním (auto L3H3, půdorys, 13 modulů materiálu za 452 107 Kč, příprava pro 48V elektro, 2 cenové varianty) je v B:\u0000_RANDOM_PROJEKTY\u0006_karavan\\poptavka_narubyvans.md. Úkol přidán do plánu stavby."
+        },
+        {
+          "date": "2026-09-12",
+          "who": "Claude",
+          "text": "Okna: jen dvě naproti sobě – u dětské sedačky na lavici (Seitz S4 900×450) a naproti u kuchyně (Seitz S4 700×300). Okno ložnice  koupelny a pevné okno v posuvných dveřích zrušeno. Modul Okna 27 480 Kč."
         }
       ]
     },
@@ -745,39 +750,23 @@
         },
         {
           "name": "Okna",
-          "total": 44862,
+          "total": 27480,
           "items": [
             [
-              "Okno kuchyň Dometic Seitz S4 700×300 (roleta + síť v ceně)",
+              "Okno u kuchyně Dometic Seitz S4 700×300 (roleta + síť), strana posuvných dveří",
               1,
               11690,
               "nomadem.cz",
               "https://www.nomadem.cz/bocni-okno-dometic-seitz-s4-vyklopne_z548/",
-              "Levně Carbest RW Style 4 667 + rám s roletou 1 947."
+              "Levně Carbest RW Style 4 667 + rám s roletou 1 947.. Rozhodnuto 12. 9. 2026: v autě jen tato dvě okna naproti sobě, jinde nic (ložnice, koupelna, posuvné dveře bez oken)"
             ],
             [
-              "Okno ložnice Dometic Seitz S4 900×450",
+              "Okno u dětské sedačky Dometic Seitz S4 900×450 (roleta + síť), lavice naproti kuchyni",
               1,
               15790,
               "nomadem.cz",
               "https://www.nomadem.cz/bocni-okno-dometic-seitz-s4-vyklopne_z548/",
-              "1000×500 18 890. Levně Carbest 6 027 + rám 2 542."
-            ],
-            [
-              "Okno koupelna Dometic Seitz S4 500×450",
-              1,
-              13990,
-              "nomadem.cz",
-              "https://www.nomadem.cz/bocni-okno-dometic-seitz-s4-vyklopne_z548/",
-              "Levně Carbest 4 242 + rám 1 692."
-            ],
-            [
-              "Pevné lepené okno do posuvných dveří Carbest, Ducato 2007+, 1400×665",
-              1,
-              3392,
-              "nomadem.cz",
-              "https://www.nomadem.cz/pevne-bocni-okno-pro-ducato-boxer-jumper-2007_z5406/",
-              "Homologace E17. Posuvná verze 5 517."
+              "1000×500 18 890. Levně Carbest 6 027 + rám 2 542.. Rozhodnuto 12. 9. 2026: v autě jen tato dvě okna naproti sobě, jinde nic (ložnice, koupelna, posuvné dveře bez oken)"
             ]
           ]
         },
