@@ -479,20 +479,21 @@ dialog::backdrop{background:rgba(0,0,0,.35)}
 
   <div class="card" style="margin-top:16px" id="roof-card">
     <h3>Střecha seshora <span class="eyebrow">solár, klima, okno</span></h3>
-    <p class="hint" style="margin:0 0 12px">Měřítko podle skutečných rozměrů: rovná plocha střechy Ducata L3 odhadnuta na 4600 × 1600 mm (změřit na autě, ±20 cm rozhoduje), panel Jinko 440 Wp 1 722 × 1 134 mm (jen podélně, napříč je širší než střecha), Velit 2000R 800 × 800 mm, Midi Heki 700 × 500, Mini Heki 40 × 40, mezery 50 mm. Se střešní klimou a 880 Wp už na střechu nejde žádné okno: buď bez okna (C), nebo klima dovnitř pod sedačku (D). Rozhodnutí zatím otevřené.</p>
+    <p class="hint" style="margin:0 0 12px">Rozložení jako u vestavbových firem: úzké panely 670 mm ve dvou řadách podél střechy u okrajů, mezi nimi mezera 60 mm, klimatizace a okno nad postelí vzadu. Rovná plocha střechy Ducata L3 odhadnuta na 4600 × 1600 mm (změřit na autě), panel Solarfam 200 Wp 1 530 × 670 × 30 mm, Velit 2000R 800 × 800, Midi Heki 700 × 500, mezery 50 mm, 100 mm od okrajů. Doporučená je varianta E: 800 Wp, klima i okno se vejdou, zbývá místo na Starlink.</p>
     <style>
       .rv{display:block;margin:0 0 14px;background:var(--surface);border:1px solid var(--line);border-radius:8px}
       .rv-body{fill:var(--steel-soft);stroke:var(--steel);stroke-width:2} .rv-cab{fill:var(--line2);stroke:none}
       .rv-roof{fill:var(--surface2);stroke:var(--mute);stroke-dasharray:6 4;stroke-width:1.5}
       .rv-panel{fill:#1e3a8a;stroke:#0f172a} .rv-ac{fill:var(--accent-soft);stroke:var(--accent);stroke-width:2}
-      .rv-heki{fill:#fde68a;stroke:#b45309;stroke-width:2} .rv-bad{fill:rgba(220,38,38,.35);stroke:#dc2626;stroke-width:2;stroke-dasharray:5 3}
+      .rv-heki{fill:#fde68a;stroke:#b45309;stroke-width:2} .rv-star{fill:var(--surface2);stroke:var(--mute);stroke-width:1.5}
+      .rv-bad{fill:rgba(220,38,38,.35);stroke:#dc2626;stroke-width:2;stroke-dasharray:5 3}
       .rv-lb{font-size:12px;font-weight:600;fill:var(--ink)} .rv-sb{font-size:11px;fill:var(--ink2)} .rv-w{fill:#fff !important}
       .rv-dim{font-size:11px;fill:var(--mute);font-family:"IBM Plex Mono",monospace}
       .rv-ttl{font-size:15px;font-weight:700;fill:var(--ink)} .rv-note{font-size:12px;font-weight:600} .rv-nok{fill:#15803d} .rv-nbad{fill:#b91c1c}
     </style>
     <div class="tablewrap">
 <svg class="rv" viewBox="0 0 1240 480" width="100%" style="max-width:1240px"><g transform="translate(20,38)">
-<text class="rv-ttl" x="0" y="-18">A · Současný plán: 2 panely + klima + Midi Heki 700×500</text><text class="rv-note rv-nbad" x="1200" y="-18" text-anchor="end">panely + klima = 4444 mm z 4600, okno Midi Heki se nevejde</text>
+<text class="rv-ttl" x="0" y="-18">E · Doporučeno: 4 panely 2 × 2 podélně + klima + Midi Heki nad postelí</text><text class="rv-note rv-nok" x="1200" y="-18" text-anchor="end">4 × 200 = 800 Wp, klima i Midi Heki nad postelí, rezerva 490 mm na Starlink</text>
 <rect class="rv-body" x="0" y="0" width="1199.6" height="410.0" rx="40"/>
 <rect class="rv-cab" x="0" y="0" width="250.0" height="410.0" rx="40"/>
 <text class="rv-sb" x="124" y="205" text-anchor="middle">kabina / čelní sklo</text>
@@ -501,13 +502,16 @@ dialog::backdrop{background:rgba(0,0,0,.35)}
 <text class="rv-dim" x="710" y="33" text-anchor="middle">rovná plocha střechy 4600 × 1600 mm</text>
 <text class="rv-sb" x="720" y="402" text-anchor="middle">← posuvné dveře (pravý bok)</text>
 <text class="rv-sb" x="1180" y="205" text-anchor="middle" transform="rotate(-90 1180 205)">zadní dveře</text>
-<rect class="rv-panel" x="260.0" y="91.6" width="344.4" height="226.8" rx="3"/><text class="rv-lb rv-w" x="432.2" y="199.0" text-anchor="middle">Jinko 440 Wp</text><text class="rv-sb rv-w" x="432.2" y="215.0" text-anchor="middle">1722 × 1134</text>
-<rect class="rv-panel" x="614.4" y="91.6" width="344.4" height="226.8" rx="3"/><text class="rv-lb rv-w" x="786.6" y="199.0" text-anchor="middle">Jinko 440 Wp</text><text class="rv-sb rv-w" x="786.6" y="215.0" text-anchor="middle">1722 × 1134</text>
-<rect class="rv-ac" x="1000.0" y="125.0" width="160.0" height="160.0" rx="3"/><text class="rv-lb" x="1080.0" y="199.0" text-anchor="middle">Velit 2000R</text><text class="rv-sb" x="1080.0" y="215.0" text-anchor="middle">800 × 800</text>
-<rect class="rv-bad" x="734.4" y="147.0" width="156.0" height="116.0" rx="3"/><text class="rv-lb" x="812.4" y="199.0" text-anchor="middle">Midi Heki</text><text class="rv-sb" x="812.4" y="215.0" text-anchor="middle">koliduje s panelem</text>
+<rect class="rv-panel" x="260.0" y="65.0" width="306.0" height="134.0" rx="3"/><text class="rv-lb rv-w" x="413.0" y="126.0" text-anchor="middle">Solarfam 200 Wp</text><text class="rv-sb rv-w" x="413.0" y="142.0" text-anchor="middle">1530 × 670</text>
+<rect class="rv-panel" x="260.0" y="211.0" width="306.0" height="134.0" rx="3"/><text class="rv-lb rv-w" x="413.0" y="272.0" text-anchor="middle">Solarfam 200 Wp</text><text class="rv-sb rv-w" x="413.0" y="288.0" text-anchor="middle">1530 × 670</text>
+<rect class="rv-panel" x="576.0" y="65.0" width="306.0" height="134.0" rx="3"/><text class="rv-lb rv-w" x="729.0" y="126.0" text-anchor="middle">Solarfam 200 Wp</text><text class="rv-sb rv-w" x="729.0" y="142.0" text-anchor="middle">1530 × 670</text>
+<rect class="rv-panel" x="576.0" y="211.0" width="306.0" height="134.0" rx="3"/><text class="rv-lb rv-w" x="729.0" y="272.0" text-anchor="middle">Solarfam 200 Wp</text><text class="rv-sb rv-w" x="729.0" y="288.0" text-anchor="middle">1530 × 670</text>
+<rect class="rv-ac" x="1000.0" y="65.0" width="160.0" height="160.0" rx="3"/><text class="rv-lb" x="1080.0" y="139.0" text-anchor="middle">Velit 2000R</text><text class="rv-sb" x="1080.0" y="155.0" text-anchor="middle">800 × 800, nad postelí</text>
+<rect class="rv-heki" x="1004.0" y="229.0" width="156.0" height="116.0" rx="3"/><text class="rv-lb" x="1082.0" y="281.0" text-anchor="middle">Midi Heki</text><text class="rv-sb" x="1082.0" y="297.0" text-anchor="middle">700 × 500, nad postelí</text>
+<rect class="rv-star" x="916.0" y="180.0" width="60.0" height="50.0" rx="3"/><text class="rv-lb" x="946.0" y="209.0" text-anchor="middle">Starlink</text>
 </g></svg>
 <svg class="rv" viewBox="0 0 1240 480" width="100%" style="max-width:1240px"><g transform="translate(20,38)">
-<text class="rv-ttl" x="0" y="-18">B · 2 panely + klima + Mini Heki 40×40</text><text class="rv-note rv-nbad" x="1200" y="-18" text-anchor="end">v řadě 4944 mm z 4600: chybí 344 mm, jen když je rovná plocha o kousek delší</text>
+<text class="rv-ttl" x="0" y="-18">F · Bez okna: 5. panel napříč před klimou</text><text class="rv-note rv-nbad" x="1200" y="-18" text-anchor="end">5 × 200 = 1 000 Wp bez okna: 5. panel napříč se nevejde o 230 mm, šlo by jen s kratší klimou (Velit Mini 660 mm)</text>
 <rect class="rv-body" x="0" y="0" width="1199.6" height="410.0" rx="40"/>
 <rect class="rv-cab" x="0" y="0" width="250.0" height="410.0" rx="40"/>
 <text class="rv-sb" x="124" y="205" text-anchor="middle">kabina / čelní sklo</text>
@@ -516,13 +520,15 @@ dialog::backdrop{background:rgba(0,0,0,.35)}
 <text class="rv-dim" x="710" y="33" text-anchor="middle">rovná plocha střechy 4600 × 1600 mm</text>
 <text class="rv-sb" x="720" y="402" text-anchor="middle">← posuvné dveře (pravý bok)</text>
 <text class="rv-sb" x="1180" y="205" text-anchor="middle" transform="rotate(-90 1180 205)">zadní dveře</text>
-<rect class="rv-panel" x="260.0" y="91.6" width="344.4" height="226.8" rx="3"/><text class="rv-lb rv-w" x="432.2" y="209.0" text-anchor="middle">Jinko 440 Wp</text>
-<rect class="rv-panel" x="614.4" y="91.6" width="344.4" height="226.8" rx="3"/><text class="rv-lb rv-w" x="786.6" y="209.0" text-anchor="middle">Jinko 440 Wp</text>
-<rect class="rv-ac" x="1000.0" y="125.0" width="160.0" height="160.0" rx="3"/><text class="rv-lb" x="1080.0" y="209.0" text-anchor="middle">Velit 2000R</text>
-<rect class="rv-bad" x="968.8" y="160.0" width="90.0" height="90.0" rx="3"/><text class="rv-lb" x="1013.8" y="199.0" text-anchor="middle">Mini Heki</text><text class="rv-sb" x="1013.8" y="215.0" text-anchor="middle">překryv s klimou</text>
+<rect class="rv-panel" x="260.0" y="65.0" width="306.0" height="134.0" rx="3"/><text class="rv-lb rv-w" x="413.0" y="126.0" text-anchor="middle">Solarfam 200 Wp</text><text class="rv-sb rv-w" x="413.0" y="142.0" text-anchor="middle">1530 × 670</text>
+<rect class="rv-panel" x="260.0" y="211.0" width="306.0" height="134.0" rx="3"/><text class="rv-lb rv-w" x="413.0" y="272.0" text-anchor="middle">Solarfam 200 Wp</text><text class="rv-sb rv-w" x="413.0" y="288.0" text-anchor="middle">1530 × 670</text>
+<rect class="rv-panel" x="576.0" y="65.0" width="306.0" height="134.0" rx="3"/><text class="rv-lb rv-w" x="729.0" y="126.0" text-anchor="middle">Solarfam 200 Wp</text><text class="rv-sb rv-w" x="729.0" y="142.0" text-anchor="middle">1530 × 670</text>
+<rect class="rv-panel" x="576.0" y="211.0" width="306.0" height="134.0" rx="3"/><text class="rv-lb rv-w" x="729.0" y="272.0" text-anchor="middle">Solarfam 200 Wp</text><text class="rv-sb rv-w" x="729.0" y="288.0" text-anchor="middle">1530 × 670</text>
+<rect class="rv-ac" x="1000.0" y="65.0" width="160.0" height="160.0" rx="3"/><text class="rv-lb" x="1080.0" y="149.0" text-anchor="middle">Velit 2000R</text>
+<rect class="rv-bad" x="856.0" y="52.0" width="134.0" height="306.0" rx="3"/><text class="rv-lb" x="923.0" y="199.0" text-anchor="middle">200 Wp</text><text class="rv-sb" x="923.0" y="215.0" text-anchor="middle">chybí 230 mm</text>
 </g></svg>
 <svg class="rv" viewBox="0 0 1240 480" width="100%" style="max-width:1240px"><g transform="translate(20,38)">
-<text class="rv-ttl" x="0" y="-18">C · 2 panely + klima, bez střešního okna</text><text class="rv-note rv-nok" x="1200" y="-18" text-anchor="end">4444 mm z 4600, rezerva 156 mm; bez střešního okna</text>
+<text class="rv-ttl" x="0" y="-18">G · 6 panelů 2 × 3 – proč to nejde</text><text class="rv-note rv-nbad" x="1200" y="-18" text-anchor="end">6 × 200 = 1 200 Wp zabere 4740 mm z 4600: přesah 190 mm a žádné místo na klimu ani okno</text>
 <rect class="rv-body" x="0" y="0" width="1199.6" height="410.0" rx="40"/>
 <rect class="rv-cab" x="0" y="0" width="250.0" height="410.0" rx="40"/>
 <text class="rv-sb" x="124" y="205" text-anchor="middle">kabina / čelní sklo</text>
@@ -531,25 +537,15 @@ dialog::backdrop{background:rgba(0,0,0,.35)}
 <text class="rv-dim" x="710" y="33" text-anchor="middle">rovná plocha střechy 4600 × 1600 mm</text>
 <text class="rv-sb" x="720" y="402" text-anchor="middle">← posuvné dveře (pravý bok)</text>
 <text class="rv-sb" x="1180" y="205" text-anchor="middle" transform="rotate(-90 1180 205)">zadní dveře</text>
-<rect class="rv-panel" x="260.0" y="91.6" width="344.4" height="226.8" rx="3"/><text class="rv-lb rv-w" x="432.2" y="209.0" text-anchor="middle">Jinko 440 Wp</text>
-<rect class="rv-panel" x="614.4" y="91.6" width="344.4" height="226.8" rx="3"/><text class="rv-lb rv-w" x="786.6" y="209.0" text-anchor="middle">Jinko 440 Wp</text>
-<rect class="rv-ac" x="1000.0" y="125.0" width="160.0" height="160.0" rx="3"/><text class="rv-lb" x="1080.0" y="209.0" text-anchor="middle">Velit 2000R</text>
-</g></svg>
-<svg class="rv" viewBox="0 0 1240 480" width="100%" style="max-width:1240px"><g transform="translate(20,38)">
-<text class="rv-ttl" x="0" y="-18">D · Klima pod sedačku (Dometic FreshWell 3000, 230 V), 2 panely + Midi Heki</text><text class="rv-note rv-nok" x="1200" y="-18" text-anchor="end">4374 mm z 4600, rezerva 226 mm; klima pod sedačkou (230 V)</text>
-<rect class="rv-body" x="0" y="0" width="1199.6" height="410.0" rx="40"/>
-<rect class="rv-cab" x="0" y="0" width="250.0" height="410.0" rx="40"/>
-<text class="rv-sb" x="124" y="205" text-anchor="middle">kabina / čelní sklo</text>
-<text class="rv-sb" x="124" y="218" text-anchor="middle">zaoblení, nelze osadit</text>
-<rect class="rv-roof" x="250.0" y="45.0" width="920.0" height="320.0"/>
-<text class="rv-dim" x="710" y="33" text-anchor="middle">rovná plocha střechy 4600 × 1600 mm</text>
-<text class="rv-sb" x="720" y="402" text-anchor="middle">← posuvné dveře (pravý bok)</text>
-<text class="rv-sb" x="1180" y="205" text-anchor="middle" transform="rotate(-90 1180 205)">zadní dveře</text>
-<rect class="rv-panel" x="260.0" y="91.6" width="344.4" height="226.8" rx="3"/><text class="rv-lb rv-w" x="432.2" y="209.0" text-anchor="middle">Jinko 440 Wp</text>
-<rect class="rv-panel" x="614.4" y="91.6" width="344.4" height="226.8" rx="3"/><text class="rv-lb rv-w" x="786.6" y="209.0" text-anchor="middle">Jinko 440 Wp</text>
-<rect class="rv-heki" x="968.8" y="147.0" width="156.0" height="116.0" rx="3"/><text class="rv-lb" x="1046.8" y="199.0" text-anchor="middle">Midi Heki</text><text class="rv-sb" x="1046.8" y="215.0" text-anchor="middle">700 × 500</text>
+<rect class="rv-panel" x="260.0" y="65.0" width="306.0" height="134.0" rx="3"/><text class="rv-lb rv-w" x="413.0" y="126.0" text-anchor="middle">Solarfam 200 Wp</text><text class="rv-sb rv-w" x="413.0" y="142.0" text-anchor="middle">1530 × 670</text>
+<rect class="rv-panel" x="260.0" y="211.0" width="306.0" height="134.0" rx="3"/><text class="rv-lb rv-w" x="413.0" y="272.0" text-anchor="middle">Solarfam 200 Wp</text><text class="rv-sb rv-w" x="413.0" y="288.0" text-anchor="middle">1530 × 670</text>
+<rect class="rv-panel" x="576.0" y="65.0" width="306.0" height="134.0" rx="3"/><text class="rv-lb rv-w" x="729.0" y="126.0" text-anchor="middle">Solarfam 200 Wp</text><text class="rv-sb rv-w" x="729.0" y="142.0" text-anchor="middle">1530 × 670</text>
+<rect class="rv-panel" x="576.0" y="211.0" width="306.0" height="134.0" rx="3"/><text class="rv-lb rv-w" x="729.0" y="272.0" text-anchor="middle">Solarfam 200 Wp</text><text class="rv-sb rv-w" x="729.0" y="288.0" text-anchor="middle">1530 × 670</text>
+<rect class="rv-bad" x="892.0" y="65.0" width="306.0" height="134.0" rx="3"/><text class="rv-lb" x="1045.0" y="126.0" text-anchor="middle">200 Wp</text><text class="rv-sb" x="1045.0" y="142.0" text-anchor="middle">přesahuje</text>
+<rect class="rv-bad" x="892.0" y="211.0" width="306.0" height="134.0" rx="3"/><text class="rv-lb" x="1045.0" y="272.0" text-anchor="middle">200 Wp</text><text class="rv-sb" x="1045.0" y="288.0" text-anchor="middle">přesahuje</text>
 </g></svg>
     </div>
+  </div>
   </div>
 </section>
 

@@ -367,25 +367,25 @@
           5032,
           "ostrovni-elektrarny.cz",
           "https://ostrovni-elektrarny.cz/shop/produkt/105-victron-smartsolar-mppt-150-45-12-24-48v",
-          "Zvládne až 2,6 kWp na 48 V, jeden pro celou střechu",
+          "4× 200 Wp v sérii (114 V naprázdno) – jeden regulátor pro celou střechu, rezerva do 2,6 kWp",
           "Solár"
         ],
         [
-          "Jinko Tiger Neo 440 Wp full black (1722 × 1134 mm)",
-          2,
-          2150,
-          "nejpanely.cz",
-          "https://www.nejpanely.cz/fotovoltaicky-solarni-panel-jinko-solar-tiger-neo-n-type-54hl4-b-440wp-full-black/",
-          "2 panely podél střechy = 880 Wp, zbytek střechy na Maxxfan",
+          "Solarfam 200 Wp mono shingle, černý rám (1530 × 670 × 30 mm, 10,2 kg)",
+          4,
+          2652,
+          "elventil.cz",
+          "https://www.elventil.cz/fotovoltaicky-solarni-panel-solarfam-200w-mono--cerny-ram",
+          "4 ks = 800 Wp ve dvou řadách podél střechy (2 × 2), jako u vestavbových firem – vejde se i klima a Midi Heki nad postelí, viz Půdorys / Střecha seshora. Voc 28,6 V: 4 ks do série = 114 V naprázdno, Vmp 97 V, vyhovuje MPPT 150/45 pro 48 V. Nahrazuje 2× Jinko 440 (1722 × 1134), které se na střechu s klimou a oknem nevešly",
           "Solár"
         ],
         [
           "Solarmi ABS rohové držáky s průchodkou (sada 5 ks)",
-          2,
+          4,
           425,
           "i4wifi.cz",
           "https://www.i4wifi.cz/cs/277770-xtend-solarmi-drzak-pro-solarni-panely-5ks-cerny",
-          "Lepit Sikaflexem 252, jedna sada na panel",
+          "4 sady = 20 držáků pro 4 panely (4 rohy + 1 průchodka na panel)",
           "Solár"
         ],
         [
@@ -463,7 +463,7 @@
       ],
       "peak": 1200,
       "pricedAt": "2026-09-12",
-      "pv": 1000,
+      "pv": 800,
       "volt": 48
     },
     "layout": {
@@ -591,6 +591,11 @@
           "date": "2026-09-12",
           "who": "Claude",
           "text": "Architektura 48 V upravena: 2× Pylontech US5000 (7,7 kWh využitelných) potvrzeno, 2× Orion-Tr 48/12-30 (domácnost / pracovní stůl), klimatizace Velit 2000R přímo na 48V sběrnici, kuchyň (indukce, air fryer trouba) a 240W adaptér notebooku na 230 V z MultiPlus. Schéma na stránce překresleno."
+        },
+        {
+          "date": "2026-09-12",
+          "who": "Claude",
+          "text": "Střecha: místo 2× Jinko 440 (na dodávku nevhodné, s klimou a oknem se nevešly) 4× Solarfam 200 Wp 1 530 × 670 mm ve dvou řadách podél střechy = 800 Wp, vzadu nad postelí Velit 2000R + Midi Heki vedle sebe, rezerva na Starlink. Nákres v Půdorys / Střecha seshora (varianty E, F, G)."
         }
       ]
     },
