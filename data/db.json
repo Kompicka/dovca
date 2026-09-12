@@ -74,15 +74,15 @@
           ]
         },
         {
-          "name": "Dostavba elektra 48 V",
+          "name": "Elektro 48 V (montáž firmou)",
           "tasks": [
             [
-              "Zaměřit garáž / prostor pod postelí na baterie 2× US5000",
-              "",
+              "Zadat elektro 48 V vestavbové firmě podle záložky Elektro (díly, schéma, bilance) – nebo její elektrikář; chtít cenu zvlášť",
+              "Kp",
               false
             ],
             [
-              "Objednat díly podle záložky Elektro",
+              "Zaměřit garáž / prostor pod postelí na baterie 2× US5000",
               "",
               false
             ],
@@ -222,6 +222,11 @@
           0,
           "Bere se automaticky ze záložky Elektro a design (ověřené e-shopy)",
           "elec"
+        ],
+        [
+          "Montáž elektra 48 V firmou + revize 230 V",
+          70000,
+          "Odhad: 60–80 h × 900–1 100 Kč (vestavbová firma nebo její elektrikář) + revize cca 3 000. Rozhodnuto 12. 9. 2026: elektro NEDĚLÁ majitel sám. Upřesnit v nabídce NarubyVans"
         ],
         [
           "Detaily svépomocí: světla, USB, poličky, textil, Starlink držák",
@@ -652,6 +657,11 @@
           "date": "2026-09-12",
           "who": "Claude",
           "text": "Majitel: design a styl vestaveb NarubyVans (Křinec, Jan Rychtařík) se mu líbí nejvíc – referenční styl pro zadání vestavby (Nomad, Trio). Do poptávky přidat odkaz na jejich vestavbu jako vzor dekorů a detailů."
+        },
+        {
+          "date": "2026-09-12",
+          "who": "Claude",
+          "text": "Změna: elektro 48 V si majitel NEDĚLÁ sám, montuje vestavbová firma (NarubyVans) nebo její elektrikář podle našeho návrhu. Do rozpočtu přidán odhad montáže 70 000 Kč (60–80 h + revize). Poptávka upravena."
         }
       ]
     },
