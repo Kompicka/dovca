@@ -235,7 +235,7 @@
     "elec": {
       "alt": 1140,
       "bat": 7.7,
-      "drive": 1,
+      "drive": 2,
       "eff": 92,
       "inv": 3000,
       "loads": [
@@ -617,6 +617,11 @@
           "date": "2026-09-12",
           "who": "Claude",
           "text": "Klimatizace zlevněna: místo FreshWell 3000 (40 750) přenosná EcoFlow WAVE 3 za 22 490 Kč (1,8 kW, 690 W). Alternativa bytový split 2,5 kW svépomocí za cca 15 tis. celkem. Ventilace + klima teď 31 380 Kč. Na stránce nová karta Materiál po modulech s odkazy u každé položky."
+        },
+        {
+          "date": "2026-09-12",
+          "who": "Claude",
+          "text": "Bilance počítá s 2 h jízdy denně (1 140 W × 2 h × 0,9 = 2,1 kWh z alternátoru)."
         }
       ]
     },
