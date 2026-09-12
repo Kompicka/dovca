@@ -25,7 +25,7 @@ Stránka umí běžet i jako claude.ai artifact s `db` capability (kód pro `win
 ```
 plan.requirements: {yearMin, kmMax, fuel, seats, eur (kurz EUR→CZK), len[], hgt[], models[], src[], kind[], budgetVan, budgetCamper, budgetBuild, dist, notes, updatedAt, updatedBy}
 plan.compare:      {camper, camperFix, camperRes, van, hours, rate, buildRes, items[[název, Kč, poznámka, 'elec'?]]}  – položka se 4. prvkem 'elec' se počítá automaticky ze součtu plan.elec.parts
-plan.elec:         {volt, bat (kWh využitelné), pv (Wp), alt (W), drive (h/den), eff (%), inv (W), peak (W), loads[[název, W, h/den, 230|12]], parts[[název, ks, Kč/ks, obchod, url, poznámka]], pricedAt}
+plan.elec:         {volt, bat (kWh využitelné), pv (Wp), alt (W), drive (h/den), eff (%), inv (W), peak (W), loads[[název, W, h/den, 230|12]], parts[[název, ks, Kč/ks, obchod, url, poznámka, kategorie]], pricedAt}
 plan.layout:       {van: 'ducato-l3'|'ducato-l2'|'ducato-l4'|'transit-l3'|'sprinter-l3', blocks[{n,x,y,w,h,c}]}  – mm, x podél délky od kabiny
 plan.build:        {phases[{name, tasks[[text, kdo, hotovo]]}]}
 plan.log:          {entries[{date, who, text}]}

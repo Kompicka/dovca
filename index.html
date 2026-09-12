@@ -384,7 +384,7 @@ dialog::backdrop{background:rgba(0,0,0,.35)}
     <h3>Součástky a rozpočet <span class="eyebrow">české zdroje</span></h3>
     <p class="note" id="parts-meta"></p>
     <div class="tablewrap">
-      <table id="parts"><thead><tr><th>Díl</th><th class="num">ks</th><th class="num">Cena / ks</th><th class="num">Celkem</th><th>Obchod</th><th>Poznámka</th><th></th></tr></thead>
+      <table id="parts"><thead><tr><th>Kategorie</th><th>Díl</th><th class="num">ks</th><th class="num">Cena / ks</th><th class="num">Celkem</th><th>Odkaz</th><th>Poznámka</th><th></th></tr></thead>
       <tbody id="parts-body"></tbody>
       <tfoot><tr><td><b>Elektro celkem</b></td><td colspan="2"></td><td class="num" id="parts-total"><b>–</b></td><td colspan="3"></td></tr></tfoot></table>
     </div>
@@ -796,7 +796,7 @@ function elecRead(){
   const e=Object.assign({},get('elec'));
   e.volt=+$('#e-volt').value;e.bat=+$('#e-bat').value;e.pv=+$('#e-pv').value;e.alt=+$('#e-alt').value;e.drive=+$('#e-drive').value;e.eff=+$('#e-eff').value;e.inv=+$('#e-inv').value;e.peak=+$('#e-peak').value;
   e.loads=$$('#loads-body tr').map(tr=>{const i=tr.querySelectorAll('input,select');return [i[0].value,+i[1].value||0,+i[2].value||0,+i[3].value]});
-  e.parts=$$('#parts-body tr').map(tr=>{const i=tr.querySelectorAll('input');return [i[0].value,+i[1].value||0,+i[2].value||0,i[3].value,i[4].value,i[5].value]});
+  e.parts=$$('#parts-body tr').map(tr=>{const i=tr.querySelectorAll('input');const url=i[5].value.trim();const host=url.replace(/^https?:\/\/(www\.)?/,'').split('/')[0];return [i[1].value,+i[2].value||0,+i[3].value||0,host||i[4].value,url,i[6].value,i[0].value]});
   return e;
 }
 function renderElec(){
@@ -805,7 +805,7 @@ function renderElec(){
   const lb=$('#loads-body');lb.innerHTML='';
   e.loads.forEach((l,i)=>{const tr=document.createElement('tr');tr.innerHTML=`<td><input value="${esc(l[0])}"></td><td class="num"><input class="n" type="number" value="${l[1]}"></td><td class="num"><input class="n" type="number" step="0.1" value="${l[2]}"></td><td><select><option value="230"${l[3]==230?' selected':''}>230 V</option><option value="12"${l[3]==12?' selected':''}>12 V</option></select></td><td class="num" data-wh></td><td><button class="x btn ghost small" data-ld-del="${i}">×</button></td>`;lb.appendChild(tr)});
   const pb=$('#parts-body');pb.innerHTML='';
-  e.parts.forEach((p,i)=>{const tr=document.createElement('tr');tr.innerHTML=`<td><input value="${esc(p[0])}"></td><td class="num"><input class="n" type="number" style="width:60px" value="${p[1]}"></td><td class="num"><input class="n" type="number" value="${p[2]}"></td><td class="num" data-sum></td><td><input value="${esc(p[3])}" placeholder="obchod" style="width:110px"><input value="${esc(p[4])}" placeholder="https://…" style="width:110px;margin-top:3px">${p[4]?`<div><a href="${esc(p[4])}" target="_blank" rel="noopener" style="font-size:12px">otevřít ↗</a></div>`:''}</td><td><input value="${esc(p[5])}" style="min-width:180px"></td><td><button class="x btn ghost small" data-pt-del="${i}">×</button></td>`;pb.appendChild(tr)});
+  e.parts.forEach((p,i)=>{const tr=document.createElement('tr');const host=(p[4]||'').replace(/^https?:\/\/(www\.)?/,'').split('/')[0]||p[3]||'';tr.innerHTML=`<td><input value="${esc(p[6]||'')}" placeholder="kategorie" style="width:105px;font-weight:600"></td><td><input value="${esc(p[0])}"></td><td class="num"><input class="n" type="number" style="width:60px" value="${p[1]}"></td><td class="num"><input class="n" type="number" value="${p[2]}"></td><td class="num" data-sum></td><td class="shop"><input type="hidden" value="${esc(p[3])}"><input value="${esc(p[4])}" placeholder="https://…" style="width:150px;display:none">${p[4]?`<a href="${esc(p[4])}" target="_blank" rel="noopener" title="${esc(p[4])} · dvojklik = upravit">${esc(host)} ↗</a>`:`<a href="#" class="edit-url">+ odkaz</a>`}</td><td><input value="${esc(p[5])}" style="min-width:180px"></td><td><button class="x btn ghost small" data-pt-del="${i}">×</button></td>`;pb.appendChild(tr)});
   $('#parts-meta').textContent=e.pricedAt?`Ceny ověřeny ${e.pricedAt}. Odkazy vedou na konkrétní produkty; ceny se hýbou, před nákupem zkontrolujte.`:'Ceny jsou zatím odhad. Po ověření v českých e-shopech sem přibudou odkazy.';
   calcElec();drawSchema();
 }
@@ -863,7 +863,9 @@ $('#p-elec').addEventListener('change',e=>{if(e.target.matches('#e-volt,#e-bat,#
 $('#loads-body').addEventListener('click',e=>{const b=e.target.closest('[data-ld-del]');if(!b)return;const el=elecRead();el.loads.splice(+b.dataset.ldDel,1);state.elec=el;renderElec()});
 $('#parts-body').addEventListener('click',e=>{const b=e.target.closest('[data-pt-del]');if(!b)return;const el=elecRead();el.parts.splice(+b.dataset.ptDel,1);state.elec=el;renderElec()});
 $('#ld-add').addEventListener('click',()=>{const el=elecRead();el.loads.push(['Nový spotřebič',0,1,12]);state.elec=el;renderElec()});
-$('#pt-add').addEventListener('click',()=>{const el=elecRead();el.parts.push(['Nový díl',1,0,'','','']);state.elec=el;renderElec()});
+$('#pt-add').addEventListener('click',()=>{const el=elecRead();el.parts.push(['Nový díl',1,0,'','','','']);state.elec=el;renderElec()});
+$('#parts-body').addEventListener('dblclick',e=>{const td=e.target.closest('td.shop');if(!td)return;e.preventDefault();const inp=td.querySelector('input:not([type=hidden])');inp.style.display='';td.querySelector('a').style.display='none';inp.focus()});
+$('#parts-body').addEventListener('click',e=>{const a=e.target.closest('a.edit-url');if(!a)return;e.preventDefault();const td=a.closest('td');const inp=td.querySelector('input:not([type=hidden])');inp.style.display='';a.style.display='none';inp.focus()});
 $('#e-save').addEventListener('click',async()=>{const el=elecRead();state.elec=el;if(!db){localSave();toast('Uloženo v tomto prohlížeči');return}try{await db.doc('plan/elec').set(el);flash('#e-saved')}catch(err){toast('Uložení selhalo: '+err.code)}});
 
 /* ---------- floor plan ---------- */

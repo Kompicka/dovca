@@ -313,79 +313,8 @@
           25320,
           "ostrovni-elektrarny.cz",
           "https://ostrovni-elektrarny.cz/shop/produkt/927-baterie-pylontech-us5000-48v-100ah-4-8kwh",
-          "2× = 9,6 kWh nominál, 8,6 kWh využitelných (90 % DoD), 2× 39,7 kg, záruka 7–10 let, ≥6 000 cyklů. Ověřeno 12. 9. 2026: za kWh je to 5 275 Kč; Seplos POLO-W 48 V 5,12 kWh 24 490 Kč (battery.cz, 4 783 Kč/kWh, záruka jen 24 měsíců, 50 kg); 24V LiTime 200 Ah 5,12 kWh 29 990 Kč (5 857 Kč/kWh, bez Bluetooth); 12V Ultimatron 200 Ah 24 999 Kč (9 765 Kč/kWh). Přechod na 24 V baterii tedy nezlevní, rackové 48V baterie jsou nejlevnější hotové řešení. Úspora: začít s 1 ks (−25 320 Kč) a druhý dokoupit paralelně, až se ukáže potřeba"
-        ],
-        [
-          "Victron MultiPlus-II 48/3000/35-32 (měnič + nabíječ 230 V)",
-          1,
-          16478,
-          "i4wifi.cz",
-          "https://www.i4wifi.cz/cs/265531-victron-multiplus-ii-48-3000-35-32",
-          "3 000 W trvale, 5 500 W špička. Jinde 29 000 Kč, před objednávkou ověřit"
-        ],
-        [
-          "Victron SmartSolar MPPT 150/45",
-          1,
-          5032,
-          "ostrovni-elektrarny.cz",
-          "https://ostrovni-elektrarny.cz/shop/produkt/105-victron-smartsolar-mppt-150-45-12-24-48v",
-          "Zvládne až 2,6 kWp na 48 V, jeden pro celou střechu"
-        ],
-        [
-          "Jinko Tiger Neo 440 Wp full black (1722 × 1134 mm)",
-          2,
-          2150,
-          "nejpanely.cz",
-          "https://www.nejpanely.cz/fotovoltaicky-solarni-panel-jinko-solar-tiger-neo-n-type-54hl4-b-440wp-full-black/",
-          "2 panely podél střechy = 880 Wp, zbytek střechy na Maxxfan"
-        ],
-        [
-          "Solarmi ABS rohové držáky s průchodkou (sada 5 ks)",
-          2,
-          425,
-          "i4wifi.cz",
-          "https://www.i4wifi.cz/cs/277770-xtend-solarmi-drzak-pro-solarni-panely-5ks-cerny",
-          "Lepit Sikaflexem 252, jedna sada na panel"
-        ],
-        [
-          "Victron Orion-Tr Smart 12/48-8 A (380 W) izolovaný, alternátor → 48 V",
-          2,
-          6711,
-          "neosolar.cz",
-          "https://eshop.neosolar.cz/dc-dc-nabijecka-orion-tr-smart-12-48-8a-380w-izolovana/",
-          "2× = cca 760 W za jízdy, dají se řadit dál"
-        ],
-        [
-          "Victron Orion-Tr 48/12-30 A (360 W) měnič pro 12V okruh",
-          2,
-          5528,
-          "neosolar.cz",
-          "https://eshop.neosolar.cz/dc-dc-konvertor-orion-tr-48-12-30a-360w/",
-          "2 ks: první pro domácnost (lednice, světla, čerpadlo, topení, USB), druhý pro pracovní stůl (notebook 140 W, 2 monitory, Starlink) – každý okruh má vlastní 360 W, pojistky zvlášť. Klimatizace jede přímo ze 48 V a 12V okruhy nezatěžuje"
-        ],
-        [
-          "Victron SmartShunt 500 A (měření baterie)",
-          1,
-          2473,
-          "nomadem.cz",
-          "https://www.nomadem.cz/smartshunt-500a-50mv-victron-energy_z2327/",
-          "Bluetooth do telefonu"
-        ],
-        [
-          "Victron Cerbo GX MKII (dohled, volitelné)",
-          1,
-          6912,
-          "i4wifi.cz",
-          "https://www.i4wifi.cz/cs/300428-victron-energy-cerbo-gx-mkii",
-          "Nutné pro komunikaci Pylontech ↔ MultiPlus (CAN). Bez něj radši Victron baterie"
-        ],
-        [
-          "Victron GX Touch 50 (displej, volitelné)",
-          1,
-          6206,
-          "battery.cz",
-          "https://www.battery.cz/victron-energy-gx-touch-50/",
-          "Jde nahradit telefonem přes VRM"
+          "2× = 9,6 kWh nominál, 8,6 kWh využitelných (90 % DoD), 2× 39,7 kg, záruka 7–10 let, ≥6 000 cyklů. Ověřeno 12. 9. 2026: za kWh je to 5 275 Kč; Seplos POLO-W 48 V 5,12 kWh 24 490 Kč (battery.cz, 4 783 Kč/kWh, záruka jen 24 měsíců, 50 kg); 24V LiTime 200 Ah 5,12 kWh 29 990 Kč (5 857 Kč/kWh, bez Bluetooth); 12V Ultimatron 200 Ah 24 999 Kč (9 765 Kč/kWh). Přechod na 24 V baterii tedy nezlevní, rackové 48V baterie jsou nejlevnější hotové řešení. Úspora: začít s 1 ks (−25 320 Kč) a druhý dokoupit paralelně, až se ukáže potřeba",
+          "Baterie"
         ],
         [
           "Victron Lynx Distributor M10 (sběrnice s pojistkami)",
@@ -393,7 +322,8 @@
           5528,
           "neosolar.cz",
           "https://eshop.neosolar.cz/lynx-distributor-m10/",
-          "Levněji obchod77.cz cca 4 550 Kč"
+          "Levněji obchod77.cz cca 4 550 Kč",
+          "Rozvod 48 V"
         ],
         [
           "MEGA držáky 3× + pojistky 125/200 A 3× + DC jistič 100 A 48 V",
@@ -401,15 +331,17 @@
           1800,
           "solarsun.cz",
           "https://www.solarsun.cz/victron-energy-drzak-pro-pojistky-mega-fuse/",
-          "Držák 283 Kč, pojistka 189 Kč, jistič 355 Kč (vselektro.eu)"
+          "Držák 283 Kč, pojistka 189 Kč, jistič 355 Kč (vselektro.eu)",
+          "Rozvod 48 V"
         ],
         [
-          "Kabel 35 mm² CYA H07V-K (m) + oka a smršťovačky",
-          10,
-          300,
-          "bch-battery.cz",
-          "https://www.bch-battery.cz/kabel-35mm2-cya-35-lanko-cu-35mm2-cerny",
-          "V běžném elektro 200–260 Kč/m, oka + lisování cca 800 Kč navíc"
+          "Victron MultiPlus-II 48/3000/35-32 (měnič + nabíječ 230 V)",
+          1,
+          16478,
+          "i4wifi.cz",
+          "https://www.i4wifi.cz/cs/265531-victron-multiplus-ii-48-3000-35-32",
+          "3 000 W trvale, 5 500 W špička. Jinde 29 000 Kč, před objednávkou ověřit",
+          "Měnič 230 V"
         ],
         [
           "Rozvaděč 230 V: rozvodnice 4M, chránič 2P 25 A/30 mA, jistič B16, zásuvky, kabel 2,5 mm²",
@@ -417,7 +349,8 @@
           2500,
           "elektromaterialy.cz",
           "https://www.elektromaterialy.cz/proudovy-chranic-iid-2p-25a-30ma",
-          "Rozvodnice 746, chránič 879, jistič 86 Kč, zbytek zásuvky a kabel"
+          "Rozvodnice 746, chránič 879, jistič 86 Kč, zbytek zásuvky a kabel",
+          "Rozvod 230 V"
         ],
         [
           "CEE 16 A vstupní zásuvka pro karavan (Bals, IP44) + kabel 20 m",
@@ -425,7 +358,53 @@
           1500,
           "mojeelektro.cz",
           "https://mojeelektro.cz/cee-zasuvky-a-vidlice/19955-cee-zasuvka-pro-karavan-230v16a-ip44.html",
-          "Zásuvka 319 Kč, kabelová redukce 3 m 847 Kč (elektro-materialy.cz)"
+          "Zásuvka 319 Kč, kabelová redukce 3 m 847 Kč (elektro-materialy.cz)",
+          "Rozvod 230 V"
+        ],
+        [
+          "Victron SmartSolar MPPT 150/45",
+          1,
+          5032,
+          "ostrovni-elektrarny.cz",
+          "https://ostrovni-elektrarny.cz/shop/produkt/105-victron-smartsolar-mppt-150-45-12-24-48v",
+          "Zvládne až 2,6 kWp na 48 V, jeden pro celou střechu",
+          "Solár"
+        ],
+        [
+          "Jinko Tiger Neo 440 Wp full black (1722 × 1134 mm)",
+          2,
+          2150,
+          "nejpanely.cz",
+          "https://www.nejpanely.cz/fotovoltaicky-solarni-panel-jinko-solar-tiger-neo-n-type-54hl4-b-440wp-full-black/",
+          "2 panely podél střechy = 880 Wp, zbytek střechy na Maxxfan",
+          "Solár"
+        ],
+        [
+          "Solarmi ABS rohové držáky s průchodkou (sada 5 ks)",
+          2,
+          425,
+          "i4wifi.cz",
+          "https://www.i4wifi.cz/cs/277770-xtend-solarmi-drzak-pro-solarni-panely-5ks-cerny",
+          "Lepit Sikaflexem 252, jedna sada na panel",
+          "Solár"
+        ],
+        [
+          "Victron Orion-Tr Smart 12/48-8 A (380 W) izolovaný, alternátor → 48 V",
+          2,
+          6711,
+          "neosolar.cz",
+          "https://eshop.neosolar.cz/dc-dc-nabijecka-orion-tr-smart-12-48-8a-380w-izolovana/",
+          "2× = cca 760 W za jízdy, dají se řadit dál",
+          "Alternátor"
+        ],
+        [
+          "Victron Orion-Tr 48/12-30 A (360 W) měnič pro 12V okruh",
+          2,
+          5528,
+          "neosolar.cz",
+          "https://eshop.neosolar.cz/dc-dc-konvertor-orion-tr-48-12-30a-360w/",
+          "2 ks: první pro domácnost (lednice, světla, čerpadlo, topení, USB), druhý pro pracovní stůl (notebook 140 W, 2 monitory, Starlink) – každý okruh má vlastní 360 W, pojistky zvlášť. Klimatizace jede přímo ze 48 V a 12V okruhy nezatěžuje",
+          "Měnič 12 V"
         ],
         [
           "12V pojistková skříň, spínače, kabel 1,5–4 mm²",
@@ -433,7 +412,8 @@
           3000,
           "",
           "",
-          "Odhad, neoceněno"
+          "Odhad, neoceněno",
+          "Rozvod 12 V"
         ],
         [
           "Autonabíječka Baseus USB-C PD 3.1 140 W (12 V) + kabel 240 W, pro notebook",
@@ -441,7 +421,44 @@
           994,
           "mobac.cz",
           "https://www.mobac.cz/baseus-digital-display-rychla-nabijecka-do-auta-usb-a-usb-c-pd3-1-140w-cerna-usb-c-kabel-baseus-superior-series-5a-240w-/",
-          "Zapojit do 12V okruhu za Orion 48/12. Pro 2 monitory ještě 2× PD nabíječka 65 W z 12 V (cca 500 Kč/ks). Framework 16 s GPU při plné zátěži chce 180–240 W, to jde jen přes měnič 230 V a jeho vlastní 240W adaptér"
+          "Zapojit do 12V okruhu za Orion 48/12. Pro 2 monitory ještě 2× PD nabíječka 65 W z 12 V (cca 500 Kč/ks). Framework 16 s GPU při plné zátěži chce 180–240 W, to jde jen přes měnič 230 V a jeho vlastní 240W adaptér",
+          "Pracovní stůl"
+        ],
+        [
+          "Victron SmartShunt 500 A (měření baterie)",
+          1,
+          2473,
+          "nomadem.cz",
+          "https://www.nomadem.cz/smartshunt-500a-50mv-victron-energy_z2327/",
+          "Bluetooth do telefonu",
+          "Měření"
+        ],
+        [
+          "Victron Cerbo GX MKII (dohled, volitelné)",
+          1,
+          6912,
+          "i4wifi.cz",
+          "https://www.i4wifi.cz/cs/300428-victron-energy-cerbo-gx-mkii",
+          "Nutné pro komunikaci Pylontech ↔ MultiPlus (CAN). Bez něj radši Victron baterie",
+          "Dohled"
+        ],
+        [
+          "Victron GX Touch 50 (displej, volitelné)",
+          1,
+          6206,
+          "battery.cz",
+          "https://www.battery.cz/victron-energy-gx-touch-50/",
+          "Jde nahradit telefonem přes VRM",
+          "Dohled"
+        ],
+        [
+          "Kabel 35 mm² CYA H07V-K (m) + oka a smršťovačky",
+          10,
+          300,
+          "bch-battery.cz",
+          "https://www.bch-battery.cz/kabel-35mm2-cya-35-lanko-cu-35mm2-cerny",
+          "V běžném elektro 200–260 Kč/m, oka + lisování cca 800 Kč navíc",
+          "Kabeláž"
         ]
       ],
       "peak": 1200,
