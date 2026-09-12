@@ -174,8 +174,8 @@
         ],
         [
           "Materiál: Ventilace a klimatizace",
-          49640,
-          "Střešní ventilátor MaxxFan Deluxe (400 × 400) 1× 8 890 Kč (nomadem.cz); Klimatizace vestavná Dometic FreshWell 3000  230 V  chlazení 2 7 kW / příkon 990 W  topí i chladí  montáž pod sedačku 1× 40 750 Kč (nomadem.cz). Položky s odkazy jsou níže v kartě Materiál po modulech"
+          31380,
+          "Střešní ventilátor MaxxFan Deluxe (400 × 400) 1× 8 890 Kč (nomadem.cz); Klimatizace přenosná EcoFlow WAVE 3  chlazení 1 8 kW / topení 2 kW  příkon 690 W (230 V) nebo 640 W (DC) 1× 22 490 Kč (ecoflow.cz). Položky s odkazy jsou níže v kartě Materiál po modulech"
         ],
         [
           "Materiál: Kuchyň",
@@ -270,8 +270,8 @@
           12
         ],
         [
-          "Klimatizace pod sedačkou Dometic FreshWell 3000, 230 V (příkon 990 W, kompresor běží cca 60 % času; léto)",
-          600,
+          "Klimatizace EcoFlow WAVE 3, 230 V (příkon 690 W, kompresor cca 60 % času; léto)",
+          415,
           4,
           230
         ],
@@ -612,6 +612,11 @@
           "date": "2026-09-12",
           "who": "Claude",
           "text": "Alternátor posílen: 3× Orion-Tr Smart 12/48-8 = 1 140 W (limit sériového alternátoru; víc jen druhým 48V alternátorem). Bilance na stránce nově ukazuje i řádek bez klimatizace, protože klima je v seznamu spotřebičů jako každodenní 4 h a v létě tak bilance vychází záporně (−1,2 kWh/den s jízdou); bez klimy je léto +1,5 kWh/den."
+        },
+        {
+          "date": "2026-09-12",
+          "who": "Claude",
+          "text": "Klimatizace zlevněna: místo FreshWell 3000 (40 750) přenosná EcoFlow WAVE 3 za 22 490 Kč (1,8 kW, 690 W). Alternativa bytový split 2,5 kW svépomocí za cca 15 tis. celkem. Ventilace + klima teď 31 380 Kč. Na stránce nová karta Materiál po modulech s odkazy u každé položky."
         }
       ]
     },
@@ -1047,7 +1052,7 @@
         },
         {
           "name": "Ventilace a klimatizace",
-          "total": 49640,
+          "total": 31380,
           "items": [
             [
               "Střešní ventilátor MaxxFan Deluxe (400 × 400)",
@@ -1058,12 +1063,12 @@
               "Zpět v plánu 12. 9. 2026 – jediný otvor ve střeše, sedí mezi řadami panelů. svetkaravanu.cz 8 800, levně Fiamma Turbo Vent 5 990"
             ],
             [
-              "Klimatizace vestavná Dometic FreshWell 3000, 230 V, chlazení 2,7 kW / příkon 990 W, topí i chladí, montáž pod sedačku",
+              "Klimatizace přenosná EcoFlow WAVE 3, chlazení 1,8 kW / topení 2 kW, příkon 690 W (230 V) nebo 640 W (DC)",
               1,
-              40750,
-              "nomadem.cz",
-              "https://www.nomadem.cz/vestavna-klimatizace-dometic-freshwell-3000_z7732/",
-              "Místo střešní Velit 2000R (uvolní střechu pro 1 200 Wp). Heureka od 39 740. Méně úsporná než DC Velit (EER 2,7 vs ≈ 4,5): 4 h ≈ 2,4 kWh místo 1,4. Levnější a úspornější, ale svépomocná alternativa: bytový invertorový mini-split 2,5 kW za 15–20 tis. s venkovní jednotkou pod podlahou"
+              22490,
+              "ecoflow.cz",
+              "https://ecoflow.cz/products/prenosna-klimatizace-ecoflow-wave-3",
+              "Levnější náhrada za FreshWell 3000 (40 750 Kč, nomadem.cz): bez montáže, vozí se jen v létě, hadice ven oknem, 15 kg. Nejlevnější a nejúspornější trvalá cesta je bytový invertorový split 2,5 kW za 8–12 tis. Kč + vakuování a naplnění technikem 3–5 tis., venkovní jednotka pod podlahu – svépomoc, bez záruky výrobce"
             ]
           ]
         },
