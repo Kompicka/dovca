@@ -233,7 +233,7 @@
       "van": 450000
     },
     "elec": {
-      "alt": 800,
+      "alt": 1140,
       "bat": 7.7,
       "drive": 1,
       "eff": 92,
@@ -390,11 +390,11 @@
         ],
         [
           "Victron Orion-Tr Smart 12/48-8 A (380 W) izolovaný, alternátor → 48 V",
-          2,
+          3,
           6711,
           "neosolar.cz",
           "https://eshop.neosolar.cz/dc-dc-nabijecka-orion-tr-smart-12-48-8a-380w-izolovana/",
-          "2× = cca 760 W za jízdy, dají se řadit dál",
+          "3 ks paralelně = 1 140 W (≈ 95 A z 12V alternátoru). Sériový alternátor Ducata 150–180 A trvale bezpečně dá 1,0–1,2 kW navíc, víc jen s druhým alternátorem 48 V (60–100 tis. Kč vč. konzole, pro Ducato v ČR skoro nikdo nedělá). Hodina jízdy = 1,1 kWh do baterie. Kabel od alternátoru 25 mm², pojistka 125 A",
           "Alternátor"
         ],
         [
@@ -601,6 +601,11 @@
           "date": "2026-09-12",
           "who": "Claude",
           "text": "Rozhodnuto: střešní okno ne, klimatizace uvnitř (Dometic FreshWell 3000 pod sedačku, 40 750 Kč), střecha celá pro solár: 6× Solarfam 200 Wp = 1 200 Wp na nosiči Thule až k okrajům, Maxxfan zpět mezi řady panelů. Bilance: v létě 1 200 Wp dá 4–5 kWh/den, s alternátorem pokryje i 4 h klimy; v říjnu 2 kWh/den, deficit 2–3 kWh/den. Nákres H/I/E v Půdorysu."
+        },
+        {
+          "date": "2026-09-12",
+          "who": "Claude",
+          "text": "Alternátor posílen: 3× Orion-Tr Smart 12/48-8 = 1 140 W (limit sériového alternátoru; víc jen druhým 48V alternátorem). Bilance na stránce nově ukazuje i řádek bez klimatizace, protože klima je v seznamu spotřebičů jako každodenní 4 h a v létě tak bilance vychází záporně (−1,2 kWh/den s jízdou); bez klimy je léto +1,5 kWh/den."
         }
       ]
     },
