@@ -159,8 +159,8 @@
         ],
         [
           "Materiál: Koupelna",
-          41616,
-          "Sprchová vanička 723×682×62 mm plast 1× 1 352 Kč (nomadem.cz); Stěny GFK lesklý laminát  role 2 45 m (2 bm = 4 9 m²) 2× 3 675 Kč (kobras.cz); Sprchová baterie Reich Keramik Trend E (mikrospínač) 1× 1 939 Kč (nomadem.cz); Sprchová hadice Reich 150 cm + hlavice Reich Julia + držák 1× 2 067 Kč (nomadem.cz) …. Položky s odkazy jsou níže v kartě Materiál po modulech"
+          38087,
+          "Sprchová vanička 723×682×62 mm plast 1× 1 352 Kč (nomadem.cz); Stěny GFK lesklý laminát  role 2 45 m (2 bm = 4 9 m²) 2× 3 675 Kč (kobras.cz); Sprchová baterie Reich Keramik Trend E (mikrospínač) 1× 1 939 Kč (nomadem.cz); Sprchová hadice Reich 150 cm + hlavice Reich Julia + držák 1× 2 067 Kč (nomadem.cz); Odpadní armatura úhlová 25 mm 1× 219 Kč (nomadem.cz); Stěnový ventilátor 12 V do koupelny (místo Mini Heki 40×40 – střecha je plná panelů) 1× 790 Kč (nomadem.cz); Roletové dveře Carbest do 198×100 cm 1× 7 390 Kč (nomadem.cz); WC kazetové Thetford C223-CS (el. splachování z nádrže) 1× 14 790 Kč (kobras.cz); Servisní dvířka Thetford Model 3 (jen pro kazetové WC) 1× 2 190 Kč (nomadem.cz). Položky s odkazy jsou níže v kartě Materiál po modulech"
         ],
         [
           "Materiál: Voda",
@@ -174,8 +174,8 @@
         ],
         [
           "Materiál: Ventilace a klimatizace",
-          31380,
-          "Střešní ventilátor MaxxFan Deluxe (400 × 400) 1× 8 890 Kč (nomadem.cz); Klimatizace přenosná EcoFlow WAVE 3  chlazení 1 8 kW / topení 2 kW  příkon 690 W (230 V) nebo 640 W (DC) 1× 22 490 Kč (ecoflow.cz). Položky s odkazy jsou níže v kartě Materiál po modulech"
+          9709,
+          "Střešní ventilátor MaxxFan Deluxe (400 × 400) 1× 8 890 Kč (nomadem.cz); Odtahový ventilátor 12 V do boční stěny (průtah vzduchu s Maxxfanem) 1× 819 Kč (kaufland.cz). Položky s odkazy jsou níže v kartě Materiál po modulech"
         ],
         [
           "Materiál: Kuchyň",
@@ -270,12 +270,6 @@
           12
         ],
         [
-          "Klimatizace EcoFlow WAVE 3, 230 V (příkon 690 W, kompresor cca 60 % času; léto)",
-          415,
-          4,
-          230
-        ],
-        [
           "Naftové topení – ventilátor (zima)",
           20,
           8,
@@ -310,6 +304,12 @@
           500,
           1.1,
           230
+        ],
+        [
+          "Ventilátory: Maxxfan + odtah ve stěně + stolní 12 V (léto, průvan místo klimy)",
+          35,
+          10,
+          12
         ]
       ],
       "parts": [
@@ -622,6 +622,11 @@
           "date": "2026-09-12",
           "who": "Claude",
           "text": "Bilance počítá s 2 h jízdy denně (1 140 W × 2 h × 0,9 = 2,1 kWh z alternátoru)."
+        },
+        {
+          "date": "2026-09-12",
+          "who": "Claude",
+          "text": "Klimatizace odložena (EcoFlow WAVE 3 v plánu s ks=0 jako volba). Místo ní pasivní chlazení: Maxxfan + odtahový ventilátor ve stěně 819 Kč + stolní 12V ventilátor, stínění REMIfront a markýza už v plánu. Koupelnové Mini Heki nahrazeno stěnovým ventilátorem, střecha je celá pro panely. Denní spotřeba bez klimy 5,4 kWh."
         }
       ]
     },
@@ -871,7 +876,7 @@
         },
         {
           "name": "Koupelna",
-          "total": 41616,
+          "total": 38087,
           "items": [
             [
               "Sprchová vanička 723×682×62 mm plast",
@@ -914,12 +919,12 @@
               "Bez sifonu, běžné v obytných vozech."
             ],
             [
-              "Mini Heki FL 40×40 s nucenou ventilací (koupelna)",
+              "Stěnový ventilátor 12 V do koupelny (místo Mini Heki 40×40 – střecha je plná panelů)",
               1,
-              4319,
+              790,
               "nomadem.cz",
-              "https://www.nomadem.cz/stresni-okno-dometic-seitz-mini-heki-style-plus-40-x-40-cm_z567/",
-              "Levně stěnový ventilátor 12 V 790 Kč."
+              "",
+              "Mini Heki FL s nucenou ventilací 4 319 Kč by zabralo místo panelu. Odkaz doplnit při objednávce"
             ],
             [
               "Roletové dveře Carbest do 198×100 cm",
@@ -1057,7 +1062,7 @@
         },
         {
           "name": "Ventilace a klimatizace",
-          "total": 31380,
+          "total": 9709,
           "items": [
             [
               "Střešní ventilátor MaxxFan Deluxe (400 × 400)",
@@ -1069,11 +1074,19 @@
             ],
             [
               "Klimatizace přenosná EcoFlow WAVE 3, chlazení 1,8 kW / topení 2 kW, příkon 690 W (230 V) nebo 640 W (DC)",
-              1,
+              0,
               22490,
               "ecoflow.cz",
               "https://ecoflow.cz/products/prenosna-klimatizace-ecoflow-wave-3",
-              "Levnější náhrada za FreshWell 3000 (40 750 Kč, nomadem.cz): bez montáže, vozí se jen v létě, hadice ven oknem, 15 kg. Nejlevnější a nejúspornější trvalá cesta je bytový invertorový split 2,5 kW za 8–12 tis. Kč + vakuování a naplnění technikem 3–5 tis., venkovní jednotka pod podlahu – svépomoc, bez záruky výrobce"
+              "Rozhodnuto 12. 9. 2026: klimu teď nekupovat, zkusit léto bez ní (izolace, stínění, 2 ventilátory, markýza, stání ve stínu). Koupit až podle zkušenosti, přenosná se dá dokoupit kdykoli. ks=0 = nezapočteno. Levnější náhrada za FreshWell 3000 (40 750 Kč, nomadem.cz): bez montáže, vozí se jen v létě, hadice ven oknem, 15 kg. Nejlevnější a nejúspornější trvalá cesta je bytový invertorový split 2,5 kW za 8–12 tis. Kč + vakuování a naplnění technikem 3–5 tis., venkovní jednotka pod podlahu – svépomoc, bez záruky výrobce"
+            ],
+            [
+              "Odtahový ventilátor 12 V do boční stěny (průtah vzduchu s Maxxfanem)",
+              1,
+              819,
+              "kaufland.cz",
+              "https://www.kaufland.cz/product/562102229/",
+              "Maxxfan fouká dovnitř, tenhle odsává ven u postele/koupelny → průvan i při zavřených dveřích. Příkon do 10 W"
             ]
           ]
         },
