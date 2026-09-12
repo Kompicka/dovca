@@ -828,28 +828,35 @@ function calcElec(){
 }
 function drawSchema(){
   const s=$('#schema');const e=get('elec');
-  const box=(x,y,w,h,t,sub,cls='')=>`<g><rect class="box ${cls}" x="${x}" y="${y}" width="${w}" height="${h}" rx="4"/><text x="${x+w/2}" y="${y+(sub?h/2-3:h/2+4)}" text-anchor="middle" font-weight="600">${t}</text>${sub?`<text class="lbl" x="${x+w/2}" y="${y+h/2+13}" text-anchor="middle">${sub}</text>`:''}</g>`;
+  const box=(x,y,w,h,t,sub,cls='')=>`<g><rect class="box ${cls}" x="${x}" y="${y}" width="${w}" height="${h}" rx="4"/><text x="${x+w/2}" y="${y+(sub?h/2-3:h/2+4)}" text-anchor="middle" font-weight="600">${t}</text>${sub?`<text class="lbl" x="${x+w/2}" y="${y+h/2+11}" text-anchor="middle">${sub}</text>`:''}</g>`;
   const line=(cls,d)=>`<path class="${cls}" d="${d}"/>`;
+  s.setAttribute('viewBox','0 0 980 460');
   s.innerHTML=`
    ${line('w48','M150 60 H230')}${line('w48','M150 150 H230')}${line('w48','M350 60 V150 H430')}${line('w48','M350 150 H430')}
-   ${line('w48','M430 60 H480 V 230 H430')}${line('w48','M560 60 H620')}${line('w48','M560 150 H620')}${line('w48','M560 230 H620')}
-   ${line('w230','M40 300 H230')}${line('w230','M740 60 H820')}${line('w230','M350 300 H620 V90')}
-   ${line('w12','M740 230 H790 V 190 H820')}${line('w12','M740 230 H790 V 230 H820')}${line('w12','M740 230 H790 V 270 H820')}${line('w12','M740 230 H790 V 310 H820')}${line('w12','M740 230 H790 V 350 H820')}
+   ${line('w48','M430 60 H480 V390 H590 V310 H620')}
+   ${line('w48','M560 60 H620')}${line('w48','M560 150 H620')}${line('w48','M560 230 H620')}
+   ${line('w230','M40 300 H230')}${line('w230','M350 300 H400 V15 H680 V35')}${line('w230','M740 60 H820')}${line('w230','M740 60 H780 V115 H820')}
+   ${line('w12','M740 230 H790 V175 H820')}${line('w12','M740 230 H790 V210 H820')}${line('w12','M740 230 H790 V245 H820')}${line('w12','M740 230 H790 V280 H820')}
+   ${line('w12','M740 310 H800 V315 H820')}${line('w12','M740 310 H800 V350 H820')}${line('w12','M740 310 H800 V385 H820')}
    ${box(30,35,120,50,'Alternátor 12 V','za jízdy')}
    ${box(30,125,120,50,`Solár ${fmtN(e.pv)} Wp`,'střecha')}
-   ${box(230,35,120,50,'2× Orion-Tr 12/48','izolovaný, ~800 W')}
+   ${box(230,35,120,50,'2× Orion-Tr 12/48','izolovaný, ~760 W')}
    ${box(230,125,120,50,'MPPT 150/45','solární regulátor')}
    ${box(30,275,120,50,'Břeh CEE 16 A','kemp / garáž')}
    ${box(230,275,120,50,'Rozvaděč 230 V','chránič + jistič')}
    ${box(430,35,130,50,'Sběrnice 48 V','Lynx + MEGA pojistky','k')}
-   ${box(430,125,130,50,`Baterie ${e.bat} kWh`,'LiFePO4 48 V','k')}
+   ${box(430,125,130,50,`Baterie ${e.bat} kWh`,'2× US5000 paralelně','k')}
    ${box(430,205,130,50,'SmartShunt','měření')}
+   ${box(430,285,130,50,'Klimatizace 48 V','Velit 2000R, přímo','k')}
    ${box(620,35,120,50,`MultiPlus-II 48/${e.inv/1000|0}k`,'měnič + nabíječ','b')}
    ${box(620,125,120,50,'Cerbo GX','dohled (volitelné)')}
-   ${box(620,205,120,50,'Orion 48/12-30 A','12V okruh','b')}
-   ${box(820,35,130,50,'PC + monitor','zásuvky 230 V')}
-   ${box(820,175,130,30,'Lednice')}${box(820,215,130,30,'Světla, USB')}${box(820,255,130,30,'Čerpadlo')}${box(820,295,130,30,'Notebook USB-C')}${box(820,335,130,30,'Naftové topení')}
-   <g transform="translate(30,380)"><path class="w48" d="M0 0 H30"/><text x="38" y="4">48 V</text><path class="w12" d="M90 0 H120"/><text x="128" y="4">12 V</text><path class="w230" d="M175 0 H205"/><text x="213" y="4">230 V</text></g>`;
+   ${box(620,205,120,50,'Orion 48/12-30 A','12 V domácnost','b')}
+   ${box(620,285,120,50,'Orion 48/12-30 A','12 V pracovní stůl','b')}
+   ${box(820,35,130,50,'Kuchyň 230 V','indukce, air fryer trouba')}
+   ${box(820,95,130,40,'Zásuvky 230 V','adaptér 240 W při GPU')}
+   ${box(820,160,130,30,'Lednice 130 l')}${box(820,195,130,30,'Světla, USB')}${box(820,230,130,30,'Čerpadlo')}${box(820,265,130,30,'Naftové topení')}
+   ${box(820,300,130,30,'Notebook USB-C 140 W')}${box(820,335,130,30,'2× monitor USB-C')}${box(820,370,130,30,'Starlink Mini')}
+   <g transform="translate(30,440)"><path class="w48" d="M0 0 H30"/><text x="38" y="4">48 V</text><path class="w12" d="M90 0 H120"/><text x="128" y="4">12 V</text><path class="w230" d="M175 0 H205"/><text x="213" y="4">230 V</text></g>`;
 }
 $('#p-elec').addEventListener('input',e=>{if(e.target.matches('input,select')&&!e.target.closest('.row'))calcElec()});
 $('#p-elec').addEventListener('change',e=>{if(e.target.matches('#e-volt,#e-bat,#e-pv,#e-inv')){state.elec=elecRead();drawSchema()}});

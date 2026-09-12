@@ -357,11 +357,11 @@
         ],
         [
           "Victron Orion-Tr 48/12-30 A (360 W) měnič pro 12V okruh",
-          1,
+          2,
           5528,
           "neosolar.cz",
           "https://eshop.neosolar.cz/dc-dc-konvertor-orion-tr-48-12-30a-360w/",
-          "Lednice, světla, čerpadlo, Maxxfan, topení, USB. Se 150 W notebookem, 60 W monitory, lednicí a Starlinkem je 12V okruh na cca 300 W špičkově – na hraně 360 W. Zvážit 2 ks paralelně nebo Orion-Tr 48/12-30 + oddělený zdroj pro notebook. Klima jede přímo ze 48 V, 12V okruh nezatěžuje"
+          "2 ks: první pro domácnost (lednice, světla, čerpadlo, topení, USB), druhý pro pracovní stůl (notebook 140 W, 2 monitory, Starlink) – každý okruh má vlastní 360 W, pojistky zvlášť. Klimatizace jede přímo ze 48 V a 12V okruhy nezatěžuje"
         ],
         [
           "Victron SmartShunt 500 A (měření baterie)",
@@ -569,6 +569,11 @@
           "date": "2026-09-12",
           "who": "Claude",
           "text": "Kuchyň: místo air fryeru 4 l air fryer trouba Tefal Easy Fry Oven & Grill 11 l / 2 000 W (4 159 Kč). Baterie: porovnány ceny za kWh – Pylontech US5000 5 275 Kč/kWh (25 320 Kč), Seplos POLO-W 4 783 Kč/kWh, 24V LiTime 200 Ah 5 857 Kč/kWh, 12V Ultimatron 9 765 Kč/kWh. Závěr: zůstat na 48 V, baterie nejsou předražené; šetřit se dá jen 1 baterií na start."
+        },
+        {
+          "date": "2026-09-12",
+          "who": "Claude",
+          "text": "Architektura 48 V upravena: 2× Pylontech US5000 (7,7 kWh využitelných) potvrzeno, 2× Orion-Tr 48/12-30 (domácnost / pracovní stůl), klimatizace Velit 2000R přímo na 48V sběrnici, kuchyň (indukce, air fryer trouba) a 240W adaptér notebooku na 230 V z MultiPlus. Schéma na stránce překresleno."
         }
       ]
     },
