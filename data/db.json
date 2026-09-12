@@ -45,6 +45,11 @@
               "Předkupní diagnostika motoru v servisu",
               "",
               false
+            ],
+            [
+              "Poptat vestavbu na míru: 1. NarubyVans (Křinec), 2. JVM Camper, 3. FullVans – poslat poptavka_narubyvans.md + půdorys, chtít cenu s materiálem i bez",
+              "Kp",
+              false
             ]
           ]
         },
@@ -632,6 +637,11 @@
           "date": "2026-09-12",
           "who": "Claude",
           "text": "Firmy na vestavbu na míru v ČR k poptání (ceny nezveřejňují): NarubyVans, Křinec – řady Siesta, Vista, Gandalf, Trio, Nomad, do 2 měsíců (narubyvans.cz); JVM Camper, Raškovice – řady BIKER XXL 640, MOTORBIKER XXL 640, BIKER L 600, 3D návrh (jvmcamper.cz); FullVans, Terešov – katalog Tripper/Siesta 380–673 tis., vlastní CNC truhlárna (fullvans.com); KRS / KPS Automobile, Domažlicko – 20 let, sériové i na míru (vanisti.cz/vyrobce/krs); Přestavby dodávek – 30 let, 1 000+ vozů (prestavbydodavek.cz); VejnyWood (vejnywood.cz); MS Camper, hlavně Sprinter (mscamper.cz); New Age Nomads, expediční (newagenomads.net); WoodVANs, Zlobice – 4 typové vestavby do vlastního auta, 6 měsíců (woodvans.cz). Jen moduly bez koupelny: CZCAMPER, Camperbox, Obytné vestavby TOM. Hotový koupelnový modul v EU jen Campermanufaktur Berlin (od 6 690 €) a VanCubic (sada od 15 990 €)."
+        },
+        {
+          "date": "2026-09-12",
+          "who": "Claude",
+          "text": "Majitel vybral NarubyVans jako první firmu k poptání. Poptávkový text s celým zadáním (auto L3H3, půdorys, 13 modulů materiálu za 452 107 Kč, příprava pro 48V elektro, 2 cenové varianty) je v B:\u0000_RANDOM_PROJEKTY\u0006_karavan\\poptavka_narubyvans.md. Úkol přidán do plánu stavby."
         }
       ]
     },
