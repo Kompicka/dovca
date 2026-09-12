@@ -179,8 +179,8 @@
         ],
         [
           "Materiál: Kuchyň",
-          32046,
-          "Lednice Vitrifrigo C130L CHR 130 l  12/24 V  kompresor SECOP BD35F (45 W) 1× 22 630 Kč (nomadem.cz); Dřez nerez Can LA1402 32×35 cm + výpusť 1× 2 489 Kč (nomadem.cz); Indukční deska vestavná Klarstein Delicatessa Slim 30 cm  2 zóny  3 500 W 1× 3 519 Kč (klarstein.cz); Koš na odpad Brunner Pillar 1× 409 Kč (nomadem.cz); Air fryer Tefal Easy Fry EY201815  4 2 l  1 550 W (volně stojící  místo vestavné trouby) 1× 2 999 Kč (tefal.cz). Odkazy v Elektro a design / db.json plan.materials"
+          33206,
+          "Lednice Vitrifrigo C130L CHR 130 l  12/24 V  kompresor SECOP BD35F (45 W) 1× 22 630 Kč (nomadem.cz); Dřez nerez Can LA1402 32×35 cm + výpusť 1× 2 489 Kč (nomadem.cz); Indukční deska vestavná Klarstein Delicatessa Slim 30 cm  2 zóny  3 500 W 1× 3 519 Kč (klarstein.cz); Koš na odpad Brunner Pillar 1× 409 Kč (nomadem.cz); Air fryer trouba Tefal Easy Fry Oven & Grill 9v1 FW501815  11 l  2 000 W  grill + rožeň (místo vestavné trouby) 1× 4 159 Kč (kulina.cz). Odkazy v Elektro a design / db.json plan.materials"
         ],
         [
           "Materiál: Sedačky",
@@ -300,8 +300,8 @@
           230
         ],
         [
-          "Air fryer Tefal Easy Fry 1 550 W (místo trouby)",
-          1550,
+          "Air fryer trouba Tefal Easy Fry Oven & Grill 11 l, 2 000 W (místo vestavné trouby)",
+          2000,
           0.4,
           230
         ]
@@ -310,10 +310,10 @@
         [
           "Pylontech US5000 48 V 4,8 kWh LiFePO4",
           2,
-          26084,
-          "solar-eshop.cz",
-          "https://www.solar-eshop.cz/p/pylontech-baterie-us5000/",
-          "2× = 9,6 kWh nominál, 7,7 kWh využitelných, 2× 40 kg. Levnější: Seplos POLO-W 48 V 5 kWh 24 490 Kč (battery.cz)"
+          25320,
+          "ostrovni-elektrarny.cz",
+          "https://ostrovni-elektrarny.cz/shop/produkt/927-baterie-pylontech-us5000-48v-100ah-4-8kwh",
+          "2× = 9,6 kWh nominál, 8,6 kWh využitelných (90 % DoD), 2× 39,7 kg, záruka 7–10 let, ≥6 000 cyklů. Ověřeno 12. 9. 2026: za kWh je to 5 275 Kč; Seplos POLO-W 48 V 5,12 kWh 24 490 Kč (battery.cz, 4 783 Kč/kWh, záruka jen 24 měsíců, 50 kg); 24V LiTime 200 Ah 5,12 kWh 29 990 Kč (5 857 Kč/kWh, bez Bluetooth); 12V Ultimatron 200 Ah 24 999 Kč (9 765 Kč/kWh). Přechod na 24 V baterii tedy nezlevní, rackové 48V baterie jsou nejlevnější hotové řešení. Úspora: začít s 1 ks (−25 320 Kč) a druhý dokoupit paralelně, až se ukáže potřeba"
         ],
         [
           "Victron MultiPlus-II 48/3000/35-32 (měnič + nabíječ 230 V)",
@@ -564,6 +564,11 @@
           "date": "2026-09-12",
           "who": "Claude",
           "text": "Kuchyň: indukční deska 2 zóny potvrzena, místo vestavné trouby air fryer Tefal Easy Fry 4,2 l (2 999 Kč), rychlovarná konvice zrušena (voda na indukci). V Elektro přidány spotřeby indukce (1 800 W, 0,6 h) a air fryeru (1 550 W, 0,4 h)."
+        },
+        {
+          "date": "2026-09-12",
+          "who": "Claude",
+          "text": "Kuchyň: místo air fryeru 4 l air fryer trouba Tefal Easy Fry Oven & Grill 11 l / 2 000 W (4 159 Kč). Baterie: porovnány ceny za kWh – Pylontech US5000 5 275 Kč/kWh (25 320 Kč), Seplos POLO-W 4 783 Kč/kWh, 24V LiTime 200 Ah 5 857 Kč/kWh, 12V Ultimatron 9 765 Kč/kWh. Závěr: zůstat na 48 V, baterie nejsou předražené; šetřit se dá jen 1 baterií na start."
         }
       ]
     },
@@ -1021,7 +1026,7 @@
         },
         {
           "name": "Kuchyň",
-          "total": 32046,
+          "total": 33206,
           "items": [
             [
               "Lednice Vitrifrigo C130L CHR 130 l, 12/24 V, kompresor SECOP BD35F (45 W)",
@@ -1056,12 +1061,12 @@
               ""
             ],
             [
-              "Air fryer Tefal Easy Fry EY201815, 4,2 l, 1 550 W (volně stojící, místo vestavné trouby)",
+              "Air fryer trouba Tefal Easy Fry Oven & Grill 9v1 FW501815, 11 l, 2 000 W, grill + rožeň (místo vestavné trouby)",
               1,
-              2999,
-              "tefal.cz",
-              "https://www.tefal.cz/p/horkovzdusna-friteza-tefal-easy-fry-ey201815/1510001456",
-              "Nahrazuje troubu Klarstein Victoria (8 909). Alza Philips Airfryer 3000 series 4,2 l 1 400 W od 2 375 Kč. Uložit do skříňky s výsuvem, provoz jen s otevřenou skříňkou"
+              4159,
+              "kulina.cz",
+              "https://www.kulina.cz/horkovzdusna-friteza-easy-fry-oven-grill-fw501815-tefal/",
+              "Rozhodnuto 12. 9. 2026: air fryer trouba místo klasické trouby (Klarstein Victoria 8 909) i místo malého 4l air fryeru. Ceny od 4 056 Kč (zbozi.cz), CZC 4 702, Euronics 5 699. Volně stojící, ukotvit proti pohybu za jízdy, větrat při provozu"
             ]
           ]
         },
