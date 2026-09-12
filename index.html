@@ -8,7 +8,7 @@
 <style>
 :root{
   --bg:#EDEFEA; --surface:#FFFFFF; --surface2:#F6F7F4; --line:#D3D7CF; --line2:#E4E7E0;
-  --ink:#1B2420; --ink2:#4A554F; --mute:#7A857E;
+  --ink:#1B2420; --ink2:#3F4A44; --mute:#667169;
   --accent:#E8641B; --accent-ink:#FFFFFF; --accent-soft:#FBE8DB;
   --steel:#35566B; --steel-soft:#DCE6EC;
   --good:#2F7D4E; --good-soft:#DDEFE3; --warn:#B8860B; --warn-soft:#F8EFD2; --bad:#B23A2A; --bad-soft:#F6DCD7;
@@ -18,7 +18,7 @@
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
     --bg:#161917; --surface:#1F2421; --surface2:#262C28; --line:#3A423D; --line2:#2E3531;
-    --ink:#E8ECE6; --ink2:#B5BDB6; --mute:#7F8A83;
+    --ink:#E8ECE6; --ink2:#C4CBC5; --mute:#9AA59D;
     --accent:#F0793A; --accent-ink:#1B1410; --accent-soft:#3A2618;
     --steel:#8FB3C9; --steel-soft:#24343F;
     --good:#6FC48E; --good-soft:#1E3427; --warn:#E0B44A; --warn-soft:#3A2F14; --bad:#E5705F; --bad-soft:#3E211C;
@@ -27,14 +27,14 @@
 }
 :root[data-theme="dark"]{
   --bg:#161917; --surface:#1F2421; --surface2:#262C28; --line:#3A423D; --line2:#2E3531;
-  --ink:#E8ECE6; --ink2:#B5BDB6; --mute:#7F8A83;
+  --ink:#E8ECE6; --ink2:#C4CBC5; --mute:#9AA59D;
   --accent:#F0793A; --accent-ink:#1B1410; --accent-soft:#3A2618;
   --steel:#8FB3C9; --steel-soft:#24343F;
   --good:#6FC48E; --good-soft:#1E3427; --warn:#E0B44A; --warn-soft:#3A2F14; --bad:#E5705F; --bad-soft:#3E211C;
   --shadow:0 1px 2px rgba(0,0,0,.4),0 6px 20px rgba(0,0,0,.35);
 }
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 "IBM Plex Sans",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 "IBM Plex Sans",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
 h1,h2,h3{font-family:"Barlow Condensed","Arial Narrow",sans-serif;text-wrap:balance;margin:0;line-height:1.1}
 h1{font-size:34px;font-weight:700;letter-spacing:.01em;text-transform:uppercase}
 h2{font-size:26px;font-weight:600}
@@ -45,14 +45,14 @@ button{font:inherit;cursor:pointer}
 input,select,textarea{font:inherit;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:7px 9px;min-width:0}
 input:focus,select:focus,textarea:focus,button:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
 textarea{width:100%;resize:vertical}
-.eyebrow{font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);font-weight:600}
+.eyebrow{font-size:12px;letter-spacing:.11em;text-transform:uppercase;color:var(--mute);font-weight:600}
 
 /* header */
 .top{background:var(--surface);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}
 .top-in{max-width:1180px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;gap:20px;flex-wrap:wrap}
 .brand{display:flex;align-items:center;gap:12px}
 .brand svg{width:44px;height:30px;flex:none}
-.brand small{display:block;color:var(--mute);font-size:12.5px;font-weight:500;margin-top:2px}
+.brand small{display:block;color:var(--ink2);font-size:13px;font-weight:500;margin-top:2px}
 .strip{display:flex;gap:8px;flex-wrap:wrap;margin-left:auto}
 .stat{background:var(--surface2);border:1px solid var(--line2);border-radius:var(--radius);padding:6px 12px;min-width:110px}
 .stat .eyebrow{font-size:10.5px}
@@ -70,7 +70,7 @@ textarea{width:100%;resize:vertical}
 
 main{max-width:1180px;margin:0 auto;padding:22px 20px 80px}
 .panel{display:none}.panel.on{display:block}
-.intro{max-width:66ch;color:var(--ink2);margin:0 0 18px}
+.intro{max-width:74ch;color:var(--ink2);font-size:16.5px;line-height:1.65;margin:0 0 20px}
 .grid{display:grid;gap:16px}
 .g2{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
 .card{background:var(--surface);border:1px solid var(--line2);border-radius:var(--radius);padding:18px 20px}
@@ -79,7 +79,7 @@ main{max-width:1180px;margin:0 auto;padding:22px 20px 80px}
 .card h3 .eyebrow{font-weight:600}
 .row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
 .field{display:flex;flex-direction:column;gap:4px}
-.field label{font-size:12.5px;color:var(--ink2);font-weight:500}
+.field label{font-size:13.5px;color:var(--ink2);font-weight:600}
 .fields{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
 .chips{display:flex;flex-wrap:wrap;gap:6px}
 .chip{border:1px solid var(--line);background:var(--surface2);border-radius:99px;padding:4px 11px;font-size:13px;color:var(--ink2)}
@@ -92,13 +92,13 @@ main{max-width:1180px;margin:0 auto;padding:22px 20px 80px}
 .actions{display:flex;gap:10px;align-items:center;margin-top:16px;flex-wrap:wrap}
 .saved{font-size:13px;color:var(--good);opacity:0;transition:opacity .2s}
 .saved.show{opacity:1}
-.note{font-size:13px;color:var(--mute)}
+.note{font-size:14px;line-height:1.55;color:var(--ink2)}
 .banner{background:var(--warn-soft);color:var(--ink);border:1px solid var(--warn);border-radius:var(--radius);padding:10px 14px;font-size:14px;margin-bottom:16px}
 .banner[hidden]{display:none}
 
 /* table */
 .tablewrap{overflow-x:auto}
-table{border-collapse:collapse;width:100%;font-size:14px}
+table{border-collapse:collapse;width:100%;font-size:14.5px}
 th{text-align:left;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--mute);font-weight:600;padding:8px 10px;border-bottom:1px solid var(--line);white-space:nowrap}
 td{padding:9px 10px;border-bottom:1px solid var(--line2);vertical-align:top}
 td.num,th.num{text-align:right;white-space:nowrap}
@@ -131,7 +131,7 @@ td input.n{text-align:right;width:110px}
 .bar{height:10px;border-radius:99px;background:var(--line2);overflow:hidden;margin-top:10px}
 .bar i{display:block;height:100%;background:var(--steel)}
 .bar.a i{background:var(--accent)}
-.hint{font-size:13px;color:var(--ink2);margin-top:8px;max-width:60ch}
+.hint{font-size:14.5px;line-height:1.62;color:var(--ink2);margin-top:8px;max-width:68ch}
 @media (max-width:760px){.verdict{grid-template-columns:1fr}.vs{padding:4px 0}}
 
 /* build plan */
@@ -169,18 +169,32 @@ td input.n{text-align:right;width:110px}
 #schema .w48{stroke:var(--accent);stroke-width:3;fill:none}
 #schema .w12{stroke:var(--steel);stroke-width:2;fill:none}
 #schema .w230{stroke:var(--ink2);stroke-width:2;fill:none;stroke-dasharray:6 4}
-#fp .van{fill:var(--surface2);stroke:var(--ink);stroke-width:2}
+#fp{min-width:780px}
+#fp .van{fill:var(--surface2);stroke:var(--ink);stroke-width:2;vector-effect:non-scaling-stroke}
 #fp .arch{fill:var(--line);stroke:none}
-#fp .door{stroke:var(--accent);stroke-width:5;fill:none}
-#fp .blk{stroke:var(--ink);stroke-width:1.2;cursor:grab;opacity:.92}
+#fp .door{stroke:var(--accent);stroke-width:4;fill:none;vector-effect:non-scaling-stroke}
+#fp .blk{stroke:var(--ink);stroke-width:1.5;cursor:grab;opacity:.92;vector-effect:non-scaling-stroke}
 #fp .blk.drag{cursor:grabbing;opacity:1}
-#fp .bl{font-size:12px;fill:var(--ink);pointer-events:none;font-weight:500}
-#fp .bs{font-size:9.5px;fill:var(--ink2);pointer-events:none}
+#fp .bl{font-size:52px;fill:var(--ink);pointer-events:none;font-weight:600}
+#fp .bs{font-size:38px;fill:var(--ink2);pointer-events:none}
 #fp .h{cursor:pointer}
-#fp .h circle{fill:var(--surface);stroke:var(--ink2)}
-#fp .h text{font-size:10px;fill:var(--ink);pointer-events:none;text-anchor:middle}
-#fp .dim{fill:var(--mute);font-size:11px;font-family:"IBM Plex Mono",monospace}
-#fp .dimline{stroke:var(--mute);stroke-width:1}
+#fp .h circle{fill:var(--surface);stroke:var(--ink2);stroke-width:1.5;vector-effect:non-scaling-stroke}
+#fp .h text{font-size:36px;fill:var(--ink);pointer-events:none;text-anchor:middle;font-weight:600}
+#fp .dim{fill:var(--ink2);font-size:42px;font-family:"IBM Plex Mono",monospace}
+#fp .dimline{stroke:var(--mute);stroke-width:1;vector-effect:non-scaling-stroke}
+.rear-view{min-width:680px;max-width:980px;display:block;font-family:"IBM Plex Sans",sans-serif}
+.rear-view .body{fill:var(--steel-soft);stroke:var(--steel);stroke-width:3}
+.rear-view .opening{fill:var(--surface2);stroke:var(--ink);stroke-width:3}
+.rear-view .door-panel{fill:var(--surface);stroke:var(--steel);stroke-width:3}
+.rear-view .door-inset{fill:var(--steel-soft);stroke:var(--line);stroke-width:2}
+.rear-view .cabinet{fill:var(--surface);stroke:var(--ink2);stroke-width:2}
+.rear-view .bed{fill:var(--accent-soft);stroke:var(--accent);stroke-width:3}
+.rear-view .detail{fill:none;stroke:var(--ink2);stroke-width:2}
+.rear-view .floor{fill:var(--line2);stroke:var(--ink2);stroke-width:2}
+.rear-view .accent{fill:var(--accent)}
+.rear-view text{fill:var(--ink);font-size:15px;font-weight:600}
+.rear-view .sub{fill:var(--ink2);font-size:13px;font-weight:500}
+.rear-view .body,.rear-view .opening,.rear-view .door-panel,.rear-view .door-inset,.rear-view .cabinet,.rear-view .bed,.rear-view .detail,.rear-view .floor{vector-effect:non-scaling-stroke}
 /* log */
 .entry{display:grid;grid-template-columns:110px 1fr;gap:14px;padding:10px 0;border-bottom:1px solid var(--line2)}
 .entry .d{font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--mute)}
@@ -213,7 +227,8 @@ dialog::backdrop{background:rgba(0,0,0,.35)}
     <button class="tab" role="tab" data-p="req" aria-selected="true">Požadavky</button>
     <button class="tab" role="tab" data-p="deals" aria-selected="false">Nálezy<span class="cnt" id="c-deals">0</span></button>
     <button class="tab" role="tab" data-p="cmp" aria-selected="false">Koupit vs. postavit</button>
-    <button class="tab" role="tab" data-p="elec" aria-selected="false">Elektro a design</button>
+    <button class="tab" role="tab" data-p="elec" aria-selected="false">Elektro</button>
+    <button class="tab" role="tab" data-p="layout" aria-selected="false">Půdorys</button>
     <button class="tab" role="tab" data-p="build" aria-selected="false">Plán stavby</button>
     <button class="tab" role="tab" data-p="log" aria-selected="false">Deník</button>
   </nav>
@@ -321,7 +336,7 @@ dialog::backdrop{background:rgba(0,0,0,.35)}
   </div>
 </section>
 
-<!-- ===== ELEKTRO A DESIGN ===== -->
+<!-- ===== ELEKTRO ===== -->
 <section class="panel" id="p-elec">
   <p class="intro">Pracovat z dodávky s 800W počítačem 6 hodin denně znamená zhruba 5 kWh jen na práci. To je víc než běžný obytný vůz spálí za tři dny, a proto se to celé točí kolem baterie a nabíjení, ne kolem světel.</p>
 
@@ -377,9 +392,15 @@ dialog::backdrop{background:rgba(0,0,0,.35)}
     <div class="actions"><button class="btn small" id="pt-add">+ Díl</button><button class="btn primary" id="e-save">Uložit elektro</button><span class="saved" id="e-saved">Uloženo pro všechny</span></div>
   </div>
 
-  <div class="card" style="margin-top:16px">
-    <h3>Půdorys <span class="eyebrow">design vestavby</span></h3>
-    <p class="hint" style="margin:0 0 10px">Fiat Ducato / Boxer / Jumper L3H2: ložná délka 3 705 mm, šířka 1 870 mm, mezi podběhy 1 422 mm, výška 1 932 mm. Bloky přetahujte, kolečkem u bloku otočíte. Posuvné dveře jsou vpravo, vzadu jsou křídlové dveře.</p>
+</section>
+
+<!-- ===== PŮDORYS ===== -->
+<section class="panel" id="p-layout">
+  <p class="intro">Samostatný návrh interiéru. Nahoře upravíte půdorys v přesných rozměrech, pod ním je orientační pohled do auta zezadu přes otevřené křídlové dveře.</p>
+
+  <div class="card lift">
+    <h3>Interaktivní půdorys <span class="eyebrow">design vestavby</span></h3>
+    <p class="hint" style="margin:0 0 12px">Blok přesuňte tažením. Tlačítkem ⟳ ho otočíte a tlačítkem × odstraníte. Posuvné dveře jsou dole, zadní křídlové dveře vpravo. Rozměry jsou v milimetrech.</p>
     <div class="row" style="margin-bottom:10px">
       <select id="fp-van"><option value="ducato-l3">Ducato/Boxer/Jumper L3 (3705×1870)</option><option value="ducato-l2">Ducato/Boxer/Jumper L2 (3120×1870)</option><option value="ducato-l4">Ducato/Boxer/Jumper L4 (4070×1870)</option><option value="transit-l3">Ford Transit L3 (3494×1784)</option><option value="sprinter-l3">Sprinter/Crafter L3 (4300×1787)</option></select>
       <input id="fp-name" placeholder="Nový blok" style="width:140px"><input id="fp-w" type="number" placeholder="délka mm" style="width:100px"><input id="fp-h" type="number" placeholder="šířka mm" style="width:100px">
@@ -389,6 +410,72 @@ dialog::backdrop{background:rgba(0,0,0,.35)}
     </div>
     <div class="tablewrap"><svg id="fp" width="100%" style="max-width:980px;display:block;touch-action:none;user-select:none;font-family:'IBM Plex Sans',sans-serif" aria-label="Půdorys vestavby"></svg></div>
     <p class="note" id="fp-legend"></p>
+  </div>
+
+  <div class="card" style="margin-top:16px">
+    <h3>Pohled zezadu <span class="eyebrow">otevřené dveře</span></h3>
+    <p class="hint" style="margin:0 0 14px">Orientační pohled do navržené vestavby: zvedací postel je nahoře, technika a úložné prostory zůstávají po stranách a středem vede volný průchod.</p>
+    <div class="tablewrap">
+      <svg class="rear-view" viewBox="0 0 980 620" width="100%" role="img" aria-labelledby="rear-title rear-desc">
+        <title id="rear-title">Dodávka zezadu s otevřenými dveřmi</title>
+        <desc id="rear-desc">Schematický pohled do obytné dodávky zezadu. Oboje zadní dveře jsou otevřené, uvnitř je zvedací postel, boční skříně a volná středová ulička.</desc>
+        <line class="detail" x1="30" y1="575" x2="950" y2="575"/>
+
+        <!-- otevřené levé a pravé křídlo -->
+        <path class="door-panel" d="M248 118 L48 158 Q34 161 34 178 V520 Q34 537 50 540 L248 522 Z"/>
+        <path class="door-inset" d="M215 170 L78 195 V324 L215 307 Z"/>
+        <path class="door-inset" d="M215 344 L78 356 V495 L215 481 Z"/>
+        <path class="detail" d="M230 220 h-18 M230 420 h-18"/>
+        <rect class="accent" x="45" y="430" width="12" height="54" rx="5"/>
+
+        <path class="door-panel" d="M732 118 L932 158 Q946 161 946 178 V520 Q946 537 930 540 L732 522 Z"/>
+        <path class="door-inset" d="M765 170 L902 195 V324 L765 307 Z"/>
+        <path class="door-inset" d="M765 344 L902 356 V495 L765 481 Z"/>
+        <path class="detail" d="M750 220 h18 M750 420 h18"/>
+        <rect class="accent" x="923" y="430" width="12" height="54" rx="5"/>
+
+        <!-- karoserie a otevřený zadní portál -->
+        <path class="body" d="M245 525 V155 Q245 48 350 38 H630 Q735 48 735 155 V525 Q735 552 708 552 H272 Q245 552 245 525 Z"/>
+        <path class="opening" d="M292 518 V164 Q292 96 360 88 H620 Q688 96 688 164 V518 Z"/>
+        <rect class="accent" x="255" y="420" width="16" height="70" rx="6"/>
+        <rect class="accent" x="709" y="420" width="16" height="70" rx="6"/>
+
+        <!-- interiér -->
+        <path class="floor" d="M315 500 L665 500 L622 410 H358 Z"/>
+        <path class="detail" d="M490 500 V410 M404 500 L430 410 M576 500 L550 410" opacity=".45"/>
+        <rect class="bed" x="345" y="155" width="290" height="92" rx="12"/>
+        <path class="detail" d="M365 181 H615 M365 218 H615" opacity=".45"/>
+        <path class="detail" d="M355 146 V121 M625 146 V121"/>
+        <circle class="accent" cx="355" cy="121" r="5"/><circle class="accent" cx="625" cy="121" r="5"/>
+
+        <path class="cabinet" d="M312 267 H405 V475 H330 Q312 475 312 457 Z"/>
+        <line class="detail" x1="312" y1="340" x2="405" y2="340"/>
+        <line class="detail" x1="312" y1="410" x2="405" y2="410"/>
+        <circle class="accent" cx="390" cy="324" r="4"/><circle class="accent" cx="390" cy="394" r="4"/>
+
+        <path class="cabinet" d="M575 267 H668 V457 Q668 475 650 475 H575 Z"/>
+        <line class="detail" x1="575" y1="340" x2="668" y2="340"/>
+        <line class="detail" x1="575" y1="410" x2="668" y2="410"/>
+        <circle class="accent" cx="590" cy="324" r="4"/><circle class="accent" cx="590" cy="394" r="4"/>
+
+        <rect class="cabinet" x="430" y="292" width="120" height="70" rx="6"/>
+        <rect class="detail" x="444" y="304" width="44" height="32" rx="3"/>
+        <rect class="detail" x="497" y="304" width="39" height="32" rx="3"/>
+        <path class="detail" d="M455 362 L440 410 M525 362 L540 410"/>
+
+        <rect class="body" x="225" y="530" width="530" height="34" rx="12"/>
+        <rect class="opening" x="438" y="542" width="104" height="22" rx="5"/>
+
+        <!-- popisky -->
+        <text id="rear-van-label" x="490" y="22" text-anchor="middle">Dodávka · pohled zezadu</text>
+        <text x="490" y="142" text-anchor="middle">Zvedací postel</text>
+        <text class="sub" x="358" y="493" text-anchor="middle">úložný prostor</text>
+        <text class="sub" x="622" y="493" text-anchor="middle">technika</text>
+        <text class="sub" x="490" y="523" text-anchor="middle">volný průchod</text>
+        <text class="sub" x="132" y="560" text-anchor="middle">levé dveře otevřené</text>
+        <text class="sub" x="848" y="560" text-anchor="middle">pravé dveře otevřené</text>
+      </svg>
+    </div>
   </div>
 </section>
 
