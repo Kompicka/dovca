@@ -179,8 +179,8 @@
         ],
         [
           "Materiál: Kuchyň",
-          37956,
-          "Lednice Vitrifrigo C130L CHR 130 l  12/24 V  kompresor SECOP BD35F (45 W) 1× 22 630 Kč (nomadem.cz); Dřez nerez Can LA1402 32×35 cm + výpusť 1× 2 489 Kč (nomadem.cz); Indukční deska vestavná Klarstein Delicatessa Slim 30 cm  2 zóny  3 500 W 1× 3 519 Kč (klarstein.cz); Vestavná trouba Klarstein Victoria 45 cm  49 l  2 800 W 1× 8 909 Kč (klarstein.cz); Koš na odpad Brunner Pillar 1× 409 Kč (nomadem.cz). Odkazy v Elektro a design / db.json plan.materials"
+          32046,
+          "Lednice Vitrifrigo C130L CHR 130 l  12/24 V  kompresor SECOP BD35F (45 W) 1× 22 630 Kč (nomadem.cz); Dřez nerez Can LA1402 32×35 cm + výpusť 1× 2 489 Kč (nomadem.cz); Indukční deska vestavná Klarstein Delicatessa Slim 30 cm  2 zóny  3 500 W 1× 3 519 Kč (klarstein.cz); Koš na odpad Brunner Pillar 1× 409 Kč (nomadem.cz); Air fryer Tefal Easy Fry EY201815  4 2 l  1 550 W (volně stojící  místo vestavné trouby) 1× 2 999 Kč (tefal.cz). Odkazy v Elektro a design / db.json plan.materials"
         ],
         [
           "Materiál: Sedačky",
@@ -294,9 +294,15 @@
           12
         ],
         [
-          "Rychlovarná konvice 1 800 W",
+          "Indukční deska 2 zóny (vaření + ohřev vody místo konvice; běžně jedna zóna 1 800 W, obě naráz 3 500 W = nad 3 000 W měniče trvale)",
           1800,
-          0.2,
+          0.6,
+          230
+        ],
+        [
+          "Air fryer Tefal Easy Fry 1 550 W (místo trouby)",
+          1550,
+          0.4,
           230
         ]
       ],
@@ -553,6 +559,11 @@
           "date": "2026-09-12",
           "who": "Claude",
           "text": "Elektro: místo PC 800 W notebook s GPU napájený USB-C (150 W) + 2 monitory USB-C (60 W), lednice 130–140 l (Vitrifrigo C130L), místo Maxxfanu střešní DC klimatizace (Velit 2000R 48 V, EU náhrada Dometic RTX 2000). Denní spotřeba klesla z cca 6,9 kWh na cca 2,8 kWh bez klimy / 4,2 kWh se 4 h klimy – 2× US5000 (7,7 kWh) stačí i na den bez slunce."
+        },
+        {
+          "date": "2026-09-12",
+          "who": "Claude",
+          "text": "Kuchyň: indukční deska 2 zóny potvrzena, místo vestavné trouby air fryer Tefal Easy Fry 4,2 l (2 999 Kč), rychlovarná konvice zrušena (voda na indukci). V Elektro přidány spotřeby indukce (1 800 W, 0,6 h) a air fryeru (1 550 W, 0,4 h)."
         }
       ]
     },
@@ -1010,7 +1021,7 @@
         },
         {
           "name": "Kuchyň",
-          "total": 37956,
+          "total": 32046,
           "items": [
             [
               "Lednice Vitrifrigo C130L CHR 130 l, 12/24 V, kompresor SECOP BD35F (45 W)",
@@ -1034,15 +1045,7 @@
               3519,
               "klarstein.cz",
               "https://www.klarstein.cz/delicatessa-slim-30cm-indukcni-varna-deska-2-varne-zony-cerna-p-10033015.html",
-              "Špička 3,5 kW nad 3kW měnič: nepouštět obě zóny naplno, nebo měnič 5 kVA."
-            ],
-            [
-              "Vestavná trouba Klarstein Victoria 45 cm, 49 l, 2 800 W",
-              1,
-              8909,
-              "klarstein.cz",
-              "https://www.klarstein.cz/Victoria-vestavna-trouba-45-cm-49-l-cerna.html",
-              "Vestavná 45 cm pod 2 kW v ČR neexistuje. Levně minitrouba Klarstein Omnichef 30 l 1 500 W cca 2 300 (cena neověřená)."
+              "Špička 3,5 kW nad 3kW měnič: nepouštět obě zóny naplno, nebo měnič 5 kVA.. 2 zóny potvrzeny 12. 9. 2026. Obě naráz 3 500 W je nad 3 000 W trvalého výkonu MultiPlus – vařit na jedné zóně nebo nastavit power limit. Rychlovarná konvice zrušena, voda se ohřívá tady"
             ],
             [
               "Koš na odpad Brunner Pillar",
@@ -1051,6 +1054,14 @@
               "nomadem.cz",
               "https://www.nomadem.cz/odpadkove-kose/",
               ""
+            ],
+            [
+              "Air fryer Tefal Easy Fry EY201815, 4,2 l, 1 550 W (volně stojící, místo vestavné trouby)",
+              1,
+              2999,
+              "tefal.cz",
+              "https://www.tefal.cz/p/horkovzdusna-friteza-tefal-easy-fry-ey201815/1510001456",
+              "Nahrazuje troubu Klarstein Victoria (8 909). Alza Philips Airfryer 3000 series 4,2 l 1 400 W od 2 375 Kč. Uložit do skříňky s výsuvem, provoz jen s otevřenou skříňkou"
             ]
           ]
         },
